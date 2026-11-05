@@ -202,3 +202,37 @@
 .gpo-display{min-height:230px;max-height:48svh;display:grid;place-items:center;background:#07101c;overflow:hidden}.gpo-display img{max-width:100%;max-height:48svh;object-fit:contain}.gpo-empty{text-align:center;color:#c6d4e1;padding:55px 20px}.gpo-empty span{font-size:14px;font-weight:800;letter-spacing:2px}.gpo-empty p{max-width:380px;color:#9fb0c0;line-height:1.5}
 .gpo-dialog-copy{padding:17px 25px 10px}.gpo-count{color:#dbb77c;font-size:11px;letter-spacing:2px;font-weight:700}.gpo-dialog-copy h3{font-family:Georgia,serif;font-size:26px;font-weight:400;margin:7px 0 9px}.gpo-metadata{display:flex;gap:22px;flex-wrap:wrap;color:#b9c7d3;font-size:10px;letter-spacing:1.1px}.gpo-metadata b{display:block;color:#f0dfca;font-size:13px;letter-spacing:0;margin-top:5px}.gpo-dialog-copy p{font-size:14px;line-height:1.5;color:#d9e0e5}.gpo-dialog-copy>small{display:block;color:#a7b7c7;font-size:10px;letter-spacing:.6px}.gpo-dialog-copy>small strong{display:block;margin-top:4px;color:#eed6ab;font-size:12px}.gpo-dialog-copy .gpo-notes{font-size:11px;color:#a8b4c2;margin:12px 0 7px}.gpo-dialog-copy a{color:#ebc389;font-size:13px;display:inline-block;margin:3px 0 10px}.gpo-controls{padding:14px 25px 22px;display:flex;justify-content:space-between;gap:12px;border-top:1px solid #73849b66}.gpo-controls button{background:#263e55;color:#f8e9d6;border:1px solid #8d7a5a;padding:11px 16px;cursor:pointer}.gpo-controls button:disabled{opacity:.3;cursor:default}
 @media(max-width:680px){.decision-bottom{flex-wrap:wrap}.archive-actions{justify-content:flex-start}.gpo-dialog-header{padding:14px 15px}.gpo-display{min-height:170px}.gpo-dialog-copy{padding:14px 16px 10px}.gpo-controls{padding:12px 16px 17px}.gpo-dialog-copy h3{font-size:23px}}
+
+/* VERSION 14: A desk of 1967 archival photographs emerging from a secret folder.
+   All images are genuine supplied archive copies and retain captions or credits. */
+.welcome-view{background:radial-gradient(ellipse at 75% 43%,#213b48 0,transparent 52%),linear-gradient(110deg,#101c2c 0%,#172b38 55%,#10212d 100%)}
+.welcome-inner{grid-template-columns:minmax(0,0.94fr) minmax(0,1.06fr);gap:clamp(16px,2vw,36px)}
+.archive-desk{height:clamp(510px,48vw,630px);min-width:0;position:relative;isolation:isolate;filter:none!important;transform:translateZ(0);perspective:none}
+.desk-grain{position:absolute;inset:2% 1%;border-radius:12px;background:radial-gradient(ellipse at 51% 41%,#4a4238a1 0,transparent 68%),repeating-linear-gradient(96deg,#9f826412 0 1px,#0000 2px 6px),linear-gradient(128deg,#55453260,#17272b77);box-shadow:inset 0 0 66px #08151a9c,0 20px 55px #030c1380;z-index:0}
+.folder-shadow{position:absolute;left:18%;top:17%;width:74%;height:71%;background:#0008;filter:blur(24px);transform:rotate(-6deg);z-index:1}
+.classified-folder{position:absolute;left:17%;top:16%;height:72%;width:73%;transform:rotate(-7deg);z-index:2;filter:drop-shadow(0 13px 11px #030c1488)}
+.folder-tab{position:absolute;top:-25px;left:6%;width:58%;height:43px;background:#a9946c;color:#3b2c1c;padding:10px 14px 6px;font:800 10px/1.2 Arial,sans-serif;letter-spacing:2px;clip-path:polygon(0 0,85% 0,100% 100%,0 100%);z-index:1}
+.folder-tab span{display:block;font-size:8px;letter-spacing:1px;margin-top:3px}
+.folder-face{position:absolute;inset:0;background:linear-gradient(135deg,#d1bd90,#bea678 40%,#ad946c 100%);border:1px solid #7a654c;box-shadow:inset 0 0 0 4px #ddcca480,inset 0 0 35px #8069488c;overflow:hidden}
+.folder-face:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,#412b1308 0 2px,#0000 2px 8px)}
+.folder-code{position:absolute;top:10%;left:7%;right:6%;font:900 10px Arial;letter-spacing:2px;color:#56412c;display:flex;justify-content:space-between}
+.folder-rule{position:absolute;top:17%;left:7%;right:7%;border-top:1px solid #624c3490}
+.folder-mark{position:absolute;top:31%;left:8%;font:900 clamp(24px,2.5vw,36px)/1.04 Arial,sans-serif;letter-spacing:4px;color:#8b2922;border:5px double #9d342c;padding:10px 13px;transform:rotate(-9deg);opacity:.72}
+.folder-sub{position:absolute;bottom:9%;left:8%;font:800 10px/1.7 Arial,sans-serif;letter-spacing:2px;color:#5a4632}
+.folder-seal{position:absolute;bottom:9%;right:7%;width:64px;height:64px;border:2px solid #72624d6b;border-radius:100%;display:grid;place-items:center;color:#80694e;font:900 15px Arial}
+.desk-photo{position:absolute;padding:8px 8px 27px;background:#ebe8de;border:1px solid #bfb7a6;box-shadow:3px 13px 20px #03090dbe,0 0 0 1px #ffffff45;z-index:4;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;transform-origin:50% 50%}
+.desk-photo img{width:100%;height:calc(100% - 0px);object-fit:cover;display:block;filter:grayscale(1) sepia(.12) contrast(1.04)}
+.desk-photo span{position:absolute;bottom:6px;left:8px;right:8px;color:#433d32;font:800 8px Arial,sans-serif;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.desk-photo-paratroopers{width:34%;height:62%;left:36%;top:17%;transform:rotate(4deg);z-index:9}
+.desk-photo-paratroopers img{object-position:center 38%}
+.desk-photo-nasser{width:33%;height:31%;left:5%;top:22%;transform:rotate(-14deg);z-index:6}
+.desk-photo-golan{width:35%;height:30%;right:3%;top:13%;transform:rotate(12deg);z-index:5}
+.desk-photo-jerusalem{width:29%;height:39%;left:10%;bottom:8%;transform:rotate(-8deg);z-index:8}
+.desk-photo-shelter{width:35%;height:27%;right:4%;bottom:12%;transform:rotate(10deg);z-index:7}
+.desk-stamp{position:absolute;top:8%;right:1%;z-index:10;border:3px double #c96753;color:#d2705e;background:#17242bc7;transform:rotate(9deg);padding:7px 10px;font:900 15px Arial;letter-spacing:3px;opacity:.94}
+.desk-credit{position:absolute;bottom:1%;right:3%;font:800 9px/1.6 Arial;letter-spacing:.8px;text-align:right;color:#d6bd92;z-index:10;text-shadow:0 2px 5px #000}
+@media(hover:hover) and (pointer:fine){.desk-photo:hover{box-shadow:4px 22px 38px #03090ddd;transform:rotate(0deg) translateY(-8px);z-index:11}}
+@media(max-width:1080px){.archive-desk{height:520px}.desk-photo-paratroopers{width:35%}.desk-photo span{font-size:7px}.desk-credit{font-size:7px}}
+@media(max-width:780px){.welcome-inner{grid-template-columns:1fr;gap:2px}.welcome-copy{padding:34px 0 18px}.archive-desk{height:430px;width:100%;max-width:640px;margin:0 auto 20px}.desk-photo-paratroopers{width:34%;height:68%;top:13%}.desk-stamp{font-size:12px}.desk-credit{font-size:8px}.welcome-view{overflow:hidden}}
+@media(max-width:490px){.archive-desk{height:300px;margin-top:14px}.desk-photo{padding:5px 5px 18px}.desk-photo span{font-size:5px;bottom:5px;left:5px}.desk-stamp{font-size:9px;letter-spacing:1px;border-width:2px;top:7%}.desk-credit{font-size:6px;bottom:0}.folder-mark{font-size:19px;border-width:3px}.folder-tab{font-size:7px}.welcome-copy{padding-top:22px}.welcome-copy h1{font-size:clamp(51px,13vw,68px)}}
+@media(prefers-reduced-motion:reduce){.desk-photo{transition:none}}

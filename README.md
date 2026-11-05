@@ -1,4 +1,8 @@
-# Six Days of Decisions | Version 12
+# Version 14: GPO photograph desk
+
+32 selected images from the user supplied GPO Photos ZIP are embedded locally. The iconic three paratroopers picture appears on the home screen in a collage of historical photographs emerging from a decorative Top Secret folder. Other relevant photographs appear on decision cards and in the contextual archive viewer, with location, date and credit. All previous gameplay and video files are retained. See GPO_IMPORTED_PHOTOS.md for provenance.
+
+# Six Days of Decisions | Version 14
 
 A chronological, interactive learning game for students aged 16 to 17, prepared for StandWithUs UK Explore. The game runs on GitHub Pages as static HTML, JavaScript, CSS, SVG maps and local video files.
 
@@ -8,7 +12,7 @@ A chronological, interactive learning game for students aged 16 to 17, prepared 
 * Stage 1 displays the supplied genuine UN Photo of a peacekeeper lowering the UN flag at King’s Gate near Gaza City on **19 May 1967**. The decision concerns the earlier diplomatic crisis, which had already been developing before this photograph was taken.
 * Stage 5 displays the supplied Dan Hadani / National Library of Israel photograph of Egyptian aircraft wreckage.
 * Stage 9 displays the supplied photograph of Israeli soldiers using a makeshift shower in Sinai.
-* Other stages use clearly credited archive video frames where appropriate. Five stages have explicitly labelled image placeholders, rather than a misleading reconstruction presented as a genuine photograph.
+* Other stages use clearly credited archive video frames where appropriate. All stages now feature appropriate historical photographs or credited archival frames, with any date uncertainty clearly stated.
 * Six silent maps contain moving, labelled military symbols, including infantry, tanks, aircraft, artillery and ships. Flags are attached to units. Egyptian, Syrian, Jordanian, Israeli and UN symbols use the **1967** flag designs.
 * The two large choices, two spare lives, Game Over after three mistakes, restart, all video edits, historical credits and transparent StandWithUs UK / Explore branding are retained from Version 11.
 
@@ -20,21 +24,21 @@ A chronological, interactive learning game for students aged 16 to 17, prepared 
 4. Select **Commit changes** and use the message below.
 5. Reload https://yehuda-swu.github.io/6-day-war-game/ after GitHub Pages deploys the change.
 
-**Suggested commit message:** `Add archival decision cards and 1967 military unit animations`
+**Suggested commit message:** `Add GPO archive photos and Top Secret desk home screen`
 
 If using Git locally instead of the web interface:
 
 ```bash
 git add .
-git commit -m "Add archival decision cards and 1967 military unit animations"
+git commit -m "Add GPO archive photos and Top Secret desk home screen"
 git push origin main
 ```
 
 There is no build process and no external server requirement. Open `index.html` locally if you want a quick preview. Some browsers may restrict locally opened media; GitHub Pages is the preferred check.
 
-## Photography still needed
+## Archive photography
 
-Authentic archival photographs would improve decision cards **2, 3, 7, 12 and 13**. These stages already have the same card layout, but clearly state that a photograph is pending. See `MEDIA_CHECKLIST.md` for suggested subjects. Do not use modern photographs or animated illustrations as unidentified archival images.
+All 14 decision screens now have actual archival photographs or explicitly credited archival stills, together with source details and careful dates. When the image was not taken on the exact decision day, this is stated. A photographic gallery is available on relevant decisions. The home screen features a designed Top Secret folder with five overlapping original photographs, including the three paratroopers by David Rubinger. The folder itself is a modern decorative reconstruction.
 
 ## Map design and historical limits
 

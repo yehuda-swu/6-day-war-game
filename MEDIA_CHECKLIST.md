@@ -1,32 +1,24 @@
-# Version 12 archive photography register
+# Version 14 historical image checklist
 
-Every decision has an archive card with a short description, date, location and source. **Five slots explicitly remain placeholders** until suitable authentic photographs can be obtained. The outcome films and animated maps remain in place.
+Every decision now has a real historical photograph or, at the Khartoum Summit, a clearly identified AP Archive still. The supplied GPO archive includes 32 selected photographs used on the welcome screen and in the appropriate stages of the game.
 
-| Stage | Decision card material | Status |
+| Stage | Archive image on decision screen | Credit |
 |---|---|---|
-| 01 | UN peacekeepers withdraw | Confirmed historical photograph |
-| 02 | Straits of Tiran | Historical photograph needed |
-| 03 | Three fronts and mobilisation | Historical photograph needed |
-| 04 | Cabinet decision | Historical documentary frame |
-| 05 | Operation Focus | Confirmed historical photograph |
-| 06 | Jordan enters | Historical documentary frame |
-| 07 | Jerusalem battle | Historical photograph needed |
-| 08 | Old City | Historical film still |
-| 09 | Sinai campaign | Confirmed historical photograph |
-| 10 | Northern front | Historical documentary frame |
-| 11 | Golan Heights | Historical documentary frame |
-| 12 | Ceasefire | Historical photograph needed |
-| 13 | Peace debate | Historical photograph needed |
-| 14 | Khartoum summit | Historical film still |
+| 01 | UNEF flag lowered at King’s Gate, Gaza City, 19 May 1967 | UN Photo |
+| 02 | President Nasser addressing a crowd, exact day not confirmed | Government Press Office collection |
+| 03 | Family shelters in northern Israel, exact day not confirmed | Government Press Office collection |
+| 04 | Yitzhak Rabin with soldiers, exact day not confirmed | Government Press Office collection |
+| 05 | Egyptian aircraft wreckage following Operation Focus | Dan Hadani Collection, National Library of Israel |
+| 06 | Israeli soldier at a Jerusalem position, exact day not confirmed | Government Press Office collection |
+| 07 | Soldiers near Jerusalem's walls, exact day not confirmed | Government Press Office collection |
+| 08 | The three paratroopers at the Western Wall, 7 June 1967 | David Rubinger / GPO archive |
+| 09 | Soldiers at a makeshift shower in Sinai | Dan Hadani Collection, National Library of Israel |
+| 10 | Child in a shelter near the northern front, exact day not confirmed | Government Press Office collection |
+| 11 | Tanks on the Golan, exact day not confirmed | Government Press Office collection |
+| 12 | Vehicles and soldiers on the Golan, date not confirmed | Government Press Office collection |
+| 13 | Levi Eshkol visiting the Golan, exact date not confirmed | Government Press Office collection |
+| 14 | Nasser arrives in Khartoum, 30 August 1967 | AP Archive |
 
-## Outstanding historical photographs
+Photographs dated outside the actual decision day are labelled as **contextual**. No photo is described as showing a cabinet meeting unless it actually does so. Two unrelated items in the upload were excluded.
 
-* **Stage 2:** Eilat harbour, Israeli shipping or Straits of Tiran in May or June 1967
-* **Stage 3:** Israeli reservist call up or civilian emergency preparations in May 1967
-* **Stage 7:** Ammunition Hill or troops around divided Jerusalem in early June 1967
-* **Stage 12:** The ceasefire, soldiers immediately after the war, or a June 1967 newspaper image
-* **Stage 13:** Israeli ministers or cabinet deliberations during June 1967
-
-The first card uses the supplied **19 May 1967** UN Photo from King’s Gate near Gaza City. This image shows the withdrawal taking effect after the earlier Egyptian request. The photo's date is intentionally different from the earlier decision date. All photo metadata must be verified against an original archive record before replacing placeholders.
-
-The animated maps are not photographs. The documentary film frames are identified separately from photographs. See `media_checklist.csv` for filenames and `MAP_SOURCES.md` for flag and map explanations.
+The silent animated maps, game footage and historical credits remain unchanged. The game retains Hebrew audio only in the Old City communications clip.
