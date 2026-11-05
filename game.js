@@ -4,9 +4,7 @@
  * Each correct answer follows the documented historical path, not necessarily
  * the only defensible strategic or moral choice.
  *
- * TO ADD MEDIA: put files inside assets/ and update image or video below.
- * Example image: 'assets/08-old-city.jpg'
- * Example video: 'assets/08-old-city.mp4'
+ * Archival media belongs to the relevant decision stage.
  */
 'use strict';
 
@@ -71,7 +69,7 @@ const STAGES = [
     options:['Attack Egyptian airfields to reduce the threat from the air.','Open with a ground offensive in Sinai before trying to neutralise Egyptian aircraft.'],correct:0,
     success:'Israeli pilots struck Egyptian air bases. The loss of aircraft and runways severely weakened Egypt’s ability to defend its forces in Sinai.',
     alternative:'The historical operation focused on Egyptian airfields, not symbolic flights over cities.',
-    focus:['sinai','israel'],point:[342,306],map:'THE SOUTHERN FRONT',archiveTitle:'Operation Focus',archiveCaption:'The opening air campaign dramatically changed the balance of the war.',image:'assets/05-airfields.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:1
+    focus:['sinai','israel'],point:[342,306],map:'THE SOUTHERN FRONT',archiveTitle:'Operation Focus',archiveCaption:'The opening air campaign dramatically changed the balance of the war.',image:'assets/05-airfields.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',archivePhoto:'assets/05-airfields-wreckage.jpg',archivePhotoCredit:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',archivePhotoCaption:'Wreckage of the Egyptian Air Force after the first day of the war. Historical photograph.',source:1
   },
   {
     date:'5 JUNE 1967',day:'DAY ONE',phase:1,tag:'06 / THE EASTERN FRONT',title:'Jordan opens fire',
@@ -101,7 +99,7 @@ const STAGES = [
     options:['Delay entry into the Old City because of the risks to religious sites and civilians.','Enter with ground forces while seeking to protect sacred places.'],correct:1,
     success:'Israeli paratroopers entered the Old City on 7 June. The Western Wall became accessible to Jewish worshippers, while Jerusalem’s political and religious status remained deeply contested.',
     alternative:'The objective was not to destroy the holy sites. Israeli leaders were concerned about the damage and diplomatic repercussions of an assault.',
-    focus:['westbank','israel'],point:[427,277],map:'THE OLD CITY',archiveTitle:'Jerusalem, 7 June',archiveCaption:'Paratroopers reached the Western Wall after the battle for Jerusalem.',image:'assets/08-old-city.jpg',video:null,mediaCredit:'Old City archival film: source credit to be confirmed',source:1
+    focus:['westbank','israel'],point:[427,277],map:'THE OLD CITY',archiveTitle:'Jerusalem, 7 June',archiveCaption:'Paratroopers reached the Western Wall after the battle for Jerusalem.',image:'assets/08-old-city.jpg',video:null,mediaCredit:'IDF',source:1
   },
   {
     date:'7 JUNE 1967',day:'DAY THREE',phase:1,tag:'09 / THE SOUTHERN FRONT',title:'The route to Eilat',
@@ -111,7 +109,7 @@ const STAGES = [
     options:['Regain access through the Straits of Tiran and secure the Sinai front.','Hold existing positions in Sinai instead of pressing towards the Straits of Tiran.'],correct:0,
     success:'Israel secured Sharm el Sheikh and access to the Straits. By the end of the fighting it occupied the Sinai Peninsula and Gaza Strip.',
     alternative:'Capturing Cairo was not the outcome of the 1967 southern campaign. Securing Sinai and access to the Straits were central developments.',
-    focus:['sinai','gaza'],point:[399,420],map:'SINAI AND THE STRAITS',archiveTitle:'The Sinai campaign',archiveCaption:'The battle in Sinai was decided quickly. The blockade of the Straits ended.',image:'assets/09-sinai.jpg',video:null,source:7
+    focus:['sinai','gaza'],point:[399,420],map:'SINAI AND THE STRAITS',archiveTitle:'The Sinai campaign',archiveCaption:'The battle in Sinai was decided quickly. The blockade of the Straits ended.',image:'assets/09-sinai.jpg',video:null,youtube:{id:'UfWaa0a-e98',start:254,end:300,credit:'Periscope Film LLC',description:'Period footage of Israeli armour and artillery; precise shooting locations and dates not independently verified'},photoCredit:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',photoCaption:'IDF soldiers at an improvised shower in Sinai, June 1967.',source:7
   },
   {
     date:'8 JUNE 1967',day:'DAY FOUR',phase:1,tag:'10 / THE CEASEFIRE',title:'The fighting changes',
@@ -131,7 +129,7 @@ const STAGES = [
     options:['Stay below the Golan Heights and accept a ceasefire without an offensive.','Authorise an advance onto the Golan Heights despite the risks.'],correct:1,
     success:'Israeli forces attacked Syrian positions on 9 June. The advance was contested but continued into the following day.',
     alternative:'Restraint was advocated by some leaders, but the actual decision on 9 June was to launch the Golan offensive.',
-    focus:['golan','syria'],point:[451,113],map:'GOLAN HEIGHTS',archiveTitle:'The battle for the Golan',archiveCaption:'The northern offensive took place on 9 and 10 June, shortly before the final ceasefire.',image:'assets/11-golan.jpg',video:null,source:3
+    focus:['golan','syria'],point:[451,113],map:'GOLAN HEIGHTS',archiveTitle:'The battle for the Golan',archiveCaption:'The northern offensive took place on 9 and 10 June, shortly before the final ceasefire.',image:'assets/11-golan.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:3
   },
   {
     date:'10 JUNE 1967',day:'DAY SIX',phase:1,tag:'12 / THE WAR ENDS',title:'Six days later',
@@ -161,41 +159,81 @@ const STAGES = [
     options:['Arab League leaders adopted a declaration rejecting peace, recognition and negotiations with Israel at that time.','Arab League leaders called for immediate direct peace negotiations with Israel.'],correct:0,
     success:'The Three No’s became a defining feature of the immediate aftermath. In November 1967, UN Resolution 242 offered a framework linking withdrawal, recognition and secure peace.',
     alternative:'There was no peace treaty at Khartoum. Its declaration included the Three No’s, although diplomatic positions evolved in later years.',
-    focus:['israel','sinai','golan','westbank'],point:[411,250],map:'THE DIPLOMATIC FRONT',archiveTitle:'The Khartoum summit',archiveCaption:'Arab leaders adopted the declaration known as the Three No’s.',image:'assets/14-khartoum.jpg',video:null,source:6
+    focus:['israel','sinai','golan','westbank'],point:[411,250],map:'THE DIPLOMATIC FRONT',archiveTitle:'Nasser arrives at the Khartoum Summit',archiveCaption:'AP Archive footage dated 30 August 1967 shows President Gamal Abdel Nasser arriving in Khartoum. The Arab League declaration containing the Three No’s was adopted at the summit on 1 September.',image:'assets/14-khartoum.jpg',video:'assets/14-khartoum.mp4',mediaCredit:'AP Archive',photoCaption:'30 August 1967: President Nasser arrives at Khartoum and inspects a guard of honour. This footage shows his arrival, not the adoption of the final declaration.',source:6
   }
 ];
 
 
-// Every completed decision reveals a video interlude before advancing.
-// Upload assets/01-peacekeepers.mp4, etc. No JavaScript edits are necessary.
+// Each completed decision reveals an archival film when available.
+// Missing films use the historically grounded illustrated outcome.
 const PHASES = ['THE CRISIS', 'SIX DAYS OF WAR', 'THE AFTERMATH'];
-const STATE_KEY = 'swu_six_days_decisions_v2';
+const STATE_KEY = 'swu_six_days_decisions_v8_lives';
+const PRIOR_STATE_KEY = 'swu_six_days_decisions_v2';
+const INITIAL_SPARE_LIVES = 2;
+const MAX_MISTAKES = 3;
 const LEGACY_KEY = 'swu_six_days_decisions_v1';
 const $ = id => document.getElementById(id);
 const pad = n => String(n).padStart(2,'0');
-let state = {index:0,alternatives:0,started:false,finished:false};
+let state = {index:0,alternatives:0,started:false,finished:false,gameOver:false};
 let view = 'welcome';
 let locked = false;
 let pendingAdvance = null;
 let videoReady = false;
 
 function store(){try{localStorage.setItem(STATE_KEY,JSON.stringify(state))}catch(e){}}
-function load(){try{let raw=localStorage.getItem(STATE_KEY);if(!raw)raw=localStorage.getItem(LEGACY_KEY);const data=JSON.parse(raw);if(data&&Number.isInteger(data.index)&&data.index>=0&&data.index<=STAGES.length)state={index:data.index,alternatives:Number(data.alternatives)||0,started:!!data.started,finished:!!data.finished};}catch(e){}}
+function load(){
+  try{
+    // Existing players retain their chapter progress. The previous build had no lives.
+    let raw=localStorage.getItem(STATE_KEY);
+    let migrated=false;
+    if(!raw){raw=localStorage.getItem(PRIOR_STATE_KEY)||localStorage.getItem(LEGACY_KEY);migrated=!!raw;}
+    if(!raw)return;
+    const data=JSON.parse(raw);
+    if(data&&Number.isInteger(data.index)&&data.index>=0&&data.index<=STAGES.length){
+      state={index:data.index,alternatives:migrated?0:Math.min(MAX_MISTAKES,Math.max(0,Number(data.alternatives)||0)),started:!!data.started,finished:!!data.finished,gameOver:migrated?false:!!data.gameOver};
+      if(!state.finished && state.alternatives>=MAX_MISTAKES)state.gameOver=true;
+      if(migrated)store();
+    }
+  }catch(e){}
+}
+function remainingLives(){return Math.max(0,INITIAL_SPARE_LIVES-state.alternatives)}
+function renderLives(){
+  const hearts=$('lives-icons');
+  hearts.replaceChildren();
+  for(let i=0;i<INITIAL_SPARE_LIVES;i++){
+    const h=document.createElement('span');h.className='life-icon'+(i<remainingLives()?'':' spent');
+    h.textContent='♥';h.setAttribute('aria-hidden','true');hearts.appendChild(h);
+  }
+  const remaining=remainingLives();
+  const status=remaining>0?`${remaining} ${remaining===1?'life':'lives'} remaining`:'Final chance';
+  $('lives-text').textContent=status;
+  $('lives-counter').setAttribute('aria-label',`${status}. A third incorrect decision ends the game.`);
+}
+
 function setView(next){
   view=next;
-  $('welcome-view').hidden=next!=='welcome';$('game-view').hidden=next!=='decision';$('reel-view').hidden=next!=='reel';$('finish-view').hidden=next!=='finish';
+  $('welcome-view').hidden=next!=='welcome';$('game-view').hidden=next!=='decision';$('reel-view').hidden=next!=='reel';$('finish-view').hidden=next!=='finish';$('gameover-view').hidden=next!=='gameover';
   window.scrollTo({top:0,behavior:'instant'});
 }
-function start(){state.started=true;state.finished=false;store();renderDecision();}
-function reset(){state={index:0,alternatives:0,started:true,finished:false};store();renderDecision();}
+function start(){if(state.finished||state.gameOver){reset();return;}state.started=true;state.finished=false;store();renderDecision();}
+function reset(){state={index:0,alternatives:0,started:true,finished:false,gameOver:false};store();renderDecision();}
+function goHome(){clearTimeout(pendingAdvance);stopVideo();locked=false;$('try-again-panel').hidden=true;setView('welcome');updateWelcome()}
+function updateWelcome(){
+  $('start-button').textContent=state.started&&!state.finished&&!state.gameOver?'Resume your journey →':state.finished||state.gameOver?'Begin the mission again →':'Enter the decision room →';
+  $('welcome-new-button').hidden=!(state.started&&!state.finished&&!state.gameOver);
+}
+function requestRestart(){$('restart-dialog').showModal()}
+
 function renderProgress(){
   const bar=$('micro-progress');bar.replaceChildren();
   STAGES.forEach((_,i)=>{const piece=document.createElement('span');piece.className='micro-piece'+(i<state.index?' completed':i===state.index?' live':'');bar.appendChild(piece)});
 }
 function renderDecision(){
   clearTimeout(pendingAdvance);stopVideo();
+  if(state.gameOver){gameOver();return;}
   if(state.index>=STAGES.length){finish();return;}
   locked=false;
+  renderLives();
   $('try-again-panel').hidden=true;
   const s=STAGES[state.index];
   $('stage-indicator').textContent=`DECISION ${pad(state.index+1)} / ${STAGES.length}`;
@@ -226,8 +264,20 @@ function choose(i){
     // Show the film sequence immediately following a correct historical decision.
     showReel(stage);
   }else{
-    state.alternatives++;store();$('retry-copy').textContent=stage.alternative;
-    $('try-again-panel').hidden=false;$('retry-button').focus();
+    state.alternatives++;
+    if(state.alternatives>=MAX_MISTAKES){
+      state.gameOver=true;
+      store();
+      gameOver();
+      return;
+    }
+    store();renderLives();
+    const remaining=remainingLives();
+    $('retry-lives').textContent=remaining===1?'LIFE LOST · 1 LIFE LEFT':'LIFE LOST · FINAL CHANCE';
+    $('retry-heading').textContent=remaining===1?'One life remaining.':'Your final chance.';
+    $('retry-copy').textContent=stage.alternative+' '+(remaining===0?'Another incorrect decision will end the mission.':'You can reconsider this decision.');
+    $('try-again-panel').hidden=false;
+    $('retry-button').focus();
   }
 }
 function retry(){
@@ -237,9 +287,12 @@ function retry(){
 }
 function reelVideoPath(s){return s.video || s.image.replace(/\.(jpe?g|png|webp)$/i,'.mp4')}
 function stopVideo(){
+  $('archive-reveal').hidden=true;
   const v=$('outcome-video');
   v.oncanplay=null;v.onended=null;v.onerror=null;
   v.pause();v.removeAttribute('src');v.load();v.hidden=true;
+  const youtubeFrame=$('outcome-youtube');youtubeFrame.removeAttribute('src');youtubeFrame.hidden=true;
+  $('external-film-link').hidden=true;
   videoReady=false;$('reel-view').classList.remove('has-video');
 }
 function showReel(s){
@@ -250,14 +303,37 @@ function showReel(s){
   $('reel-description').textContent=s.success;
   $('reel-foot-step').textContent=state.index===STAGES.length-1?'NEXT: THE FINAL DEBRIEF':`NEXT: DECISION ${pad(state.index+2)}`;
   $('media-type').textContent='VISUAL HISTORY CARD';
-  $('reel-help').textContent='Upload the numbered MP4 to replace this card with archival or narrated footage.';
+  $('reel-help').textContent='Read the historical outcome and continue when you are ready.';
   $('reel-next').textContent=state.index===STAGES.length-1?'View the final debrief →':'Continue to the next decision →';
   $('reel-replay').hidden=true;
-  const credit=$('reel-credit');credit.textContent=s.mediaCredit?`Video source: ${s.mediaCredit}`:'';credit.hidden=true;
+  const credit=$('reel-credit');credit.textContent=s.mediaCredit?`Footage: ${s.mediaCredit}`:s.photoCredit?`Photograph: ${s.photoCredit}`:'';credit.hidden=!(s.mediaCredit||s.photoCredit);
+  const photoCaption=$('reel-photo-caption');photoCaption.textContent=s.photoCaption||'';photoCaption.hidden=!s.photoCaption;
   const image=$('reel-image');image.hidden=true;image.onload=()=>{image.hidden=false};image.onerror=()=>{image.hidden=true};image.src=s.image;
   $('reel-illustration').hidden=false;
   const vid=$('outcome-video');
-  // On GitHub Pages a missing video simply falls back to the illustrated result.
+  // User provided this source as a YouTube link, not a locally licensed media file.
+  // Official YouTube embedding allows students to view the original upload without
+  // copying or redistributing Periscope Film's footage in the GitHub package.
+  if(s.youtube){
+    const yt=s.youtube;
+    const frame=$('outcome-youtube');
+    const sourceLink=$('external-film-link');
+    sourceLink.href=`https://www.youtube.com/watch?v=${yt.id}&t=${yt.start}s`;
+    sourceLink.hidden=false;
+    credit.textContent=`Archival film source: ${yt.credit}. Viewed through the original YouTube player.`;
+    credit.hidden=false;
+    photoCaption.textContent=yt.description;
+    photoCaption.hidden=false;
+    $('media-type').textContent='EXTERNAL ARCHIVAL FILM';
+    $('reel-help').textContent='This footage plays from YouTube and needs an internet connection. Press play if necessary, then choose Continue when ready.';
+    $('reel-view').classList.add('has-video');
+    $('reel-illustration').hidden=true;
+    frame.hidden=false;
+    frame.src=`https://www.youtube-nocookie.com/embed/${yt.id}?start=${yt.start}&end=${yt.end}&autoplay=1&playsinline=1&rel=0`;
+    $('reel-next').focus({preventScroll:true});
+    return;
+  }
+  // On GitHub Pages a missing local video simply falls back to the illustrated result.
   vid.oncanplay=()=>{
     if(view!=='reel'||videoReady)return;
     videoReady=true;
@@ -270,6 +346,22 @@ function showReel(s){
   };
   vid.onended=()=>{
     if(view!=='reel')return;
+    if(s.archivePhoto){
+      const picture=$('archive-reveal-image');
+      const verify=new Image();
+      verify.onload=()=>{
+        if(view!=='reel')return;
+        picture.src=s.archivePhoto;
+        $('archive-reveal-caption').textContent=s.archivePhotoCaption||'';
+        $('archive-reveal-credit').textContent=s.archivePhotoCredit||'';
+        $('archive-reveal').hidden=false;
+        $('reel-help').textContent='Archival photograph: continue when you are ready.';
+        pendingAdvance=setTimeout(()=>{if(view==='reel')advance()},6500);
+      };
+      verify.onerror=()=>{pendingAdvance=setTimeout(()=>{if(view==='reel')advance()},1800)};
+      verify.src=s.archivePhoto;
+      return;
+    }
     $('reel-help').textContent='The clip has finished. Moving to the next decision.';
     pendingAdvance=setTimeout(()=>{if(view==='reel')advance()},2800);
   };
@@ -278,7 +370,7 @@ function showReel(s){
     vid.hidden=true;$('reel-illustration').hidden=false;
     $('media-type').textContent='VISUAL HISTORY CARD';
     $('reel-replay').hidden=true;
-    credit.hidden=true;
+    credit.hidden=!(s.photoCredit);
   };
   vid.src=reelVideoPath(s);vid.load();
   $('reel-next').focus({preventScroll:true});
@@ -293,8 +385,17 @@ function advance(){
   state.index++;store();
   if(state.index>=STAGES.length)finish();else renderDecision();
 }
+function gameOver(){
+  clearTimeout(pendingAdvance);stopVideo();
+  locked=true;state.gameOver=true;state.finished=false;state.started=true;store();
+  $('try-again-panel').hidden=true;
+  $('gameover-stage').textContent=`REACHED DECISION ${pad(state.index+1)} OF ${STAGES.length}`;
+  $('gameover-mistakes').textContent=state.alternatives;
+  setView('gameover');
+  $('gameover-restart').focus({preventScroll:true});
+}
 function finish(){
-  state.finished=true;state.started=true;store();stopVideo();
+  state.finished=true;state.started=true;state.gameOver=false;store();stopVideo();
   $('finish-attempts').textContent=state.alternatives;setView('finish');
 }
 function openNotes(){$('notes-dialog').showModal()}
@@ -308,8 +409,13 @@ function setUpLogos(){
 }
 function init(){
   setUpSources();setUpLogos();load();
-  $('start-button').textContent=state.started&&!state.finished?'Resume your journey →':'Enter the decision room →';
+  updateWelcome();
   $('start-button').addEventListener('click',start);
+  $('home-button').addEventListener('click',goHome);
+  $('restart-button').addEventListener('click',requestRestart);
+  $('welcome-new-button').addEventListener('click',requestRestart);
+  $('cancel-restart').addEventListener('click',()=>$('restart-dialog').close());
+  $('confirm-restart').addEventListener('click',()=>{$('restart-dialog').close();reset()});
   $('retry-button').addEventListener('click',retry);
   $('reel-next').addEventListener('click',advance);
   $('reel-replay').addEventListener('click',replayVideo);
@@ -319,12 +425,14 @@ function init(){
   $('close-notes').addEventListener('click',()=>$('notes-dialog').close());
   $('notes-dialog').addEventListener('click',e=>{if(e.target===$('notes-dialog'))$('notes-dialog').close()});
   $('replay-button').addEventListener('click',reset);
+  $('gameover-restart').addEventListener('click',reset);
+  $('gameover-home').addEventListener('click',goHome);
   document.addEventListener('keydown',e=>{
     if($('notes-dialog').open)return;
     if(view==='decision'&&$('try-again-panel').hidden&&!locked&&(e.key==='1'||e.key==='2')){e.preventDefault();choose(Number(e.key)-1)}
     if(view==='decision'&&!$('try-again-panel').hidden&&e.key==='Escape'){e.preventDefault();retry()}
     if(view==='reel'&&e.key==='ArrowRight'){e.preventDefault();advance()}
   });
-  if(state.finished||state.index>=STAGES.length)finish();else if(state.started)renderDecision();else setView('welcome');
+  if(state.gameOver)gameOver();else if(state.finished||state.index>=STAGES.length)finish();else setView('welcome');
 }
 document.addEventListener('DOMContentLoaded',init);

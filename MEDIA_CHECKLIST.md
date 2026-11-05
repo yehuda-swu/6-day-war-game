@@ -68,3 +68,24 @@ The maps can be used as stills, incorporated into the outcome MP4s, or substitut
 5. Test both a correct and incorrect choice. The video will appear after a correct choice; if it is missing, the built in outcome card remains.
 
 **Production suggestion:** Start with the four most visual sequences: stages 05 (Operation Focus), 08 (Old City), 11 (Golan Heights) and 12 (ceasefire). They will have the greatest impact even before you have gathered all 14 clips.
+
+## Periscope Film LLC footage: two external review links added in Version 5
+
+* Stage 09 Sinai: suggested archive clip 04:14 to 05:00, source https://www.youtube.com/watch?v=UfWaa0a-e98&t=254s
+* Stage 11 Golan: suggested archive clip 07:43 to 08:17, source https://www.youtube.com/watch?v=UfWaa0a-e98&t=463s
+
+These are external embeds, not local MP4s. The game still needs a verified, licensed Golan image or film and geographic animations.
+
+## Version 6 media status
+
+* Stage 08: IDF Old City extract received, edited and installed (35 seconds); credit IDF.
+* Stage 11: Unpacked / OpenDor Media Golan extract received, edited and installed (21 seconds).
+* Stage 14: AP Archive credit recorded; awaiting actual Khartoum Summit video file and publishing permission.
+
+## Version 7 media update (superseded by Version 9)
+
+**Stage 14:** AP Archive Arab League Council meeting clip received and edited for contextual use. The film is not authenticated as footage of the Khartoum Summit itself. See `MEDIA_SOURCES.md` for exact source time range and credit. Before publication obtain the relevant archival rights.
+
+## Version 9: current Stage 14 footage
+
+Stage 14 now includes AP Archive footage dated 30 August 1967 of Nasser arriving in Khartoum. This replaces the later Arab League Council clip. The footage provides period context and does not depict the Three No’s declaration. Credit: **AP Archive**. Confirm publication rights before placing the game on a public GitHub Pages site.
