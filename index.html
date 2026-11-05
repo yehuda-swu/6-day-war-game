@@ -28,11 +28,27 @@
       <div class="decision-inner">
         <div class="decision-utility"><div class="utility-left"><span class="operation-dot"></span> THE 1967 ARCHIVE <span class="utility-divider">/</span> OPERATIONS ROOM</div><div class="utility-right"><div id="lives-counter" class="lives-counter" role="status" aria-live="polite" aria-label="2 lives remaining. A third incorrect decision ends the game."><span class="lives-label">LIVES</span><span id="lives-icons" class="lives-icons" aria-hidden="true"><span class="life-icon">♥</span><span class="life-icon">♥</span></span><span id="lives-text" class="lives-text">2 lives remaining</span></div><div class="decision-counter" id="stage-indicator">DECISION 01 / 14</div></div></div>
         <div class="micro-progress" id="micro-progress" aria-label="Game progress"></div>
-        <section class="scenario">
-          <div class="scenario-meta"><span id="scenario-chapter">CHAPTER ONE / THE CRISIS</span><span id="scenario-date">16 MAY 1967</span></div>
-          <h1 id="decision-title">The peacekeepers withdraw</h1>
-          <p class="scenario-copy" id="scenario-copy"></p>
-          <div class="scenario-intel"><span class="intel-icon">i</span><span id="scenario-intel"></span></div>
+        <section class="scenario scenario-with-archive">
+          <div class="scenario-main">
+            <div class="scenario-meta"><span id="scenario-chapter">CHAPTER ONE / THE CRISIS</span><span id="scenario-date">16 MAY 1967</span></div>
+            <h1 id="decision-title">The peacekeepers withdraw</h1>
+            <p class="scenario-copy" id="scenario-copy"></p>
+            <div class="scenario-intel"><span class="intel-icon">i</span><span id="scenario-intel"></span></div>
+          </div>
+          <figure class="decision-archive-card" id="decision-archive-card" aria-labelledby="archive-tag" aria-describedby="archive-caption">
+            <div class="archive-card-photo">
+              <img id="archive-photo" alt="" loading="eager" decoding="async" hidden>
+              <div id="archive-missing" class="archive-photo-placeholder" hidden aria-label="Historic photograph not yet available"><span class="archive-placeholder-icon" aria-hidden="true">▣</span><span>ARCHIVE IMAGE PENDING</span></div>
+              <span class="archive-photo-kind" id="archive-kind">HISTORICAL PHOTOGRAPH</span>
+            </div>
+            <figcaption class="archive-card-copy">
+              <div class="archive-card-kicker">FROM THE ARCHIVE <span id="archive-sequence">01 / 14</span></div>
+              <h2 id="archive-tag">UNEF withdrawal</h2>
+              <div class="archive-card-meta"><div><span>DATE</span><strong id="archive-date">19 May 1967</strong></div><div><span>LOCATION</span><strong id="archive-location">Gaza City</strong></div></div>
+              <p id="archive-caption"></p>
+              <div class="archive-card-source"><span>SOURCE</span><span id="archive-source">UN Photo</span></div>
+            </figcaption>
+          </figure>
         </section>
         <div class="make-decision"><span class="make-decision-rule"></span><span>YOUR DECISION</span><span class="make-decision-rule"></span></div>
         <h2 class="decision-question" id="question"></h2>

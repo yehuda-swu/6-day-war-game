@@ -164,6 +164,46 @@ const STAGES = [
 ];
 
 
+
+/* Decision-screen photographs are separate from the animated outcome films.
+   Never label a map, an illustration or a documentary reconstruction as an
+   original historical photograph. Dates refer to the pictured event when known. */
+const ARCHIVE_CARDS = [
+  {kind:'HISTORICAL PHOTOGRAPH',image:'assets/archive/01-unef-flag-19-may-1967.jpg',alt:'A United Nations peacekeeper lowers the UN flag at King’s Gate on 19 May 1967.',tag:'The UN flag comes down',date:'19 May 1967',location:'King’s Gate, Gaza City',source:'UN Photo',caption:'The United Nations flag is lowered at the Erez crossing as the Emergency Force withdraws from its observation posts.'},
+  {kind:'ARCHIVAL PHOTO REQUIRED',image:null,tag:'The maritime blockade',date:'May 1967',location:'Straits of Tiran',source:'Archival photograph pending',caption:'A historical photograph of Eilat, the Straits of Tiran or shipping in 1967 is still needed.'},
+  {kind:'ARCHIVAL PHOTO REQUIRED',image:null,tag:'The waiting period',date:'May 1967',location:'Israel',source:'Archival photograph pending',caption:'A dated photograph of Israeli reservists or the civilian mobilisation is still needed.'},
+  {kind:'DOCUMENTARY ARCHIVE FRAME',image:'assets/04-cabinet.jpg',tag:'Cabinet deliberations',date:'June 1967',location:'Israel',source:'Unpacked / OpenDor Media',caption:'A historical image included in documentary coverage of Israel’s wartime leadership.'},
+  {kind:'HISTORICAL PHOTOGRAPH',image:'assets/archive/05-egyptian-aircraft-wreckage.jpg',alt:'A man stands beside the wreckage of an Egyptian military aircraft after the opening air strikes.',tag:'The aftermath of Operation Focus',date:'5 June 1967',location:'Egyptian airfield',source:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',caption:'A photograph of damaged Egyptian Air Force aircraft following the opening day of the war.'},
+  {kind:'DOCUMENTARY ARCHIVE FRAME',image:'assets/06-shelling.jpg',tag:'Jerusalem under fire',date:'5 June 1967',location:'Jerusalem front',source:'Unpacked / OpenDor Media',caption:'A frame from documentary footage illustrating the fighting after Jordan entered the war.'},
+  {kind:'ARCHIVAL PHOTO REQUIRED',image:null,tag:'The battle for East Jerusalem',date:'6 June 1967',location:'Jerusalem',source:'Archival photograph pending',caption:'A photograph of Ammunition Hill or the fighting around East Jerusalem is still needed.'},
+  {kind:'IDF HISTORICAL FILM FRAME',image:'assets/08-old-city.jpg',tag:'Entry into the Old City',date:'7 June 1967',location:'Jerusalem, Old City',source:'IDF',caption:'A frame from the historical IDF film documenting the entry into Jerusalem’s Old City.'},
+  {kind:'HISTORICAL PHOTOGRAPH',image:'assets/archive/09-israeli-soldiers-sinai-shower.jpg',alt:'Israeli soldiers wash using a makeshift shower beside military trucks in Sinai.',tag:'A moment in the Sinai',date:'1967',location:'Sinai Peninsula',source:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',caption:'Israeli soldiers use a makeshift shower during the Sinai campaign.'},
+  {kind:'DOCUMENTARY ARCHIVE FRAME',image:'assets/10-northern-front.jpg',tag:'The northern front',date:'June 1967',location:'Northern Israel and Syria',source:'Unpacked / OpenDor Media',caption:'A frame from the documentary footage of artillery and the fighting on the Syrian front.'},
+  {kind:'DOCUMENTARY ARCHIVE FRAME',image:'assets/11-golan.jpg',tag:'Fighting on the heights',date:'9 to 10 June 1967',location:'Golan Heights',source:'Unpacked / OpenDor Media',caption:'A frame from documentary footage illustrating the Israeli offensive on Syrian positions.'},
+  {kind:'ARCHIVAL PHOTO REQUIRED',image:null,tag:'The ceasefire',date:'10 June 1967',location:'Israel and neighbouring fronts',source:'Archival photograph pending',caption:'A dated photograph of soldiers or contemporary celebrations at the ceasefire is still needed.'},
+  {kind:'ARCHIVAL PHOTO REQUIRED',image:null,tag:'The peace debate',date:'19 June 1967',location:'Jerusalem',source:'Archival photograph pending',caption:'A verified photograph of the Israeli cabinet or its June 1967 deliberations is still needed.'},
+  {kind:'AP ARCHIVE FILM FRAME',image:'assets/14-khartoum.jpg',tag:'Nasser arrives in Khartoum',date:'30 August 1967',location:'Khartoum, Sudan',source:'AP Archive',caption:'President Nasser arrives at the summit. This film shows his arrival, not the declaration of the Three No’s.'}
+];
+
+function renderDecisionArchive(index){
+  const info=ARCHIVE_CARDS[index];
+  const photo=$('archive-photo');
+  const placeholder=$('archive-missing');
+  $('archive-sequence').textContent=`${pad(index+1)} / ${STAGES.length}`;
+  $('archive-kind').textContent=info.kind;
+  $('archive-tag').textContent=info.tag;
+  $('archive-date').textContent=info.date;
+  $('archive-location').textContent=info.location;
+  $('archive-source').textContent=info.source;
+  $('archive-caption').textContent=info.caption;
+  photo.hidden=true;placeholder.hidden=true;
+  photo.onload=()=>{photo.hidden=false;placeholder.hidden=true};
+  photo.onerror=()=>{photo.hidden=true;placeholder.hidden=false};
+  if(info.image){photo.alt=info.alt||info.tag;photo.src=info.image}
+  else{photo.removeAttribute('src');placeholder.hidden=false}
+  $('decision-archive-card').classList.toggle('pending',!info.image);
+}
+
 // Each completed decision reveals an archival film when available.
 // Missing films use the historically grounded illustrated outcome.
 const PHASES = ['THE CRISIS', 'SIX DAYS OF WAR', 'THE AFTERMATH'];
@@ -245,6 +285,7 @@ function renderDecision(){
   $('scenario-copy').textContent=s.brief;
   $('scenario-intel').textContent=s.intel;
   $('question').textContent=s.question;
+  renderDecisionArchive(state.index);
   $('stage-source').href=SOURCES[s.source].url;
   const img=$('decision-photo');img.hidden=true;img.onload=()=>{img.hidden=false};img.onerror=()=>{img.hidden=true};img.src=s.image;
   const choices=$('choices');choices.replaceChildren();
