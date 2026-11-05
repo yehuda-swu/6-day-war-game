@@ -1,5 +1,25 @@
 # Six Days of Decisions | StandWithUs UK Explore
 
+## Version 10: silent archive films and presenter free Unpacked footage (current build)
+
+* All downloadable outcome videos are silent, except Stage 08, which retains the original Hebrew military communications from the IDF Old City footage.
+* The Stage 08 clip ends at approximately 28.4 seconds, avoiding the subsequent montage.
+* Onscreen presenter shots were **removed**, not blurred, from Unpacked / OpenDor Media sequences at Stages 04, 05, 06 and 11. Stage 10 already contains only archive images and graphics.
+* Stage 09 now plays a silent, locally hosted 46 second extract from the supplied Periscope Film LLC footage instead of relying on an external YouTube player. This means the whole game uses the same automatic progression and silence settings.
+* The game labels silent clips and the Hebrew language exception clearly in the historical outcome screens. All source credits, logos, media and the two spare lives system are retained.
+* Users confirmed that publication and editing permissions for all shared footage are in place. Preserve the attribution text on the outcome screens.
+
+**GitHub commit message:** `Mute archive footage and remove Unpacked presenter scenes`
+
+**Terminal commands:**
+
+```bash
+git add .
+git commit -m "Mute archive footage and remove Unpacked presenter scenes"
+git push origin main
+```
+
+
 An educational decision game about the crisis leading to the Six Day War, the events of 5 to 10 June 1967, and the first diplomatic discussions afterwards.
 
 ## What's new in this version

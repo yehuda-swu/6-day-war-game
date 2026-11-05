@@ -1,5 +1,23 @@
 # Media credit and usage log
 
+## Version 10: current playback and cut list
+
+All locally hosted game videos are silent except Stage 08. Extracts from Unpacked / OpenDor Media were screened and presenter images were removed at the following cut boundaries. Cuts reference the edited Version 9 files, not the full original documentary.
+
+| Stage | Edited source ranges retained | Audio | Credit |
+| --- | --- | --- | --- |
+| 04 | 00:00 to 00:14.48 | None | Unpacked / OpenDor Media |
+| 05 | 00:03.21 to 00:33.50 and 00:37.40 to 01:00.49 | None | Unpacked / OpenDor Media |
+| 06 | 00:00 to 00:18.95, 00:24.68 to 00:57.88, 01:00.50 to 01:01.00 | None | Unpacked / OpenDor Media |
+| 08 | 00:00 to 00:28.40 | Original Hebrew voices | IDF |
+| 09 | 04:14 to 05:00 of the supplied 10 minute Periscope archive | None | Periscope Film LLC |
+| 10 | 00:00 to 00:19.00 | None | Unpacked / OpenDor Media |
+| 11 | 00:01.48 to 00:19.29 | None | Unpacked / OpenDor Media |
+| 14 | 00:00 to 00:44.90 | None | AP Archive |
+
+Stage 09 is now a local silent MP4. Its film depicts period armour and artillery; its precise locations have not been independently verified. Older sections of this file document previous releases and no longer describe current audio or segment lengths. The project team has confirmed permissions for footage already shared.
+
+
 ## Current Stage 14 source: Khartoum Summit arrival (Version 9)
 
 * File supplied by project team: `SYND 30 8 67 EGYPTS PRESIDENT NASSER ARRIVES IN KHARTOUM.mp4` (48.85 seconds).

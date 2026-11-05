@@ -1,3 +1,7 @@
+## Current version 10 media playback
+
+All video stages, including locally hosted Stage 09 Sinai footage, are silent except the IDF Hebrew communications in the Stage 08 film. All Unpacked presenter shots have been cut out. Existing source credits remain visible.
+
 # Six Days of Decisions: media checklist
 
 ## How the media works

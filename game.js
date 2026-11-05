@@ -109,7 +109,7 @@ const STAGES = [
     options:['Regain access through the Straits of Tiran and secure the Sinai front.','Hold existing positions in Sinai instead of pressing towards the Straits of Tiran.'],correct:0,
     success:'Israel secured Sharm el Sheikh and access to the Straits. By the end of the fighting it occupied the Sinai Peninsula and Gaza Strip.',
     alternative:'Capturing Cairo was not the outcome of the 1967 southern campaign. Securing Sinai and access to the Straits were central developments.',
-    focus:['sinai','gaza'],point:[399,420],map:'SINAI AND THE STRAITS',archiveTitle:'The Sinai campaign',archiveCaption:'The battle in Sinai was decided quickly. The blockade of the Straits ended.',image:'assets/09-sinai.jpg',video:null,youtube:{id:'UfWaa0a-e98',start:254,end:300,credit:'Periscope Film LLC',description:'Period footage of Israeli armour and artillery; precise shooting locations and dates not independently verified'},photoCredit:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',photoCaption:'IDF soldiers at an improvised shower in Sinai, June 1967.',source:7
+    focus:['sinai','gaza'],point:[399,420],map:'SINAI AND THE STRAITS',archiveTitle:'The Sinai campaign',archiveCaption:'The battle in Sinai was decided quickly. The blockade of the Straits ended.',image:'assets/09-sinai.jpg',video:'assets/09-sinai.mp4',mediaCredit:'Periscope Film LLC',photoCredit:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',photoCaption:'Still: IDF soldiers at an improvised shower in Sinai, June 1967. The film illustrates armour and artillery; precise filming locations have not been verified.',source:7
   },
   {
     date:'8 JUNE 1967',day:'DAY FOUR',phase:1,tag:'10 / THE CEASEFIRE',title:'The fighting changes',
@@ -311,6 +311,9 @@ function showReel(s){
   const image=$('reel-image');image.hidden=true;image.onload=()=>{image.hidden=false};image.onerror=()=>{image.hidden=true};image.src=s.image;
   $('reel-illustration').hidden=false;
   const vid=$('outcome-video');
+  // Only Stage 08 preserves the Hebrew communications from the IDF film.
+  vid.muted = state.index !== 7;
+  vid.volume = state.index === 7 ? 1 : 0;
   // User provided this source as a YouTube link, not a locally licensed media file.
   // Official YouTube embedding allows students to view the original upload without
   // copying or redistributing Periscope Film's footage in the GitHub package.
@@ -324,12 +327,12 @@ function showReel(s){
     credit.hidden=false;
     photoCaption.textContent=yt.description;
     photoCaption.hidden=false;
-    $('media-type').textContent='EXTERNAL ARCHIVAL FILM';
-    $('reel-help').textContent='This footage plays from YouTube and needs an internet connection. Press play if necessary, then choose Continue when ready.';
+    $('media-type').textContent='SILENT ARCHIVAL FILM';
+    $('reel-help').textContent='This archival film plays without sound. Choose Continue when ready.';
     $('reel-view').classList.add('has-video');
     $('reel-illustration').hidden=true;
     frame.hidden=false;
-    frame.src=`https://www.youtube-nocookie.com/embed/${yt.id}?start=${yt.start}&end=${yt.end}&autoplay=1&playsinline=1&rel=0`;
+    frame.src=`https://www.youtube-nocookie.com/embed/${yt.id}?start=${yt.start}&end=${yt.end}&autoplay=1&mute=1&controls=0&disablekb=1&playsinline=1&rel=0`;
     $('reel-next').focus({preventScroll:true});
     return;
   }
@@ -338,9 +341,9 @@ function showReel(s){
     if(view!=='reel'||videoReady)return;
     videoReady=true;
     $('reel-view').classList.add('has-video');vid.hidden=false;$('reel-illustration').hidden=true;
-    $('media-type').textContent='ARCHIVE VIDEO';
+    $('media-type').textContent=state.index===7?'HEBREW ARCHIVE AUDIO':'SILENT ARCHIVE VIDEO';
     credit.hidden=!s.mediaCredit;
-    $('reel-help').textContent='After the clip finishes, the next decision will appear automatically. You can also continue now.';
+    $('reel-help').textContent=state.index===7?'Original Hebrew military communications. The next decision follows the clip.':'This film plays without sound. The next decision follows the clip.';
     $('reel-replay').hidden=false;
     const result=vid.play();if(result&&typeof result.catch==='function')result.catch(()=>{$('reel-help').textContent='Select play on the video to watch the historical footage.'});
   };
