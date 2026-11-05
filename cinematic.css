@@ -37,3 +37,7 @@
 .reel-view.has-video .reel-next,.reel-view.has-video .reel-secondary{min-height:42px;padding:10px 14px;font-size:11px}
 .reel-view.has-video .reel-help{font-size:10px!important;margin-top:8px!important}
 @media(max-width:680px){.reel-view.has-video .reel-content{padding:14px 16px;margin:auto 0 14px}.reel-view.has-video .reel-content h1{font-size:28px}.reel-view.has-video .reel-content p{font-size:12px}.reel-view.has-video .reel-next,.reel-view.has-video .reel-secondary{min-height:42px}}
+
+/* Preserve original aspect ratio of genuine archive films. */
+.reel-view.has-video .reel-media video{object-fit:contain}
+.reel-credit{font-size:11px!important;line-height:1.35!important;color:#f1d3a6!important;margin:8px 0!important;letter-spacing:.3px}

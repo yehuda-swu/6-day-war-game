@@ -54,3 +54,12 @@ The player moves through 14 decisions across three chapters. Images and video mu
 * `MEDIA_CHECKLIST.md`: media requirements and archive suggestions
 * `media_checklist.csv`: sortable asset list
 * `assets/`: upload your media here
+
+
+## Included historical video clips (November 2026 update)
+
+This package includes five clips and stills: decisions 04, 05, 06 and 10 from a video credited to Unpacked and OpenDor Media, plus decision 08 from a separate Old City film supplied by the project team. They play after the relevant historically accurate choice and automatically advance afterwards. Other stages show the original illustrated outcome screen until additional films are supplied.
+
+### Public distribution rights
+
+The team must confirm permission to republish the uploaded films and derived stills before deploying this version on a public GitHub Pages site. Being able to edit a personal copy and citing Unpacked/OpenDor Media does not in itself authorise republication. If permission has not been obtained, remove the five MP4 and JPG files from `assets` before publishing. The application will continue to work without them. See `MEDIA_SOURCES.md` for clip timestamps and attribution.

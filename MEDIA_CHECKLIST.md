@@ -6,7 +6,7 @@ Each of the 14 decisions has a matching photograph and a matching outcome video.
 
 For the first version, supply footage or short edited videos of approximately 10 to 25 seconds per stage, ideally 16:9 MP4 with H.264 video and AAC audio. 720p or 1080p is suitable. Images should ideally be 16:9 JPG at 1600 pixels wide or more. Short, compressed clips will be easier to host through GitHub Pages.
 
-**Important:** These films are not included in the game package. Until they are uploaded, a designed historical outcome card appears instead. Still images are optional too. The game is fully playable without them.
+**Update:** Five films and still images are now included: decisions 04, 05, 06, 08 and 10. The remaining decisions show a designed historical outcome card. The game is fully playable without additional media. **Confirm republication rights before publishing the included footage or derived photographs on GitHub Pages.**
 
 ## Numbered media for each decision
 

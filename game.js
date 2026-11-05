@@ -61,7 +61,7 @@ const STAGES = [
     options:['Give diplomacy more time, despite the risk of further escalation.','Authorise military action, beginning with an air operation against Egypt.'],correct:1,
     success:'The government authorised action. Israeli aircraft were ordered to strike Egyptian airfields the following morning.',
     alternative:'Waiting was a real question in contemporary debate, but it was not the cabinet’s final decision on 4 June 1967.',
-    focus:['israel','sinai'],point:[370,207],map:'THE DECISION ROOM',archiveTitle:'The cabinet debates',archiveCaption:'Prime Minister Levi Eshkol and ministers faced the most consequential decision of the crisis.',image:'assets/04-cabinet.jpg',video:null,source:2
+    focus:['israel','sinai'],point:[370,207],map:'THE DECISION ROOM',archiveTitle:'The cabinet debates',archiveCaption:'Prime Minister Levi Eshkol and ministers faced the most consequential decision of the crisis.',image:'assets/04-cabinet.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:2
   },
   {
     date:'5 JUNE 1967',day:'DAY ONE',phase:1,tag:'05 / OPERATION FOCUS',title:'The opening air strikes',
@@ -71,7 +71,7 @@ const STAGES = [
     options:['Attack Egyptian airfields to reduce the threat from the air.','Open with a ground offensive in Sinai before trying to neutralise Egyptian aircraft.'],correct:0,
     success:'Israeli pilots struck Egyptian air bases. The loss of aircraft and runways severely weakened Egypt’s ability to defend its forces in Sinai.',
     alternative:'The historical operation focused on Egyptian airfields, not symbolic flights over cities.',
-    focus:['sinai','israel'],point:[342,306],map:'THE SOUTHERN FRONT',archiveTitle:'Operation Focus',archiveCaption:'The opening air campaign dramatically changed the balance of the war.',image:'assets/05-airfields.jpg',video:null,source:1
+    focus:['sinai','israel'],point:[342,306],map:'THE SOUTHERN FRONT',archiveTitle:'Operation Focus',archiveCaption:'The opening air campaign dramatically changed the balance of the war.',image:'assets/05-airfields.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:1
   },
   {
     date:'5 JUNE 1967',day:'DAY ONE',phase:1,tag:'06 / THE EASTERN FRONT',title:'Jordan opens fire',
@@ -81,7 +81,7 @@ const STAGES = [
     options:['Defend existing positions but avoid a wider advance against Jordanian forces.','Defend its positions and begin operations against Jordanian forces.'],correct:1,
     success:'Israeli forces counterattacked. Fighting spread across Jerusalem and the West Bank, then controlled by Jordan.',
     alternative:'Israeli forces did not withdraw from the defence of Jerusalem. They responded militarily after Jordan began shelling.',
-    focus:['westbank','israel'],point:[427,277],map:'JERUSALEM FRONT',archiveTitle:'Jerusalem under fire',archiveCaption:'Jordanian artillery fire was followed by intense fighting around Jerusalem.',image:'assets/06-shelling.jpg',video:null,source:1
+    focus:['westbank','israel'],point:[427,277],map:'JERUSALEM FRONT',archiveTitle:'Jerusalem under fire',archiveCaption:'Jordanian artillery fire was followed by intense fighting around Jerusalem.',image:'assets/06-shelling.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:1
   },
   {
     date:'6 JUNE 1967',day:'DAY TWO',phase:1,tag:'07 / THE APPROACH',title:'A divided Jerusalem',
@@ -101,7 +101,7 @@ const STAGES = [
     options:['Delay entry into the Old City because of the risks to religious sites and civilians.','Enter with ground forces while seeking to protect sacred places.'],correct:1,
     success:'Israeli paratroopers entered the Old City on 7 June. The Western Wall became accessible to Jewish worshippers, while Jerusalem’s political and religious status remained deeply contested.',
     alternative:'The objective was not to destroy the holy sites. Israeli leaders were concerned about the damage and diplomatic repercussions of an assault.',
-    focus:['westbank','israel'],point:[427,277],map:'THE OLD CITY',archiveTitle:'Jerusalem, 7 June',archiveCaption:'Paratroopers reached the Western Wall after the battle for Jerusalem.',image:'assets/08-old-city.jpg',video:null,source:1
+    focus:['westbank','israel'],point:[427,277],map:'THE OLD CITY',archiveTitle:'Jerusalem, 7 June',archiveCaption:'Paratroopers reached the Western Wall after the battle for Jerusalem.',image:'assets/08-old-city.jpg',video:null,mediaCredit:'Old City archival film: source credit to be confirmed',source:1
   },
   {
     date:'7 JUNE 1967',day:'DAY THREE',phase:1,tag:'09 / THE SOUTHERN FRONT',title:'The route to Eilat',
@@ -121,7 +121,7 @@ const STAGES = [
     options:['Continue offensive operations against Egypt despite ceasefire arrangements.','End the major fighting with Egypt and Jordan while examining the Syrian front.'],correct:1,
     success:'By 8 June, fighting with Egypt and Jordan had stopped. The critical remaining decision concerned Syria and the Golan Heights.',
     alternative:'The Israeli campaign did not continue towards Cairo. The northern front became the focus of the final two days.',
-    focus:['golan','syria'],point:[447,115],map:'NORTHERN FRONT',archiveTitle:'The northern question',archiveCaption:'Syrian positions in the Golan overlooked communities in northern Israel.',image:'assets/10-northern-front.jpg',video:null,source:7
+    focus:['golan','syria'],point:[447,115],map:'NORTHERN FRONT',archiveTitle:'The northern question',archiveCaption:'Syrian positions in the Golan overlooked communities in northern Israel.',image:'assets/10-northern-front.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:7
   },
   {
     date:'9 JUNE 1967',day:'DAY FIVE',phase:1,tag:'11 / THE GOLAN DECISION',title:'The high ground',
@@ -253,6 +253,7 @@ function showReel(s){
   $('reel-help').textContent='Upload the numbered MP4 to replace this card with archival or narrated footage.';
   $('reel-next').textContent=state.index===STAGES.length-1?'View the final debrief →':'Continue to the next decision →';
   $('reel-replay').hidden=true;
+  const credit=$('reel-credit');credit.textContent=s.mediaCredit?`Video source: ${s.mediaCredit}`:'';credit.hidden=true;
   const image=$('reel-image');image.hidden=true;image.onload=()=>{image.hidden=false};image.onerror=()=>{image.hidden=true};image.src=s.image;
   $('reel-illustration').hidden=false;
   const vid=$('outcome-video');
@@ -262,6 +263,7 @@ function showReel(s){
     videoReady=true;
     $('reel-view').classList.add('has-video');vid.hidden=false;$('reel-illustration').hidden=true;
     $('media-type').textContent='ARCHIVE VIDEO';
+    credit.hidden=!s.mediaCredit;
     $('reel-help').textContent='After the clip finishes, the next decision will appear automatically. You can also continue now.';
     $('reel-replay').hidden=false;
     const result=vid.play();if(result&&typeof result.catch==='function')result.catch(()=>{$('reel-help').textContent='Select play on the video to watch the historical footage.'});
@@ -276,6 +278,7 @@ function showReel(s){
     vid.hidden=true;$('reel-illustration').hidden=false;
     $('media-type').textContent='VISUAL HISTORY CARD';
     $('reel-replay').hidden=true;
+    credit.hidden=true;
   };
   vid.src=reelVideoPath(s);vid.load();
   $('reel-next').focus({preventScroll:true});
