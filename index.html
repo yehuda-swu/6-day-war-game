@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e30">
+  <meta name="description" content="1967: Six Days of Decisions, an interactive educational history experience for students.">
+  <title>1967 | Six Days of Decisions</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="identity">
+        <div class="logo-box" id="swu-logo-box"><img id="swu-logo" alt="StandWithUs UK logo" hidden><span class="fallback-swu">STAND<span>WITH</span>US <b>UK</b></span></div>
+        <div class="brand-rule"></div>
+        <div class="logo-box explore-box" id="explore-logo-box"><img id="explore-logo" alt="Explore logo" hidden><span class="fallback-explore">EXPLORE<span class="brand-dot">.</span></span></div>
+      </div>
+      <div class="topbar-right"><span class="topbar-caption">HISTORY DECISION SIMULATOR</span><button class="small-button" type="button" id="notes-button" aria-haspopup="dialog">Educator notes <span aria-hidden="true">↗</span></button></div>
+    </header>
+
+    <main id="game-view" hidden>
+      <div class="game-topline">
+        <div class="edition"><span class="live-mark"></span> THE 1967 ARCHIVE <span class="edition-separator">/</span> ISRAEL AND THE MIDDLE EAST</div>
+        <div class="stage-indicator" id="stage-indicator">DECISION 01 / 14</div>
+      </div>
+      <section class="mission-heading" aria-label="Game heading">
+        <div><p class="kicker" id="chapter-name">CHAPTER ONE: THE CRISIS</p><h1 id="game-title">Six Days of <em>Decisions.</em></h1></div>
+        <div class="date-card"><span class="date-card-label">HISTORICAL DATE</span><strong id="date-display">MAY 1967</strong><span id="day-display">THE ROAD TO WAR</span></div>
+      </section>
+      <div class="phasebar" id="phasebar" aria-label="Historical chapters"></div>
+
+      <div class="desk-grid">
+        <section class="brief-panel" aria-labelledby="stage-title">
+          <div class="panel-head"><span><span class="corner-circle"></span> CLASSIFIED BRIEFING <span class="declass">RELEASED FOR EDUCATION</span></span><span id="stage-code">FILE 01</span></div>
+          <div class="brief-body">
+            <p class="brief-tag" id="brief-tag">THE SITUATION</p>
+            <h2 id="stage-title">An uneasy border</h2>
+            <p class="brief-copy" id="brief-copy"></p>
+            <div class="intelligence" id="intelligence"><span class="intelligence-icon">i</span><p id="intelligence-copy"></p></div>
+            <div class="decision-section">
+              <p class="decision-label"><span class="decision-line"></span> YOUR DECISION</p>
+              <h3 id="question"></h3>
+              <div id="choices" class="choices" aria-label="Choose an action"></div>
+            </div>
+            <div class="feedback" id="feedback" hidden role="status" aria-live="polite">
+              <div class="feedback-top"><span id="feedback-symbol" aria-hidden="true"></span><strong id="feedback-title"></strong></div>
+              <p id="feedback-copy"></p>
+              <button type="button" class="next-button" id="next-button">Continue the story <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+          <footer class="brief-footer"><span>HISTORICAL PATH <span class="mini-dot">●</span> TWO OPTIONS PER DECISION</span><a id="stage-source" href="#" target="_blank" rel="noopener noreferrer">VERIFY SOURCE ↗</a></footer>
+        </section>
+
+        <aside class="visual-column" aria-label="Operational map and archive media">
+          <section class="map-panel">
+            <div class="visual-header"><span>OPERATIONS MAP</span><span class="visual-header-right">SCHEMATIC <span class="accent-dot">●</span> NOT TO SCALE</span></div>
+            <div class="map-wrap">
+              <svg class="battle-map" id="battle-map" viewBox="0 0 780 458" role="img" aria-label="Simplified regional map showing Israel, neighbouring states and territories discussed in the war">
+                <defs><pattern id="topo" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M 0 35 L 35 0" stroke="#a39a7f" stroke-opacity=".12" stroke-width="1"/></pattern><filter id="softglow"><feGaussianBlur stdDeviation="6" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+                <rect width="780" height="458" fill="#dad2bc"/>
+                <path d="M0 0H288C256 46 260 70 281 112C287 152 280 201 289 242C265 301 253 354 268 458H0Z" fill="#a3b9c0"/>
+                <path d="M0 0H288C256 46 260 70 281 112C287 152 280 201 289 242C265 301 253 354 268 458H0Z" fill="url(#topo)"/>
+                <g class="map-land"><path d="M288 0H780V458H268C253 354 265 301 289 242C280 201 287 152 281 112C260 70 256 46 288 0" fill="#d8cfb7"/></g>
+                <path d="M289 242 L374 217 L465 267 L457 456 L268 458 C252 365 270 302 289 242Z" class="territory" data-region="sinai"/>
+                <path d="M346 40L405 54L415 146L398 214L430 296L412 389L397 434L383 426L368 368L369 280L340 221L338 145L334 89Z" class="territory" data-region="israel"/>
+                <path d="M424 214L477 221L495 283L482 348L416 371L430 296L398 214Z" class="territory" data-region="westbank"/>
+                <path d="M408 51L490 64L496 130L445 166L415 146Z" class="territory" data-region="golan"/>
+                <path d="M497 0L780 0L780 205L522 205L496 130L490 64Z" class="territory muted-territory" data-region="syria"/>
+                <path d="M522 205L780 205V458H457L482 348L495 283Z" class="territory muted-territory" data-region="jordan"/>
+                <path d="M377 232L400 235L401 260L374 256Z" class="territory" data-region="gaza"/>
+                <path d="M408 147Q419 153 412 173L398 184L399 162Z" fill="#a3b9c0" stroke="#899da2"/>
+                <path d="M416 365Q436 370 435 403Q422 417 412 403Z" fill="#a3b9c0" stroke="#899da2"/>
+                <path d="M288 0H780V458H268C253 354 265 301 289 242C280 201 287 152 281 112C260 70 256 46 288 0" fill="url(#topo)" pointer-events="none"/>
+                <g class="map-routes" fill="none" stroke="#9b7253" stroke-width="1.6" stroke-dasharray="6 7" opacity=".6"><path d="M342 180L410 191L500 200"/><path d="M332 350L405 303L511 284"/><path d="M330 128L439 130L521 145"/></g>
+                <g class="map-labels">
+                  <text x="110" y="174" class="water-label">MEDITERRANEAN</text><text x="150" y="195" class="water-label">SEA</text>
+                  <text x="310" y="345" class="country-label">SINAI</text><text x="314" y="360" class="country-small">EGYPT</text>
+                  <text x="370" y="209" class="country-label country-vertical" transform="rotate(-90 370 209)">ISRAEL</text>
+                  <text x="449" y="269" class="country-small">WEST BANK</text><text x="447" y="282" class="country-micro">(JORDAN, 1967)</text>
+                  <text x="443" y="100" class="country-small">GOLAN</text><text x="443" y="113" class="country-micro">HEIGHTS</text>
+                  <text x="587" y="93" class="country-label">SYRIA</text><text x="599" y="315" class="country-label">JORDAN</text>
+                  <text x="371" y="247" class="country-micro">GAZA</text>
+                </g>
+                <g class="city-points"><circle cx="368" cy="175" r="3"/><text x="293" y="172">TEL AVIV</text><circle cx="427" cy="277" r="3.4"/><text x="444" y="308">JERUSALEM</text><circle cx="403" cy="420" r="3"/><text x="350" y="446">EILAT</text><circle cx="402" cy="191" r="2.5"/><text x="415" y="189">SEA OF GALILEE</text></g>
+                <g id="map-alert" class="map-alert" transform="translate(427 277)"><circle class="pulse" r="24"/><circle r="10"/><circle class="inner" r="3"/></g>
+                <g class="map-compass"><circle cx="724" cy="61" r="22" fill="none" stroke="#938c79" stroke-width="1"/><path d="M724 36V86M699 61H749" stroke="#938c79" stroke-width=".7"/><path d="M724 42L729 61L724 57L719 61Z" fill="#42546b"/><text x="720" y="29">N</text></g>
+              </svg>
+              <div class="map-stamp"><span id="map-stamp-title">AREA OF FOCUS</span><strong id="map-stamp-value">REGIONAL CRISIS</strong></div>
+            </div>
+            <div class="map-footer"><span>STRATEGIC OVERVIEW</span><span id="map-footer-status">SITUATION UNDER REVIEW</span></div>
+          </section>
+          <section class="archive-panel" id="archive-panel">
+            <div class="archive-visual" id="archive-visual">
+              <img id="archive-image" alt="Historical archive visual" hidden>
+              <video id="archive-video" controls playsinline hidden></video>
+              <div class="archive-fallback" id="archive-fallback" aria-hidden="true">
+                <span class="archive-fallback-orbit"></span><span class="archive-fallback-star">✶</span><span class="archive-fallback-year">1967</span>
+              </div>
+              <span class="archive-overlay-tag">ARCHIVE MATERIAL <span id="asset-number">01</span></span>
+            </div>
+            <div class="archive-info"><div><span class="archive-label">FROM THE ARCHIVE</span><strong id="archive-title">The road to war</strong><p id="archive-caption">Add your own archival photographs, maps or video clips.</p></div><button class="icon-button" id="media-guide-button" type="button" aria-label="How to add archive images and video">?</button></div>
+          </section>
+        </aside>
+      </div>
+      <div class="progress-row"><div><span class="progress-title">YOUR JOURNEY THROUGH HISTORY</span><span class="progress-meta" id="progress-meta">0 / 14 DECISIONS COMPLETE</span></div><div class="progress-track" id="progress-track"></div></div>
+    </main>
+
+    <section id="welcome-view" class="welcome-view" aria-labelledby="welcome-title">
+      <div class="welcome-eyebrow"><span class="welcome-dot"></span> AN INTERACTIVE HISTORY EXPERIENCE <span class="welcome-year">1967</span></div>
+      <div class="welcome-inner">
+        <div class="welcome-copy"><div class="welcome-edition">THE MIDDLE EAST <span>JUNE 1967</span></div><h1 id="welcome-title">Six Days of<br><em>Decisions.</em></h1><p class="welcome-deck">The region is on the brink of war. You are inside Israel's decision room. Every move takes you deeper into the events of 1967.</p><p class="welcome-description">Follow the historical record. Read each briefing. Choose between two decisions. Discover what Israel's leaders actually did and what happened next.</p><div class="welcome-actions"><button class="primary-action" id="start-button" type="button">Enter the decision room <span aria-hidden="true">→</span></button><button class="secondary-action" id="welcome-notes-button" type="button">For educators ↗</button></div><div class="welcome-facts"><span><strong>14</strong> decisions</span><span><strong>3</strong> chapters</span><span><strong>1967</strong> real history</span></div></div>
+        <div class="welcome-art" aria-hidden="true"><div class="art-halo"></div><div class="art-map-paper"><span class="art-map-code">CONFIDENTIAL // MAP 067</span><div class="art-region"><div class="art-region-a"></div><div class="art-region-b"></div><div class="art-region-c"></div><div class="art-target">+</div></div><span class="art-map-corner">JUNE 1967</span></div><div class="art-note"><span>OPERATION FILE</span><b>06:00<br>JUNE 05</b><small>DOCUMENT NO. 067</small></div></div>
+      </div>
+      <div class="welcome-bottom"><span>STANDWITHUS UK <span class="divider-dot">•</span> EXPLORE</span><span>EDUCATIONAL RECONSTRUCTION BASED ON HISTORICAL EVENTS</span></div>
+    </section>
+
+    <section class="finish-view" id="finish-view" hidden aria-labelledby="finish-title">
+      <span class="finish-kicker">MISSION COMPLETED <span>JUNE TO NOVEMBER 1967</span></span>
+      <div class="finish-mark">✶</div><h1 id="finish-title">You've followed the <em>historical path.</em></h1><p class="finish-sub">You have traced Israel's decisions through the crisis, the Six Day War and the opening debates about territory and peace.</p>
+      <div class="finish-stats"><div><strong>14<span>/14</span></strong><small>DECISIONS COMPLETED</small></div><div><strong id="finish-attempts">0</strong><small>ALTERNATIVE CHOICES EXPLORED</small></div><div><strong>1967</strong><small>YEAR OF THE EVENTS</small></div></div>
+      <section class="finish-thinking"><p class="finish-section-title">WHAT HAPPENED NEXT?</p><p>Israel took control of the Sinai Peninsula, Gaza Strip, West Bank including East Jerusalem, and Golan Heights. The war also displaced hundreds of thousands of people and left difficult questions about security, territory, Palestinian rights and peace.</p><p>In November 1967, UN Security Council Resolution 242 linked withdrawal from territories occupied in the conflict with recognition, peace and secure boundaries. Egypt and Israel later signed a peace treaty in 1979, and Israel completed its withdrawal from Sinai in 1982.</p></section>
+      <section class="finish-questions"><h2>Three questions to debate</h2><ol><li>What made Israel's leaders believe that war might be unavoidable?</li><li>How did the capture of Jerusalem and the Golan Heights change Israeli security and politics?</li><li>What were the opportunities and challenges created by the territories occupied after the war?</li></ol></section>
+      <div class="finish-actions"><button class="primary-action" id="replay-button" type="button">Play again <span aria-hidden="true">↻</span></button><button class="secondary-action" id="finish-notes-button" type="button">Historical sources ↗</button></div>
+    </section>
+  </div>
+
+  <dialog id="notes-dialog" class="modal" aria-labelledby="notes-title"><div class="modal-head"><div><span>TEACHER'S ARCHIVE</span><h2 id="notes-title">Educator notes and sources</h2></div><button id="close-notes" class="modal-close" type="button" aria-label="Close">✕</button></div><div class="modal-content"><p>The objective is to reconstruct the historical choices made by Israeli leaders in 1967, not to suggest that historical choices were inevitably correct or without alternatives. Students should distinguish between documented decisions, interpretations and questions still debated by historians.</p><h3>Important historical distinctions</h3><ul><li>Israel launched a first air strike on 5 June 1967 after a period of intense mobilisation, threats and failed diplomacy. Historians continue to discuss the choices available to its leaders.</li><li>The Old City of Jerusalem was under Jordanian control from 1948 to June 1967. It was not the first instance of Jewish political control for two thousand years.</li><li>Moshe Dayan was initially reluctant to attack the Golan Heights. He changed his position on 9 June. The idea that he simply wanted agricultural land is misleading.</li><li>The 19 June cabinet resolution discussed returning Sinai and the Golan in exchange for peace. Historians dispute whether this became a concrete offer conveyed to Egypt and Syria.</li><li>The Khartoum summit was held from 29 August to 1 September 1967. Its famous Three No's were a statement by Arab League leaders, not a description of every Arab person or every later policy.</li><li>Israeli occupation of territories, Palestinian displacement and the disputed status of East Jerusalem are essential parts of the aftermath.</li></ul><h3>Further reading</h3><div id="sources-list" class="sources-list"></div><div class="modal-tip"><strong>Adding photographs or videos</strong><p>Place files in the <code>assets</code> folder using the filenames described in the README. Each stage has a configurable image and video field inside <code>game.js</code>. Missing files automatically show the built in archive illustration.</p></div><h3>Classroom use</h3><p>Suggested duration: 15 to 25 minutes plus discussion. Students may work independently or vote on the two choices as a class. Press the <strong>1</strong> or <strong>2</strong> keys to select an option, and <strong>Enter</strong> to continue.</p></div></dialog>
+</body>
+</html>
