@@ -189,3 +189,16 @@
  .scenario-with-archive+.make-decision{margin-top:15px}
 }
 @media(max-width:430px){.decision-archive-card{grid-template-columns:37% 63%}.archive-card-copy h2{font-size:17px}.archive-card-copy p{font-size:9px}.archive-card-meta{grid-template-columns:1fr 1fr}.archive-card-meta strong{font-size:8.5px}.archive-card-photo{min-height:161px}}
+
+/* GPO archive catalogue – a contextual, accessible decision-stage gallery. */
+.archive-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.gpo-open{border:1px solid #d7b675b0;background:#1d344acc;color:#eed4a4;font-size:10px;letter-spacing:.8px;padding:10px 13px;cursor:pointer}
+.gpo-open:hover,.gpo-open:focus-visible{background:#2b4864;border-color:#f3d39b}
+.gpo-dialog{position:fixed;margin:auto;inset:0;width:min(850px,calc(100vw - 28px));max-height:93svh;overflow:auto;background:#122337;color:#f4eadc;border:1px solid #bd9b64;padding:0;box-shadow:0 25px 100px #000c}
+.gpo-dialog::backdrop{background:#060d19e6;backdrop-filter:blur(5px)}
+.gpo-dialog-header{display:flex;align-items:center;justify-content:space-between;padding:19px 25px 15px;border-bottom:1px solid #73849b66}
+.gpo-dialog-header small{font-size:10px;letter-spacing:2px;color:#f0c98e}.gpo-dialog-header h2{font-family:Georgia,serif;font-size:28px;font-weight:400;margin:4px 0}
+.gpo-dialog-header button{border:1px solid #7290ad88;color:#e4eaf0;background:transparent;min-height:40px;min-width:40px;cursor:pointer}
+.gpo-display{min-height:230px;max-height:48svh;display:grid;place-items:center;background:#07101c;overflow:hidden}.gpo-display img{max-width:100%;max-height:48svh;object-fit:contain}.gpo-empty{text-align:center;color:#c6d4e1;padding:55px 20px}.gpo-empty span{font-size:14px;font-weight:800;letter-spacing:2px}.gpo-empty p{max-width:380px;color:#9fb0c0;line-height:1.5}
+.gpo-dialog-copy{padding:17px 25px 10px}.gpo-count{color:#dbb77c;font-size:11px;letter-spacing:2px;font-weight:700}.gpo-dialog-copy h3{font-family:Georgia,serif;font-size:26px;font-weight:400;margin:7px 0 9px}.gpo-metadata{display:flex;gap:22px;flex-wrap:wrap;color:#b9c7d3;font-size:10px;letter-spacing:1.1px}.gpo-metadata b{display:block;color:#f0dfca;font-size:13px;letter-spacing:0;margin-top:5px}.gpo-dialog-copy p{font-size:14px;line-height:1.5;color:#d9e0e5}.gpo-dialog-copy>small{display:block;color:#a7b7c7;font-size:10px;letter-spacing:.6px}.gpo-dialog-copy>small strong{display:block;margin-top:4px;color:#eed6ab;font-size:12px}.gpo-dialog-copy .gpo-notes{font-size:11px;color:#a8b4c2;margin:12px 0 7px}.gpo-dialog-copy a{color:#ebc389;font-size:13px;display:inline-block;margin:3px 0 10px}.gpo-controls{padding:14px 25px 22px;display:flex;justify-content:space-between;gap:12px;border-top:1px solid #73849b66}.gpo-controls button{background:#263e55;color:#f8e9d6;border:1px solid #8d7a5a;padding:11px 16px;cursor:pointer}.gpo-controls button:disabled{opacity:.3;cursor:default}
+@media(max-width:680px){.decision-bottom{flex-wrap:wrap}.archive-actions{justify-content:flex-start}.gpo-dialog-header{padding:14px 15px}.gpo-display{min-height:170px}.gpo-dialog-copy{padding:14px 16px 10px}.gpo-controls{padding:12px 16px 17px}.gpo-dialog-copy h3{font-size:23px}}

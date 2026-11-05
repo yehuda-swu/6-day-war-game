@@ -47,3 +47,9 @@ The six SVG maps run silently. Local documentary MP4 files are silent except the
 The supplied photograph metadata and source credits are preserved. The project owner has previously confirmed reuse permissions for the provided media. Keep all original credit displays intact when publishing. See `MEDIA_SOURCES.md` for the current source register and `MAP_SOURCES.md` for the cartographic and flag references.
 
 The correct answers identify the historically recorded decisions, not the only possible or morally justified decisions.
+
+
+## Version 13: GPO photographic archive
+
+The new contextual GPO gallery is available from relevant decision screens. It contains verified descriptions and dates from the photo collection at https://www.sixdaywar.org/resources-documents-photos-and-video/photos/. Three independently verified GPO photographs load directly from Wikimedia Commons in the decision cards; others are listed with source links because image files were inaccessible for direct transfer. See GPO_PHOTO_CATALOGUE.csv and GPO_PHOTO_SOURCES.md. No documentary photograph is substituted without a genuine source. External images need an internet connection.
+
