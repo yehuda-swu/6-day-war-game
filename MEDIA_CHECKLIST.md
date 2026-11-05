@@ -1,95 +1,34 @@
-## Current version 10 media playback
+# Six Days of Decisions | Version 11 media inventory
 
-All video stages, including locally hosted Stage 09 Sinai footage, are silent except the IDF Hebrew communications in the Stage 08 film. All Unpacked presenter shots have been cut out. Existing source credits remain visible.
+Version 11 has complete visual coverage for all 14 decisions: eight edited archival videos and six original, silent animated SVG maps. All six SVG maps run directly in a modern browser and display automatically after the corresponding historical decision. The player may also replay the map or continue manually.
 
-# Six Days of Decisions: media checklist
+| Stage | Event | Visual supplied | Audio | Credit |
+|---|---|---|---|---|
+| 01 | UN peacekeeper withdrawal | Original animated regional map | None | StandWithUs UK reconstruction; Natural Earth geography |
+| 02 | Straits of Tiran | Original animated maritime blockade map | None | StandWithUs UK reconstruction; Natural Earth geography |
+| 03 | Israel mobilises | Original animated three fronts map | None | StandWithUs UK reconstruction; Natural Earth geography |
+| 04 | Cabinet decision | Edited historical footage | None | Unpacked / OpenDor Media |
+| 05 | Operation Focus | Edited historical footage and Egyptian aircraft wreckage photograph | None | Unpacked / OpenDor Media; Dan Hadani Collection / National Library of Israel |
+| 06 | Jordan opens fire | Edited historical footage | None | Unpacked / OpenDor Media |
+| 07 | Battle for Jerusalem | Original animated Jerusalem diagram | None | StandWithUs UK reconstruction |
+| 08 | Entry into the Old City | IDF archival footage | Hebrew military communications only | IDF |
+| 09 | Sinai campaign | Edited historical footage and Sinai photograph | None | Periscope Film LLC; Dan Hadani Collection / National Library of Israel |
+| 10 | Northern front | Edited historical footage | None | Unpacked / OpenDor Media |
+| 11 | Golan Heights | Edited historical footage | None | Unpacked / OpenDor Media |
+| 12 | Ceasefire | Original animated territorial map | None | StandWithUs UK reconstruction; Natural Earth geography |
+| 13 | Land for peace | Original animated territorial and diplomacy map | None | StandWithUs UK reconstruction; Natural Earth geography |
+| 14 | Khartoum Summit | AP Archive footage of Nasser's arrival | None | AP Archive |
 
-## How the media works
+## Brand assets
 
-Each of the 14 decisions has a matching photograph and a matching outcome video. The player first sees two large choices. On the historically accurate choice, a full screen outcome sequence opens. If an MP4 file is present, it plays automatically. When it ends, the game advances to the next decision after a short pause. The player can also continue using the visible button. An incorrect answer brings up an explanation and allows a retry.
+* `assets/swu-logo.png` contains the supplied StandWithUs UK wordmark converted to a reverse white version with transparency, suited to the dark game header. Its former blue and white rectangular backing is removed.
+* `assets/explore-logo.png` preserves the originally supplied Explore lightbulb artwork, which already has a transparent image background.
+* `assets/swu-logo-original.png` retains the supplied original colour logo for reference.
 
-For the first version, supply footage or short edited videos of approximately 10 to 25 seconds per stage, ideally 16:9 MP4 with H.264 video and AAC audio. 720p or 1080p is suitable. Images should ideally be 16:9 JPG at 1600 pixels wide or more. Short, compressed clips will be easier to host through GitHub Pages.
+## Image permissions and accuracy
 
-**Update:** Five films and still images are now included: decisions 04, 05, 06, 08 and 10. The remaining decisions show a designed historical outcome card. The game is fully playable without additional media. **Confirm republication rights before publishing the included footage or derived photographs on GitHub Pages.**
+The game keeps the original footage credits and photo collection credits. Archival material is included on the basis of the publication permission confirmed by the project owner. Animated maps use public domain Natural Earth geographical data and original annotations. Historical control overlays and movement arrows are deliberately schematic and are not precise military route maps or definitive boundary surveys.
 
-## Numbered media for each decision
+## Future additions
 
-| No. | Date and decision | Upload photograph | Upload video | Main footage or animation | Map to prepare |
-|:---:|---|---|---|---|---|
-| 01 | 16 May 1967: The peacekeepers withdraw | `assets/01-peacekeepers.jpg` | `assets/01-peacekeepers.mp4` | UN peacekeepers depart Sinai, followed by Israeli mobilisation and the start of the waiting period | Regional map with the 1949 armistice lines |
-| 02 | 22 to 23 May 1967: The Straits of Tiran close | `assets/02-tiran.jpg` | `assets/02-tiran.mp4` | Animated map tracing the route from Eilat through the Straits of Tiran as Egypt announces the closure | Sinai, Eilat and Straits of Tiran map |
-| 03 | 30 May 1967: Jordan joins the crisis | `assets/03-mobilisation.jpg` | `assets/03-mobilisation.mp4` | Egypt and Jordan sign the defence agreement, followed by Israeli reserves preparing for multiple fronts | Regional map highlighting Egypt, Jordan and Syria |
-| 04 | 4 June 1967: The decision to act | `assets/04-cabinet.jpg` | `assets/04-cabinet.mp4` | Cabinet briefing and a dated document showing authorisation for military action | Planning map with Israel and Egyptian airfields |
-| 05 | 5 June 1967: The opening air strikes | `assets/05-airfields.jpg` | `assets/05-airfields.mp4` | Operation Focus animation: aircraft launch, approach Egyptian airfields, then the strategic effect | Map of Egyptian airfields and the opening air operation |
-| 06 | 5 June 1967: Jordan opens fire | `assets/06-shelling.jpg` | `assets/06-shelling.mp4` | Jordanian shelling of West Jerusalem, Israel responds, eastern front fighting begins | Map of divided Jerusalem and Jordanian positions |
-| 07 | 6 June 1967: A divided Jerusalem | `assets/07-jerusalem.jpg` | `assets/07-jerusalem.mp4` | Animated map of routes taken to secure positions around East Jerusalem before entry into the Old City | Battle of Jerusalem map including Mount Scopus and Ammunition Hill |
-| 08 | 7 June 1967: The Old City is entered | `assets/08-old-city.jpg` | `assets/08-old-city.mp4` | Contemporary footage of the entrance through Lions Gate and the arrival at the Western Wall | Detailed Old City map, gates and key holy places |
-| 09 | 7 June 1967: The route to Eilat | `assets/09-sinai.jpg` | `assets/09-sinai.mp4` | Animated military map of the advance through Sinai and the reopening of the Straits of Tiran | Sinai campaign map and southern coastline |
-| 10 | 8 June 1967: The fighting changes | `assets/10-northern-front.jpg` | `assets/10-northern-front.mp4` | Ceasefire on Egyptian and Jordanian fronts, then a visual focus on the remaining Syrian front | Elevation map of the Sea of Galilee and the Golan Heights |
-| 11 | 9 June 1967: The high ground | `assets/11-golan.jpg` | `assets/11-golan.mp4` | Animated ascent towards Syrian defensive positions on the Golan on 9 and 10 June | Terrain and defensive positions on the Golan Heights |
-| 12 | 10 June 1967: Six days later | `assets/12-ceasefire.jpg` | `assets/12-ceasefire.mp4` | A clear sequence showing the ceasefire and the changes to territorial control by 10 June | Before and after map showing Sinai, Gaza, West Bank, East Jerusalem and Golan |
-| 13 | 19 June 1967: What should happen to the land? | `assets/13-cabinet-peace.jpg` | `assets/13-cabinet-peace.mp4` | Animated reconstruction of the debate over possible withdrawals, peace and security arrangements | Territories and suggested security priorities map |
-| 14 | 1 September 1967: Khartoum and the future | `assets/14-khartoum.jpg` | `assets/14-khartoum.mp4` | Dated Khartoum conference imagery and the Three Nos, with the later path to Resolution 242 noted | Regional diplomatic map marking Egypt, Syria, Jordan and Israel |
-
-## Maps to source or create
-
-1. **Regional situation before the war:** Israel, Egypt, Jordan, Syria, armistice lines and the key fronts in May 1967.
-2. **Sinai and the Straits of Tiran:** Eilat, the Gulf of Aqaba and Sharm el Sheikh, with the shipping route clearly marked.
-3. **Operation Focus:** Egyptian air bases and representative Israeli attack routes on 5 June.
-4. **Jerusalem in June 1967:** The divided city, the 1949 armistice line, Ammunition Hill, the Old City, Lions Gate and the Western Wall.
-5. **Sinai campaign:** Major axes of the Israeli advance on 5 to 7 June and the approach to the Straits.
-6. **Golan terrain:** The high ground, key Syrian fortified positions and communities below near the Sea of Galilee.
-7. **Before and after the war:** The territories controlled by Egypt, Jordan and Syria before 5 June, and under Israeli control after 10 June.
-8. **Territory and peace:** A neutral political map for the June cabinet deliberations and subsequent diplomacy.
-
-The maps can be used as stills, incorporated into the outcome MP4s, or substituted for a stage JPG if you prefer a map rather than a photograph. The game currently uses a historical visual placeholder when a JPG is missing.
-
-## Additional artwork
-
-* `assets/swu-logo.png`: StandWithUs UK logo with transparent background.
-* `assets/explore-logo.png`: Explore logo with transparent background.
-* Optional introductory video covering the weeks before the war, if you want a cinematic opening in a future update.
-* Optional closing clip on Resolution 242, the peace treaty with Egypt and the longer consequences for Israelis and Palestinians.
-
-## Suggested archive sources
-
-* Israel Ministry of Defence, IDF and Defence Establishment Archives: https://archives.mod.gov.il/sites/English/Exhibitions/The_Six-Day_War/Pages/default.aspx
-* National Library of Israel, 1967 photograph collection: https://www.nli.org.il/en/a-topic/987007406206405171
-* National Library of Israel, 1967 map collection: https://www.nli.org.il/en/a-topic/987007494524205171
-* Contemporary photographic examples: https://www.sixdaywar.org/resources-documents-photos-and-video/photos/
-* Contemporary newsreel references: https://www.sixdaywar.org/resources-documents-photos-and-video/video/
-* Wikimedia Commons, public domain Golan campaign map (verify the file metadata): https://commons.wikimedia.org/wiki/File:1967_Six_Day_War_-_Battle_of_Golan_Heights.svg
-* British Pathe archive: https://www.britishpathe.com/ (licensing required for use, including educational public websites).
-
-**Rights and accuracy:** Preview or browsing rights do not authorise republication. Confirm permissions for each individual photograph, audio recording or clip. Preserve the date, source and caption for each asset. Mark animated illustrations or reconstructions clearly as such. Check front lines and place names against contemporary maps. Do not imply that a photograph captured an event if it was taken later.
-
-## Upload instructions
-
-1. Open the game repository on GitHub and navigate to the `assets` folder.
-2. Upload the numbered JPG and MP4 files using the exact filenames above. Videos are already connected automatically, so you do not need to edit JavaScript.
-3. Upload your two logos as shown above.
-4. Commit changes and refresh your published GitHub Pages game. You may need to refresh the browser cache.
-5. Test both a correct and incorrect choice. The video will appear after a correct choice; if it is missing, the built in outcome card remains.
-
-**Production suggestion:** Start with the four most visual sequences: stages 05 (Operation Focus), 08 (Old City), 11 (Golan Heights) and 12 (ceasefire). They will have the greatest impact even before you have gathered all 14 clips.
-
-## Periscope Film LLC footage: two external review links added in Version 5
-
-* Stage 09 Sinai: suggested archive clip 04:14 to 05:00, source https://www.youtube.com/watch?v=UfWaa0a-e98&t=254s
-* Stage 11 Golan: suggested archive clip 07:43 to 08:17, source https://www.youtube.com/watch?v=UfWaa0a-e98&t=463s
-
-These are external embeds, not local MP4s. The game still needs a verified, licensed Golan image or film and geographic animations.
-
-## Version 6 media status
-
-* Stage 08: IDF Old City extract received, edited and installed (35 seconds); credit IDF.
-* Stage 11: Unpacked / OpenDor Media Golan extract received, edited and installed (21 seconds).
-* Stage 14: AP Archive credit recorded; awaiting actual Khartoum Summit video file and publishing permission.
-
-## Version 7 media update (superseded by Version 9)
-
-**Stage 14:** AP Archive Arab League Council meeting clip received and edited for contextual use. The film is not authenticated as footage of the Khartoum Summit itself. See `MEDIA_SOURCES.md` for exact source time range and credit. Before publication obtain the relevant archival rights.
-
-## Version 9: current Stage 14 footage
-
-Stage 14 now includes AP Archive footage dated 30 August 1967 of Nasser arriving in Khartoum. This replaces the later Arab League Council clip. The footage provides period context and does not depict the Three No’s declaration. Credit: **AP Archive**. Confirm publication rights before placing the game on a public GitHub Pages site.
+If further authentic archival photography becomes available, particularly from Ammunition Hill, the Egyptian mobilisation and Israeli cabinet discussions, it can be incorporated into later versions without replacing the animated maps.

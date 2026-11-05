@@ -112,3 +112,39 @@
 .gameover-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px}
 @media(max-width:750px){.decision-utility{align-items:flex-start}.utility-right{gap:8px;flex-wrap:wrap;justify-content:flex-end}.lives-counter{padding:5px 8px;gap:5px;min-height:30px}.lives-label{font-size:8px;letter-spacing:1px}.life-icon{font-size:15px}.lives-text{font-size:9px}.gameover-score{grid-template-columns:1fr 1fr}.gameover-score>div:nth-child(2){grid-column:span 2;grid-row:2}.gameover-view{padding:36px 14px}.gameover-kicker span{display:block;margin:10px 0 0}.gameover-score>div{min-height:95px;padding:16px 8px}.gameover-score strong{font-size:23px}}
 @media(max-width:420px){.lives-label{display:none}.lives-text{font-size:8px}.decision-counter{white-space:nowrap}.utility-left{font-size:8px;max-width:130px;line-height:1.5}}
+
+
+/* VERSION 11: reverse transparent wordmark and transparent Explore bulb */
+.topbar .logo-box, .topbar .logo-box.explore-box{
+  background:transparent!important;border:0!important;border-radius:0!important;
+  padding:2px 3px!important;box-shadow:none!important;overflow:visible!important;
+}
+.topbar .logo-box{height:59px;min-width:93px;max-width:132px}
+.topbar .logo-box img{height:56px;max-width:127px;width:100%;object-fit:contain}
+.topbar .logo-box.explore-box{width:64px;min-width:64px;height:60px}
+.topbar .logo-box.explore-box img{height:58px;max-width:64px}
+.welcome-logo-medallion{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important;overflow:visible!important;width:128px;height:128px}
+.welcome-logo-medallion img{object-fit:contain;filter:drop-shadow(0 5px 9px #071522bb)}
+/* SVG atlas animations are local, silent and formatted as a full screen film. */
+.animated-map{position:absolute;inset:0;width:100%;height:100%;border:0;background:#071524;pointer-events:none;z-index:1;object-fit:cover}
+.animated-map[hidden]{display:none!important}
+.reel-view.has-animation .reel-media{background:#071524}
+.reel-view.has-animation .reel-shade{background:linear-gradient(90deg,#071525f9 0%,#071525e4 19%,#0715259e 40%,#07152525 62%,#07152515 100%),linear-gradient(0deg,#071525d9,transparent 45%,#071525bb)}
+.reel-view.has-animation .reel-content{margin:auto 0 23px;padding:18px 21px;max-width:min(610px,53vw);border-left:3px solid #e8c28a;background:#071525d9;box-shadow:0 9px 44px #0007}
+.reel-view.has-animation .reel-content h1{font-size:clamp(28px,3vw,43px)}
+.reel-view.has-animation .reel-content p{font-size:clamp(12px,1vw,16px);line-height:1.45}
+.reel-view.has-animation .reel-next,.reel-view.has-animation .reel-secondary{padding:10px 15px;min-height:42px}
+.reel-view.has-animation .reel-help{font-size:11px!important}
+.reel-view.has-animation .reel-top{position:relative;z-index:3}
+@media(max-width:740px){
+ .topbar .logo-box{height:48px;min-width:67px;max-width:81px}
+ .topbar .logo-box img{height:43px}
+ .topbar .logo-box.explore-box{width:43px;min-width:43px;height:46px}
+ .topbar .logo-box.explore-box img{height:44px;max-width:43px}
+ .welcome-logo-medallion{width:82px;height:82px}
+ .reel-view.has-animation .reel-shade{background:linear-gradient(180deg,#071525cb,#07152520 27%,#07152538 55%,#071525eb 78%,#071525 100%)}
+ .reel-view.has-animation .reel-content{max-width:100%;margin:auto 0 15px;padding:14px 16px}
+ .reel-view.has-animation .reel-content h1{font-size:28px}
+ .reel-view.has-animation .reel-content p{font-size:12px}
+ .reel-view.has-animation .reel-next,.reel-view.has-animation .reel-secondary{min-height:42px}
+}

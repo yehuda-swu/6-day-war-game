@@ -1,3 +1,29 @@
+# Six Days of Decisions | Version 11
+
+Version 11 completes the six historical context stages with original, silent animated SVG maps. All existing documentary clips, historical decisions, the lives system, source credits and restart controls are retained.
+
+**New in this version**
+
+* Stage 1: UN peacekeeper withdrawal animated map
+* Stage 2: Straits of Tiran maritime blockade animated map
+* Stage 3: Israel mobilises amid three fronts animated map
+* Stage 7: Jerusalem approach schematic animated map
+* Stage 12: Territorial changes on 10 June animated map
+* Stage 13: Territory and peace discussions animated map
+* The original Egyptian airfield wreckage photograph is now included after Stage 5, credited to Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel.
+* Both logos now sit directly on the dark header without white backing panels. The SWU UK wordmark uses a white reverse treatment for contrast, and the supplied Explore logo retains its original transparency.
+* Educator notes have been corrected to reflect locally hosted footage and silent map animations.
+
+The maps are schematic learning aids, not exact military route maps or definitive legal boundaries. They use public domain Natural Earth geography and original annotations.
+
+**Audio policy:** All documentary videos are silent apart from the original Hebrew military communication in the IDF Old City clip. The new animated maps contain no sound.
+
+**To publish:** Extract the ZIP, upload the files and folders into the repository root and replace the existing contents, then commit the changes. GitHub Pages should be configured to serve the root folder of the main branch.
+
+**Suggested GitHub commit message:** `Add animated 1967 maps and transparent logos to Version 11`
+
+---
+
 # Six Days of Decisions | StandWithUs UK Explore
 
 ## Version 10: silent archive films and presenter free Unpacked footage (current build)

@@ -29,7 +29,7 @@ const STAGES = [
     options:['Raise military readiness while seeking urgent diplomatic clarification.','Rely on diplomatic pressure alone and postpone military preparations.'],correct:0,
     success:'Israel raised its readiness and continued consultations with allies. The following weeks became known in Israel as the period of waiting.',
     alternative:'Ignoring the mobilisation would leave Israel exposed. Historically, Israeli leaders raised the alert while continuing diplomatic efforts.',
-    focus:['israel','sinai'],point:[369,250],map:'SINAI AND THE BORDER',archiveTitle:'The period of waiting',archiveCaption:'UN peacekeepers withdrew as tensions along Israel’s borders increased.',image:'assets/01-peacekeepers.jpg',video:null,source:0
+    focus:['israel','sinai'],point:[369,250],map:'SINAI AND THE BORDER',archiveTitle:'The period of waiting',archiveCaption:'UN peacekeepers withdrew as tensions along Israel’s borders increased.',image:'assets/01-peacekeepers.jpg',video:null,animatedMap:'assets/maps/01-un-withdrawal.svg',source:0
   },
   {
     date:'22 TO 23 MAY 1967',day:'BEFORE THE WAR',phase:0,tag:'02 / THE BLOCKADE',title:'The Straits of Tiran close',
@@ -39,7 +39,7 @@ const STAGES = [
     options:['Rely on international guarantees without further military preparation.','Seek an international solution while preparing for the possibility of fighting.'],correct:1,
     success:'Israel pursued diplomacy and prepared militarily. The failure to reopen the Straits helped persuade Israeli leaders that the crisis was deepening.',
     alternative:'There was no diplomatic breakthrough by early June. The historical Israeli response combined international appeals with military preparations.',
-    focus:['sinai','israel'],point:[399,420],map:'STRAITS OF TIRAN',archiveTitle:'The maritime blockade',archiveCaption:'Eilat’s access to the Red Sea became a central question in the crisis.',image:'assets/02-tiran.jpg',video:null,source:1
+    focus:['sinai','israel'],point:[399,420],map:'STRAITS OF TIRAN',archiveTitle:'The maritime blockade',archiveCaption:'Eilat’s access to the Red Sea became a central question in the crisis.',image:'assets/02-tiran.jpg',video:null,animatedMap:'assets/maps/02-straits-tiran.svg',source:1
   },
   {
     date:'30 MAY 1967',day:'BEFORE THE WAR',phase:0,tag:'03 / A NEW ALLIANCE',title:'Jordan joins the crisis',
@@ -49,7 +49,7 @@ const STAGES = [
     options:['Call up reservists and prepare the home front while maintaining diplomatic contact.','Maintain normal readiness while seeking assurances from Egypt and Jordan.'],correct:0,
     success:'Israel mobilised large numbers of reservists. Public anxiety was intense, especially amid fears that the conflict could threaten the state’s survival.',
     alternative:'The crisis was not over. Israeli leaders continued the mobilisation because a regional war was a genuine possibility.',
-    focus:['israel','westbank','golan'],point:[427,277],map:'THREE FRONTS',archiveTitle:'Israel prepares',archiveCaption:'Reservists were mobilised as tensions increased across the region.',image:'assets/03-mobilisation.jpg',video:null,source:1
+    focus:['israel','westbank','golan'],point:[427,277],map:'THREE FRONTS',archiveTitle:'Israel prepares',archiveCaption:'Reservists were mobilised as tensions increased across the region.',image:'assets/03-mobilisation.jpg',video:null,animatedMap:'assets/maps/03-mobilisation.svg',source:1
   },
   {
     date:'4 JUNE 1967',day:'EVE OF WAR',phase:0,tag:'04 / THE CABINET VOTE',title:'The decision to act',
@@ -89,7 +89,7 @@ const STAGES = [
     options:['Secure surrounding positions and routes before attempting to enter the Old City.','Attempt to enter the Old City before securing the routes and surrounding positions.'],correct:0,
     success:'Israeli forces secured positions around the city. By 7 June, they were in a position to enter East Jerusalem and the Old City.',
     alternative:'The historical advance consolidated key positions rather than abandoning Jerusalem. The decision to enter the Old City remained sensitive.',
-    focus:['westbank'],point:[427,277],map:'EAST JERUSALEM',archiveTitle:'The divided city',archiveCaption:'The Old City was under Jordanian control from 1948 until June 1967.',image:'assets/07-jerusalem.jpg',video:null,source:1
+    focus:['westbank'],point:[427,277],map:'EAST JERUSALEM',archiveTitle:'The divided city',archiveCaption:'The Old City was under Jordanian control from 1948 until June 1967.',image:'assets/07-jerusalem.jpg',video:null,animatedMap:'assets/maps/07-jerusalem.svg',source:1
   },
   {
     date:'7 JUNE 1967',day:'DAY THREE',phase:1,tag:'08 / THE OLD CITY',title:'The Old City is entered',
@@ -139,7 +139,7 @@ const STAGES = [
     options:['The sides accepted a ceasefire and the major fighting stopped.','Continue the northern offensive towards Damascus rather than accept a ceasefire.'],correct:0,
     success:'The ceasefire took hold on 10 June. The military conflict had lasted just six days, but its consequences continued for decades.',
     alternative:'The main fighting ended with a ceasefire on 10 June. Israeli forces did not take Damascus.',
-    focus:['golan','sinai','westbank','gaza'],point:[446,120],map:'THE CEASEFIRE',archiveTitle:'The ceasefire',archiveCaption:'The 5 to 10 June war changed the territorial map of the Middle East.',image:'assets/12-ceasefire.jpg',video:null,source:7
+    focus:['golan','sinai','westbank','gaza'],point:[446,120],map:'THE CEASEFIRE',archiveTitle:'The ceasefire',archiveCaption:'The 5 to 10 June war changed the territorial map of the Middle East.',image:'assets/12-ceasefire.jpg',video:null,animatedMap:'assets/maps/12-ceasefire.svg',source:7
   },
   {
     date:'19 JUNE 1967',day:'AFTER THE WAR',phase:2,tag:'13 / TERRITORY AND PEACE',title:'What should happen to the land?',
@@ -149,7 +149,7 @@ const STAGES = [
     options:['Retain all captured territory without proposing any withdrawal in peace negotiations.','Consider peace treaties with Egypt and Syria involving withdrawal from Sinai and the Golan.'],correct:1,
     success:'The cabinet agreed on a diplomatic position involving Sinai and the Golan in exchange for peace. East Jerusalem, the West Bank and Gaza raised further unresolved questions.',
     alternative:'Not every minister agreed on the future of the territories. Nevertheless, the recorded resolution included possible withdrawal from Sinai and the Golan for peace.',
-    focus:['sinai','golan','westbank'],point:[389,278],map:'LAND FOR PEACE?',archiveTitle:'The peace debate',archiveCaption:'The future of the occupied territories divided Israeli leaders.',image:'assets/13-cabinet-peace.jpg',video:null,source:4
+    focus:['sinai','golan','westbank'],point:[389,278],map:'LAND FOR PEACE?',archiveTitle:'The peace debate',archiveCaption:'The future of the occupied territories divided Israeli leaders.',image:'assets/13-cabinet-peace.jpg',video:null,animatedMap:'assets/maps/13-peace.svg',source:4
   },
   {
     date:'1 SEPTEMBER 1967',day:'AFTER THE WAR',phase:2,tag:'14 / THE THREE NO’S',title:'Khartoum and the future',
@@ -179,6 +179,8 @@ let view = 'welcome';
 let locked = false;
 let pendingAdvance = null;
 let videoReady = false;
+let animationReady = false;
+let mapReplayCount = 0;
 
 function store(){try{localStorage.setItem(STATE_KEY,JSON.stringify(state))}catch(e){}}
 function load(){
@@ -292,8 +294,10 @@ function stopVideo(){
   v.oncanplay=null;v.onended=null;v.onerror=null;
   v.pause();v.removeAttribute('src');v.load();v.hidden=true;
   const youtubeFrame=$('outcome-youtube');youtubeFrame.removeAttribute('src');youtubeFrame.hidden=true;
+  const mapFrame=$('animated-map');mapFrame.onload=null;mapFrame.removeAttribute('src');mapFrame.hidden=true;
   $('external-film-link').hidden=true;
-  videoReady=false;$('reel-view').classList.remove('has-video');
+  videoReady=false;animationReady=false;
+  $('reel-view').classList.remove('has-video','has-animation');
 }
 function showReel(s){
   clearTimeout(pendingAdvance);stopVideo();setView('reel');
@@ -333,6 +337,28 @@ function showReel(s){
     $('reel-illustration').hidden=true;
     frame.hidden=false;
     frame.src=`https://www.youtube-nocookie.com/embed/${yt.id}?start=${yt.start}&end=${yt.end}&autoplay=1&mute=1&controls=0&disablekb=1&playsinline=1&rel=0`;
+    $('reel-next').focus({preventScroll:true});
+    return;
+  }
+  // Original silent animated maps fill the six stages that have no archival video.
+  // They run locally as small SVG files with no external libraries or sound.
+  if(s.animatedMap){
+    animationReady=true;
+    $('reel-view').classList.add('has-animation');
+    $('reel-illustration').hidden=true;
+    $('media-type').textContent='ANIMATED HISTORICAL MAP';
+    $('reel-help').textContent='This original map animation has no audio. The next decision follows automatically.';
+    $('reel-replay').hidden=false;
+    $('reel-replay').textContent='Replay map animation ↺';
+    credit.textContent='Map: original educational reconstruction using Natural Earth public domain geography. Not to scale.';
+    credit.hidden=false;
+    const frame=$('animated-map');frame.hidden=false;
+    frame.onload=()=>{
+      if(view!=='reel'||!animationReady)return;
+      clearTimeout(pendingAdvance);
+      pendingAdvance=setTimeout(()=>{if(view==='reel')advance()},15500);
+    };
+    frame.src=s.animatedMap+'?play='+ (++mapReplayCount);
     $('reel-next').focus({preventScroll:true});
     return;
   }
@@ -379,8 +405,14 @@ function showReel(s){
   $('reel-next').focus({preventScroll:true});
 }
 function replayVideo(){
+  clearTimeout(pendingAdvance);
+  if(animationReady && view==='reel'){
+    const frame=$('animated-map');
+    frame.src=STAGES[state.index].animatedMap+'?play='+(++mapReplayCount);
+    return;
+  }
   const v=$('outcome-video');if(!videoReady)return;
-  clearTimeout(pendingAdvance);v.currentTime=0;v.play()?.catch(()=>{});
+  v.currentTime=0;v.play()?.catch(()=>{});
 }
 function advance(){
   if(view!=='reel')return;
