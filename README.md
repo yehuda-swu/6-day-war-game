@@ -42,3 +42,8 @@ The game presents historical decisions without suggesting that all these decisio
 The new soundtrack was supplied by the project owner and is **not** claimed to be public domain. Before publication on a public GitHub Pages website, ensure that the necessary rights to host and reproduce this particular music recording and composition have been obtained. See `MUSIC_SOURCES.md` for details.
 
 See also `MEDIA_SOURCES.md`, `MAP_SOURCES.md`, `GPO_PHOTO_SOURCES.md` and `V18_CHANGELOG.md`.
+
+
+## Version 20: Soundtrack from the home screen
+
+On page load the site requests audible playback of the supplied march. Modern browsers may block this request. When blocked, the visitor can tap anywhere on the home screen or use the soundtrack button to enable sound before beginning the mission. The music will then play continuously, except for the Old City Hebrew film. The user can switch it off at any time.

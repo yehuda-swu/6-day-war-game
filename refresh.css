@@ -189,3 +189,7 @@ body:has(#welcome-view:not([hidden])) .topbar-right{display:none!important}
 .welcome-music-button:hover,.welcome-music-button:focus-visible{background:rgba(239,190,116,.15);border-color:#efbe74;outline-offset:4px}
 .welcome-music-button[aria-pressed="true"]{color:#b8d8eb;border-color:rgba(150,204,228,.6)}
 @media(max-width:560px){.welcome-music-button{margin-top:10px;font-size:.84rem}}
+
+/* Version 20: gentle audible autoplay fallback */
+.welcome-music-notice{max-width:390px;margin:7px 0 0;color:#e8cda5;font-size:.78rem;line-height:1.42;}
+.welcome-music-notice[hidden]{display:none!important;}

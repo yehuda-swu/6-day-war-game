@@ -257,20 +257,25 @@ let musicPlayToken=0;
 const MUSIC_VOLUME=0.52;
 function musicElement(){return $('mission-music')}
 function updateMusicButton(){
-  const b=$('music-button'), home=$('welcome-music-button');
+  const b=$('music-button'), home=$('welcome-music-button'), notice=$('welcome-music-notice');
   const paused=musicSuppressedForOldCity;
-  const playing=musicEnabled&&!paused&&!musicAutoplayBlocked;
+  const audio=musicElement();
+  const playing=!!(musicEnabled&&!paused&&!musicAutoplayBlocked&&audio&&!audio.paused);
   if(b){
     b.setAttribute('aria-pressed',String(musicEnabled));
     b.textContent=!musicEnabled?'♫ Music off':paused?'♫ Music paused':playing?'♫ Music on':'♫ Play music';
-    b.setAttribute('aria-label',!musicEnabled?'Turn background music on':musicAutoplayBlocked?'Play background music': 'Turn background music off');
+    b.setAttribute('aria-label',!musicEnabled?'Turn background music on':musicAutoplayBlocked?'Play background music':'Turn background music off');
   }
   if(home){
     home.textContent=!musicEnabled?'♫ Play soundtrack':paused?'♫ Soundtrack paused':playing?'♫ Pause soundtrack':'♫ Play soundtrack';
     home.setAttribute('aria-pressed',String(playing));
     home.setAttribute('aria-label',playing?'Pause the soundtrack':'Play the soundtrack');
   }
+  // Most browsers refuse audible autoplay until the visitor first interacts.
+  // Explain the restriction without interrupting the home screen or mission.
+  if(notice) notice.hidden=!(view==='welcome'&&musicEnabled&&!paused&&musicAutoplayBlocked);
 }
+
 function syncMusic(){
   const audio=musicElement();if(!audio)return;
   audio.volume=MUSIC_VOLUME;audio.loop=true;
@@ -301,10 +306,15 @@ function enableMusicFromWelcome(){
   musicEnabled=true;musicAutoplayBlocked=false;syncMusic();
 }
 function resumeMusicOnFirstGesture(e){
-  if(view!=='welcome'||!musicEnabled||musicSuppressedForOldCity||!musicAutoplayBlocked)return;
-  if(e.target.closest?.('#music-button, #welcome-music-button'))return;
-  // This user gesture happens on the home screen, including when clicking
-  // the educator notes or any part of the desk; no need to begin the mission.
+  if(view!=='welcome'||!musicEnabled||musicSuppressedForOldCity)return;
+  const target=e.target;
+  // Music controls toggle playback themselves; do not start audio before
+  // the home button's click handler has a chance to interpret its state.
+  if(target?.closest?.('#music-button, #welcome-music-button'))return;
+  const audio=musicElement();
+  if(!audio||(!audio.paused&&!musicAutoplayBlocked))return;
+  // This runs synchronously inside the first user gesture, even if the
+  // initial autoplay rejection has not resolved yet.
   syncMusic();
 }
 
@@ -572,6 +582,16 @@ function init(){
   $('music-button').addEventListener('click',toggleMusic);
   $('welcome-music-button').addEventListener('click',enableMusicFromWelcome);
   document.addEventListener('pointerdown',resumeMusicOnFirstGesture,true);
+  document.addEventListener('touchend',resumeMusicOnFirstGesture,true);
+  document.addEventListener('click',resumeMusicOnFirstGesture,true);
+  document.addEventListener('keydown',e=>{
+    if(!e.repeat&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&['Enter',' ','Spacebar'].includes(e.key))
+      resumeMusicOnFirstGesture(e);
+  },true);
+  // When revisiting a tab, try again only if audio is still enabled.
+  window.addEventListener('pageshow',e=>{
+    if(e.persisted&&musicEnabled&&!musicSuppressedForOldCity) syncMusic();
+  });
   $('cancel-restart').addEventListener('click',()=>$('restart-dialog').close());
   $('confirm-restart').addEventListener('click',()=>{$('restart-dialog').close();reset()});
   $('retry-button').addEventListener('click',retry);
