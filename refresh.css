@@ -183,3 +183,9 @@ body:has(#welcome-view:not([hidden])) .topbar-right{display:none!important}
 .finish-gallery,.finish-map-compare{margin-top:30px}
 #music-button[aria-pressed="true"]{border-color:#efbe74;color:#efbe74}
 @media (max-width: 860px){.finish-map-grid,.finish-photo-strip{grid-template-columns:1fr}}
+
+/* V18: accessible home screen soundtrack control */
+.welcome-music-button{margin-top:14px;padding:8px 14px;background:rgba(12,27,42,.48);border:1px solid rgba(239,190,116,.45);border-radius:24px;color:#f1d09b;font:inherit;font-size:.88rem;letter-spacing:.04em;cursor:pointer;transition:background .18s,border-color .18s}
+.welcome-music-button:hover,.welcome-music-button:focus-visible{background:rgba(239,190,116,.15);border-color:#efbe74;outline-offset:4px}
+.welcome-music-button[aria-pressed="true"]{color:#b8d8eb;border-color:rgba(150,204,228,.6)}
+@media(max-width:560px){.welcome-music-button{margin-top:10px;font-size:.84rem}}

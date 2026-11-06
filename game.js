@@ -247,38 +247,66 @@ let videoReady = false;
 let animationReady = false;
 let mapReplayCount = 0;
 
-// Original cinematic orchestral music in an MP3 file, initiated by a user click.
-// Browser autoplay rules prevent starting sound before the first interaction.
-let musicEnabled=false;
+// The user supplied the march used throughout the experience. Most browsers
+// prohibit unmuted autoplay without a gesture. Attempt playback on page load;
+// if blocked, offer an accessible Play soundtrack control on the home screen.
+let musicEnabled=true;
 let musicSuppressedForOldCity=false;
-let musicWasInitialised=false;
-const MUSIC_VOLUME=0.76;
+let musicAutoplayBlocked=false;
+let musicPlayToken=0;
+const MUSIC_VOLUME=0.52;
 function musicElement(){return $('mission-music')}
 function updateMusicButton(){
-  const b=$('music-button');if(!b)return;
-  b.setAttribute('aria-pressed',String(musicEnabled));
-  b.textContent=musicEnabled?(musicSuppressedForOldCity?'♫ Music paused':'♫ Music on'):'♫ Music off';
-  b.setAttribute('aria-label',musicEnabled?'Turn background music off':'Turn background music on');
+  const b=$('music-button'), home=$('welcome-music-button');
+  const paused=musicSuppressedForOldCity;
+  const playing=musicEnabled&&!paused&&!musicAutoplayBlocked;
+  if(b){
+    b.setAttribute('aria-pressed',String(musicEnabled));
+    b.textContent=!musicEnabled?'♫ Music off':paused?'♫ Music paused':playing?'♫ Music on':'♫ Play music';
+    b.setAttribute('aria-label',!musicEnabled?'Turn background music on':musicAutoplayBlocked?'Play background music': 'Turn background music off');
+  }
+  if(home){
+    home.textContent=!musicEnabled?'♫ Play soundtrack':paused?'♫ Soundtrack paused':playing?'♫ Pause soundtrack':'♫ Play soundtrack';
+    home.setAttribute('aria-pressed',String(playing));
+    home.setAttribute('aria-label',playing?'Pause the soundtrack':'Play the soundtrack');
+  }
 }
 function syncMusic(){
   const audio=musicElement();if(!audio)return;
   audio.volume=MUSIC_VOLUME;audio.loop=true;
-  if(!musicEnabled||musicSuppressedForOldCity){audio.pause();updateMusicButton();return;}
+  ++musicPlayToken;
+  const token=musicPlayToken;
+  if(!musicEnabled||musicSuppressedForOldCity){audio.pause();musicAutoplayBlocked=false;updateMusicButton();return;}
+  // Calling play is harmless when the track is already playing. Do not seek
+  // when moving between screens, to keep the same soundtrack continuous.
   const result=audio.play();
-  if(result&&typeof result.catch==='function'){
-    result.catch(()=>{ // Some browsers require another user gesture.
-      if(musicEnabled) $('music-button').textContent='♫ Tap for music';
-    });
-  }
+  if(result&&typeof result.then==='function'){
+    result.then(()=>{if(token!==musicPlayToken)return;musicAutoplayBlocked=false;updateMusicButton();})
+          .catch(()=>{if(token!==musicPlayToken)return;musicAutoplayBlocked=true;updateMusicButton();});
+  }else{musicAutoplayBlocked=audio.paused;}
   updateMusicButton();
 }
-function startMusic(force){
-  if(force && !musicWasInitialised){musicEnabled=true;musicWasInitialised=true;}
-  syncMusic();
-}
+function startMusic(){syncMusic()}
 function stopMusic(){musicSuppressedForOldCity=true;syncMusic()}
 function resumeMusic(){musicSuppressedForOldCity=false;syncMusic()}
-function toggleMusic(){musicWasInitialised=true;musicEnabled=!musicEnabled;syncMusic()}
+function toggleMusic(){
+  // A blocked attempt has not produced sound; the control should start
+  // playback rather than turn the intended music off.
+  musicEnabled=musicAutoplayBlocked || !musicEnabled;
+  musicAutoplayBlocked=false;
+  syncMusic();
+}
+function enableMusicFromWelcome(){
+  if(musicEnabled&&!musicAutoplayBlocked&&!musicSuppressedForOldCity){musicEnabled=false;syncMusic();return;}
+  musicEnabled=true;musicAutoplayBlocked=false;syncMusic();
+}
+function resumeMusicOnFirstGesture(e){
+  if(view!=='welcome'||!musicEnabled||musicSuppressedForOldCity||!musicAutoplayBlocked)return;
+  if(e.target.closest?.('#music-button, #welcome-music-button'))return;
+  // This user gesture happens on the home screen, including when clicking
+  // the educator notes or any part of the desk; no need to begin the mission.
+  syncMusic();
+}
 
 function store(){}
 function load(){ state={index:0,alternatives:0,started:false,finished:false,gameOver:false}; }
@@ -301,7 +329,7 @@ function setView(next){
   $('welcome-view').hidden=next!=='welcome';$('game-view').hidden=next!=='decision';$('reel-view').hidden=next!=='reel';$('finish-view').hidden=next!=='finish';$('gameover-view').hidden=next!=='gameover';
   window.scrollTo({top:0,behavior:'instant'});
 }
-function start(){startMusic(true);reset();}
+function start(){startMusic();reset();}
 function reset(){state={index:0,alternatives:0,started:true,finished:false,gameOver:false};resumeMusic();renderDecision();}
 function goHome(){clearTimeout(pendingAdvance);stopVideo();locked=false;$('try-again-panel').hidden=true;resumeMusic();setView('welcome');updateWelcome()}
 function updateWelcome(){ $('start-button').innerHTML='Start Mission <span aria-hidden="true">→</span>'; }
@@ -542,6 +570,8 @@ function init(){
   $('home-button').addEventListener('click',goHome);
   $('restart-button').addEventListener('click',requestRestart);
   $('music-button').addEventListener('click',toggleMusic);
+  $('welcome-music-button').addEventListener('click',enableMusicFromWelcome);
+  document.addEventListener('pointerdown',resumeMusicOnFirstGesture,true);
   $('cancel-restart').addEventListener('click',()=>$('restart-dialog').close());
   $('confirm-restart').addEventListener('click',()=>{$('restart-dialog').close();reset()});
   $('retry-button').addEventListener('click',retry);
@@ -552,7 +582,7 @@ function init(){
   $('finish-notes-button').addEventListener('click',openNotes);
   $('close-notes').addEventListener('click',()=>$('notes-dialog').close());
   $('notes-dialog').addEventListener('click',e=>{if(e.target===$('notes-dialog'))$('notes-dialog').close()});
-  $('replay-button').addEventListener('click',()=>{reset();startMusic(true)});
+  $('replay-button').addEventListener('click',()=>{reset();startMusic()});
   $('finish-home-button').addEventListener('click',goHome);
   $('gameover-restart').addEventListener('click',reset);
   $('gameover-home').addEventListener('click',goHome);
@@ -562,6 +592,6 @@ function init(){
     if(view==='decision'&&!$('try-again-panel').hidden&&e.key==='Escape'){e.preventDefault();retry()}
     if(view==='reel'&&e.key==='ArrowRight'){e.preventDefault();advance()}
   });
-  setView('welcome'); updateMusicButton();
+  setView('welcome'); updateMusicButton(); syncMusic();
 }
 document.addEventListener('DOMContentLoaded',init);

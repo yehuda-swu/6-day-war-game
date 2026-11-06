@@ -1,2 +1,1 @@
-Version 17 | The Final Debrief and Cinematic Music | 6 November 2026
-Complete GitHub Pages package. Includes an original looping score, working audio controls, a fully redesigned final page and repaired navigation.
+Version 18 — Supplied military march soundtrack and music available from the home screen.
