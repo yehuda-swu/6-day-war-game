@@ -1,3 +1,7 @@
+# Version 19: Outcome viewing layout
+
+The video and map viewing area is now separate from the explanatory text on all screen sizes. A fullscreen button has been added.
+
 # Six Days of Decisions | Version 18
 
 A browser game for students aged 16 and 17, developed for StandWithUs UK Explore. It runs on GitHub Pages using static HTML, CSS, JavaScript, local photographs, historical videos, a supplied soundtrack and animated SVG maps.

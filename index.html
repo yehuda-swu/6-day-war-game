@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="cinematic.css">
   <link rel="stylesheet" href="refresh.css">
   <link rel="stylesheet" href="v17.css">
+  <link rel="stylesheet" href="outcome-layout.css">
   <script src="game.js" defer></script>
 </head>
 <body>
@@ -64,7 +65,8 @@
     </main>
 
     <section id="reel-view" class="reel-view" hidden aria-labelledby="reel-heading">
-      <div class="reel-media">
+      <div class="reel-heading-bar"><span><span class="reel-live"></span> WHAT HAPPENED</span><span id="reel-count">01 / 14</span></div>
+      <div class="reel-media" id="reel-media">
         <video id="outcome-video" playsinline controls preload="metadata" hidden></video>
         <img id="animated-map" class="animated-map" alt="Animated historical map, schematic and not to scale" decoding="async" hidden>
         <iframe id="outcome-youtube" title="Historical footage from Periscope Film LLC on YouTube" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy" hidden></iframe>
@@ -73,14 +75,22 @@
           <div class="reel-geography" aria-hidden="true"><div class="geo-orbit geo-orbit-a"></div><div class="geo-orbit geo-orbit-b"></div><div class="geo-crosshair">✦</div><div class="geo-grid"></div></div>
           <div class="reel-watermark">1967</div>
         </div>
-      </div>
-      <div class="reel-shade" aria-hidden="true"></div>
-      <div id="archive-reveal" class="archive-reveal" hidden role="group" aria-label="Historical photograph">
-        <div class="archive-reveal-card"><img id="archive-reveal-image" src="" alt="Wreckage of Egyptian aircraft after Operation Focus"><p id="archive-reveal-caption"></p><small id="archive-reveal-credit"></small></div>
+        <div id="archive-reveal" class="archive-reveal" hidden role="group" aria-label="Historical photograph">
+          <div class="archive-reveal-card"><img id="archive-reveal-image" src="" alt="Wreckage of Egyptian aircraft after Operation Focus"><p id="archive-reveal-caption"></p><small id="archive-reveal-credit"></small></div>
+        </div>
+        <button id="media-expand" class="media-expand" type="button" aria-label="View video or map in full screen" title="Expand video or map">⛶ <span>Expand</span></button>
       </div>
       <div class="reel-body">
-        <div class="reel-top"><span><span class="reel-live"></span> WHAT HAPPENED</span><span id="reel-count">01 / 14</span></div>
-        <div class="reel-content"><span class="reel-episode" id="reel-date">16 MAY 1967</span><div id="media-type" class="media-type" aria-hidden="true">VISUAL HISTORY CARD</div><h1 id="reel-heading">What happened next</h1><p id="reel-description"></p><div class="reel-controls"><button type="button" class="reel-next" id="reel-next">Next decision <span aria-hidden="true">→</span></button><button type="button" class="reel-secondary" id="reel-replay" hidden>Replay footage ↺</button></div><a id="external-film-link" class="external-film-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open the original film on YouTube ↗</a><p id="reel-credit" class="reel-credit" hidden></p><p id="reel-photo-caption" class="reel-photo-caption" hidden></p><p id="reel-help" class="reel-help">Watch what happened, then move on.</p></div>
+        <div class="reel-content">
+          <span class="reel-episode" id="reel-date">16 MAY 1967</span>
+          <h1 id="reel-heading">What happened next</h1>
+          <p id="reel-description"></p>
+          <div class="reel-controls"><button type="button" class="reel-next" id="reel-next">Next decision <span aria-hidden="true">→</span></button><button type="button" class="reel-secondary" id="reel-replay" hidden>Replay footage ↺</button></div>
+          <a id="external-film-link" class="external-film-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open the original film on YouTube ↗</a>
+          <div class="reel-sources"><p id="reel-credit" class="reel-credit" hidden></p><p id="reel-photo-caption" class="reel-photo-caption" hidden></p></div>
+          <p id="reel-help" class="reel-help" hidden></p>
+          <div id="media-type" class="media-type" aria-hidden="true" hidden></div>
+        </div>
         <div class="reel-foot"><span>SWU UK <span class="dot-sep">✦</span> EXPLORE</span><span id="reel-foot-step">NEXT: DECISION 02</span></div>
       </div>
     </section>

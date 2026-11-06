@@ -575,6 +575,25 @@ function init(){
   $('cancel-restart').addEventListener('click',()=>$('restart-dialog').close());
   $('confirm-restart').addEventListener('click',()=>{$('restart-dialog').close();reset()});
   $('retry-button').addEventListener('click',retry);
+  document.addEventListener('fullscreenchange',()=>{
+    $('media-expand').setAttribute('aria-label',document.fullscreenElement?'Exit full screen':'View video or map in full screen');
+    $('media-expand').title=document.fullscreenElement?'Exit full screen':'Expand video or map';
+  });
+  $('media-expand').addEventListener('click',async()=>{
+    const media=$('reel-media');
+    if(document.fullscreenElement || document.webkitFullscreenElement){
+      if(document.exitFullscreen) await document.exitFullscreen().catch(()=>{});
+      else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
+      return;
+    }
+    if(media.requestFullscreen){
+      try{await media.requestFullscreen()}catch(e){}
+    }else if(media.webkitRequestFullscreen){
+      media.webkitRequestFullscreen();
+    }else if(!$('outcome-video').hidden && $('outcome-video').webkitEnterFullscreen){
+      $('outcome-video').webkitEnterFullscreen();
+    }
+  });
   $('reel-next').addEventListener('click',advance);
   $('reel-replay').addEventListener('click',replayVideo);
   $('notes-button').addEventListener('click',openNotes);
