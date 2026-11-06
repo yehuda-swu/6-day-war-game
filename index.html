@@ -9,9 +9,11 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cinematic.css">
   <link rel="stylesheet" href="refresh.css">
+  <link rel="stylesheet" href="v17.css">
   <script src="game.js" defer></script>
 </head>
 <body>
+  <audio id="mission-music" src="assets/mission-score.mp3" preload="auto" loop aria-hidden="true"></audio>
   <div class="grain" aria-hidden="true"></div>
   <div class="app-shell">
     <header class="topbar">
@@ -120,30 +122,54 @@
     </section>
 
     <section class="finish-view" id="finish-view" hidden aria-labelledby="finish-title">
-      <span class="finish-kicker">MISSION COMPLETED <span>JUNE TO NOVEMBER 1967</span></span>
-      <div class="finish-mark">✶</div><h1 id="finish-title">Mission complete <em>1967.</em></h1><p class="finish-sub">You followed the decisions of 1967 and saw how six days changed the map, the region and the debate that followed.</p>
-      <div class="finish-stats"><div><strong>14<span>/14</span></strong><small>DECISIONS COMPLETED</small></div><div><strong id="finish-attempts">0</strong><small>MISTAKES MADE</small></div><div><strong>1967</strong><small>YEAR OF THE EVENTS</small></div></div>
-      <section class="finish-map-compare">
-        <p class="finish-section-title">BEFORE AND AFTER</p>
-        <div class="finish-map-grid">
-          <figure><img src="assets/armistice-line-1949-1967-map.webp" alt="Map showing Israel, Jordanian-controlled West Bank and Egyptian-controlled Gaza before June 1967"><figcaption>Before the war<br><span>Armistice lines, 1949 to 1967</span></figcaption></figure>
-          <figure><img src="assets/israel-after-six-day-war-map.jpg" alt="Map showing Israel after 10 June 1967 including Sinai, Gaza, West Bank, East Jerusalem and Golan Heights"><figcaption>After the war<br><span>Territory under Israeli control on 10 June 1967</span></figcaption></figure>
+      <div class="debrief-shell">
+        <div class="debrief-hero">
+          <div class="debrief-hero-copy">
+            <span class="debrief-stamp"><span class="debrief-stamp-dot"></span> CLASSIFIED FILE 067 / MISSION COMPLETE</span>
+            <p class="debrief-era">THE SIX DAY WAR · JUNE 1967</p>
+            <h1 id="finish-title">Six days.<br><em>A changed world.</em></h1>
+            <p class="debrief-lede">You made the decisions and watched history unfold. Now see how the map changed, and what questions the war left behind.</p>
+            <div class="debrief-metrics">
+              <div><strong>14<span>/14</span></strong><small>DECISIONS COMPLETE</small></div>
+              <div><strong id="finish-attempts">0</strong><small>MISTAKES MADE</small></div>
+              <div><strong>10 JUN</strong><small>CEASEFIRE 1967</small></div>
+            </div>
+            <a class="debrief-jump" href="#debrief-maps">EXPLORE THE FINAL MAPS <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="debrief-hero-photo">
+            <img src="assets/gpo/17-paratroopers-western-wall.jpg" alt="Three Israeli paratroopers at the Western Wall, 7 June 1967">
+            <figcaption><span>JERUSALEM / 7 JUNE 1967</span><span>DAVID RUBINGER / GPO</span></figcaption>
+          </figure>
         </div>
-      </section>
-      <section class="finish-gallery">
-        <p class="finish-section-title">JERUSALEM, JUNE 1967</p>
-        <div class="finish-photo-strip">
-          <figure><img src="assets/gpo/17-paratroopers-western-wall.jpg" alt="Three paratroopers at the Western Wall"><figcaption>Paratroopers at the Wall<br><span>David Rubinger / GPO</span></figcaption></figure>
-          <figure><img src="assets/gpo/32-wall-58-400x267.jpg" alt="People gathered at the Western Wall after the war"><figcaption>Gathering at the Wall<br><span>GPO collection</span></figcaption></figure>
-          <figure><img src="assets/gpo/34-wall-jerusalem-61-400x267.jpg" alt="Crowd celebrating at the Western Wall after the war"><figcaption>Celebration in Jerusalem<br><span>GPO collection</span></figcaption></figure>
+        <section id="debrief-maps" class="debrief-map-section" aria-labelledby="debrief-map-title">
+          <div class="debrief-section-heading"><div><span class="debrief-section-eyebrow">FINAL BRIEFING / 01</span><h2 id="debrief-map-title">Before. After.</h2></div><p>Compare Israel's boundaries before June 1967 with the areas under Israeli control after the fighting ended.</p></div>
+          <div class="debrief-map-grid">
+            <figure class="debrief-map-card"><div class="debrief-map-frame"><span class="debrief-map-chip">BEFORE</span><img src="assets/armistice-line-1949-1967-map.webp" loading="lazy" alt="Map showing Israel and territories under Jordanian and Egyptian control along the 1949 armistice lines before June 1967"></div><figcaption><strong>4 June 1967</strong><span>1949 armistice lines</span></figcaption></figure>
+            <figure class="debrief-map-card"><div class="debrief-map-frame"><span class="debrief-map-chip gold">AFTER</span><img src="assets/israel-after-six-day-war-map.jpg" loading="lazy" alt="Map showing territories under Israeli control after the ceasefire on 10 June 1967"></div><figcaption><strong>10 June 1967</strong><span>Territories under Israeli control after the war</span></figcaption></figure>
+          </div>
+          <p class="debrief-map-note">These historical maps show territorial control at the time, not the present boundaries. Original maps supplied for the game.</p>
+        </section>
+        <section class="debrief-photo-section" aria-labelledby="debrief-photo-title">
+          <div class="debrief-section-heading"><div><span class="debrief-section-eyebrow">FINAL BRIEFING / 02</span><h2 id="debrief-photo-title">At the Western Wall</h2></div><p>Archival photographs of the moment and celebrations that followed.</p></div>
+          <div class="debrief-photo-grid">
+            <figure><img src="assets/gpo/32-wall-58-400x267.jpg" loading="lazy" alt="Crowds at the Western Wall following the 1967 war"><figcaption>WESTERN WALL / JUNE 1967 <span>GPO COLLECTION</span></figcaption></figure>
+            <figure><img src="assets/gpo/33-wall-jerusalem-3.jpg" loading="lazy" alt="Soldier at the stones of the Western Wall in 1967"><figcaption>WESTERN WALL / JUNE 1967 <span>GPO COLLECTION</span></figcaption></figure>
+            <figure><img src="assets/gpo/34-wall-jerusalem-61-400x267.jpg" loading="lazy" alt="People celebrating near the Western Wall following the war"><figcaption>JERUSALEM / JUNE 1967 <span>GPO COLLECTION</span></figcaption></figure>
+          </div>
+        </section>
+        <section class="debrief-impact-section" aria-labelledby="debrief-impact-title">
+          <div class="debrief-section-heading"><div><span class="debrief-section-eyebrow">THE STORY CONTINUES</span><h2 id="debrief-impact-title">The war ended. The questions did not.</h2></div></div>
+          <div class="debrief-impact-grid"><article><span>01 / TERRITORY</span><h3>A new map</h3><p>Israel took control of Sinai, Gaza, the West Bank, East Jerusalem and the Golan Heights.</p></article><article><span>02 / PEACE</span><h3>A new debate</h3><p>Could territory be exchanged for peace? Resolution 242 helped shape the diplomacy that followed.</p></article><article><span>03 / PEOPLE</span><h3>Lives transformed</h3><p>The war displaced many Palestinians and Syrians and raised lasting questions about security, rights and political control.</p></article></div>
+        </section>
+        <div class="debrief-bottom">
+          <div><span class="debrief-section-eyebrow">ONE FINAL THOUGHT</span><p>If you were making these decisions, what would you have done differently?</p></div>
+          <div class="debrief-actions">
+            <button id="replay-button" class="primary-action" type="button">PLAY AGAIN <span aria-hidden="true">↻</span></button>
+            <button id="finish-home-button" class="secondary-action" type="button">HOME</button>
+            <button id="finish-notes-button" class="secondary-action" type="button">EDUCATOR SOURCES ↗</button>
+          </div>
         </div>
-      </section>
-      <section class="finish-thinking"><p class="finish-section-title">WHAT CHANGED?</p><p>Israel took control of the Sinai Peninsula, Gaza Strip, West Bank including East Jerusalem and the Golan Heights. The war also displaced many people and left difficult questions about security, territory, Palestinian rights and peace.</p><p>In November 1967, UN Security Council Resolution 242 called for a peace settlement linked to withdrawal from territories occupied in the conflict, recognition and secure boundaries. The arguments that followed still shape the region today.</p></section>
-      <section class="finish-questions"><h2>Three questions to debate</h2><ol><li>Why did Israeli leaders believe the crisis might turn into war?</li><li>How did Jerusalem and the Golan change the way Israelis thought about security?</li><li>What new opportunities and problems did the war create for the region?</li></ol></section>
-      <div class="finish-actions"><button class="primary-action" id="replay-button" type="button">Start Mission <span aria-hidden="true">↻</span></button><button class="secondary-action" id="finish-notes-button" type="button">Historical sources ↗</button></div>
-    </section>
-      <section class="finish-questions"><h2>Three questions to debate</h2><ol><li>What made Israel's leaders believe that war might be unavoidable?</li><li>How did the capture of Jerusalem and the Golan Heights change Israeli security and politics?</li><li>What were the opportunities and challenges created by the territories occupied after the war?</li></ol></section>
-      <div class="finish-actions"><button class="primary-action" id="replay-button" type="button">Play again <span aria-hidden="true">↻</span></button><button class="secondary-action" id="finish-notes-button" type="button">Historical sources ↗</button></div>
+      </div>
     </section>
   </div>
 
@@ -155,7 +181,7 @@
     <div class="gpo-controls"><button type="button" id="gpo-prev">← Previous photo</button><button type="button" id="gpo-next">Next photo →</button></div>
   </dialog>
 
-  <dialog id="notes-dialog" class="modal" aria-labelledby="notes-title"><div class="modal-head"><div><span>TEACHER'S ARCHIVE</span><h2 id="notes-title">Educator notes and sources</h2></div><button id="close-notes" class="modal-close" type="button" aria-label="Close">✕</button></div><div class="modal-content"><p>The objective is to reconstruct the historical choices made by Israeli leaders in 1967, not to suggest that historical choices were inevitably correct or without alternatives. Students should distinguish between documented decisions, interpretations and questions still debated by historians.</p><h3>Important historical distinctions</h3><ul><li>Israel launched a first air strike on 5 June 1967 after a period of intense mobilisation, threats and failed diplomacy. Historians continue to discuss the choices available to its leaders.</li><li>The Old City of Jerusalem was under Jordanian control from 1948 to June 1967. It was not the first instance of Jewish political control for two thousand years.</li><li>Moshe Dayan was initially reluctant to attack the Golan Heights. He changed his position on 9 June. The idea that he simply wanted agricultural land is misleading.</li><li>The 19 June cabinet resolution discussed returning Sinai and the Golan in exchange for peace. Historians dispute whether this became a concrete offer conveyed to Egypt and Syria.</li><li>The Khartoum summit was held from 29 August to 1 September 1967. Its famous Three No's were a statement by Arab League leaders, not a description of every Arab person or every later policy.</li><li>Israeli occupation of territories, Palestinian displacement and the disputed status of East Jerusalem are essential parts of the aftermath.</li></ul><h3>Further reading</h3><div id="sources-list" class="sources-list"></div><h3>Photographs and historical accuracy</h3><p>Archival photographs are shown alongside decisions as historical context. Some were taken after the event being discussed, and some have no confirmed exact day. Check the date and caption before drawing conclusions. Photographs supplied from the Government Press Office collection are credited in the archive cards and galleries. The well known Western Wall paratroopers photograph is credited to David Rubinger.</p><h3>Classroom use</h3><p>Students begin with two spare lives. Each incorrect choice costs one life, and the third incorrect choice ends the mission. The remaining lives are shown on the decision screen. Suggested duration: 15 to 25 minutes plus discussion. Students may work independently or vote on the two choices as a class. Press the <strong>1</strong> or <strong>2</strong> keys to choose, then view the historical outcome. Historical clips play automatically where supported. Animated maps run silently. Background music can be toggled on or off. The only original clip audio retained is the Hebrew communication in the Old City film. You may continue manually from any outcome screen.</p></div></dialog>
+  <dialog id="notes-dialog" class="modal" aria-labelledby="notes-title"><div class="modal-head"><div><span>TEACHER'S ARCHIVE</span><h2 id="notes-title">Educator notes and sources</h2></div><button id="close-notes" class="modal-close" type="button" aria-label="Close">✕</button></div><div class="modal-content"><p>The objective is to reconstruct the historical choices made by Israeli leaders in 1967, not to suggest that historical choices were inevitably correct or without alternatives. Students should distinguish between documented decisions, interpretations and questions still debated by historians.</p><h3>Important historical distinctions</h3><ul><li>Israel launched a first air strike on 5 June 1967 after a period of intense mobilisation, threats and failed diplomacy. Historians continue to discuss the choices available to its leaders.</li><li>The Old City of Jerusalem was under Jordanian control from 1948 to June 1967. It was not the first instance of Jewish political control for two thousand years.</li><li>Moshe Dayan was initially reluctant to attack the Golan Heights. He changed his position on 9 June. The idea that he simply wanted agricultural land is misleading.</li><li>The 19 June cabinet resolution discussed returning Sinai and the Golan in exchange for peace. Historians dispute whether this became a concrete offer conveyed to Egypt and Syria.</li><li>The Khartoum summit was held from 29 August to 1 September 1967. Its famous Three No's were a statement by Arab League leaders, not a description of every Arab person or every later policy.</li><li>Israeli occupation of territories, Palestinian displacement and the disputed status of East Jerusalem are essential parts of the aftermath.</li></ul><h3>Further reading</h3><div id="sources-list" class="sources-list"></div><h3>Photographs and historical accuracy</h3><p>Archival photographs are shown alongside decisions as historical context. Some were taken after the event being discussed, and some have no confirmed exact day. Check the date and caption before drawing conclusions. Photographs supplied from the Government Press Office collection are credited in the archive cards and galleries. The well known Western Wall paratroopers photograph is credited to David Rubinger.</p><h3>Classroom use</h3><p>Students begin with two spare lives. Each incorrect choice costs one life, and the third incorrect choice ends the mission. The remaining lives are shown on the decision screen. Suggested duration: 15 to 25 minutes plus discussion. Students may work independently or vote on the two choices as a class. Press the <strong>1</strong> or <strong>2</strong> keys to choose, then view the historical outcome. Historical clips play automatically where supported. Animated maps run silently. An original cinematic orchestral score loops in the background once a player starts the mission. The music can be switched on or off, and pauses during the Old City film so the Hebrew communication remains clear. The only original clip audio retained is the Old City film. You may continue manually from any outcome screen.</p></div></dialog>
   <dialog id="restart-dialog" class="confirm-dialog" aria-labelledby="restart-heading"><h2 id="restart-heading">Restart the mission?</h2><p>Your progress will be reset and the experience will begin again at Decision 1.</p><div class="confirm-actions"><button type="button" id="cancel-restart" class="reel-secondary">Keep my progress</button><button type="button" id="confirm-restart" class="reel-next">Restart from the beginning ↻</button></div></dialog>
 </body>
 </html>

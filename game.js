@@ -247,14 +247,38 @@ let videoReady = false;
 let animationReady = false;
 let mapReplayCount = 0;
 
-let audioContext=null,musicGain=null,musicMaster=null,musicStarted=false,musicMuted=true,musicTimers=[];
-function clearMusicTimers(){musicTimers.forEach(id=>clearTimeout(id));musicTimers=[]}
-function updateMusicButton(){const b=$('music-button'); if(!b)return; const on=musicStarted && !musicMuted; b.setAttribute('aria-pressed', String(on)); b.textContent=on?'♫ Music on':'♫ Music off';}
-function stopMusic(){clearMusicTimers(); if(musicGain){musicGain.gain.cancelScheduledValues(audioContext.currentTime); musicGain.gain.setTargetAtTime(0,audioContext.currentTime,0.15);} musicMuted=true; updateMusicButton();}
-function scheduleAmbientLoop(){ if(!audioContext||!musicGain) return; clearMusicTimers(); const notes=[146.83,174.61,196.00,220.00,196.00,174.61]; let t=audioContext.currentTime+0.05; notes.forEach((freq,i)=>{ const osc=audioContext.createOscillator(); const gain=audioContext.createGain(); osc.type=i%2?'triangle':'sine'; osc.frequency.value=freq; gain.gain.value=0.0001; osc.connect(gain).connect(musicGain); osc.start(t); gain.gain.exponentialRampToValueAtTime(0.025,t+0.4); gain.gain.exponentialRampToValueAtTime(0.0001,t+4.8); osc.stop(t+5); t+=2.3; }); musicTimers.push(setTimeout(()=>{if(!musicMuted) scheduleAmbientLoop()},12000)); }
-function initMusic(){ if(audioContext) return; const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return; audioContext=new AC(); musicMaster=audioContext.createGain(); musicMaster.gain.value=0.7; musicGain=audioContext.createGain(); musicGain.gain.value=0.0001; const lp=audioContext.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=900; musicGain.connect(lp).connect(musicMaster).connect(audioContext.destination); }
-function startMusic(force){ initMusic(); if(!audioContext||!musicGain) return; audioContext.resume?.(); if(!musicStarted){musicStarted=true; musicMuted=false; scheduleAmbientLoop();} if(force) musicMuted=false; musicGain.gain.cancelScheduledValues(audioContext.currentTime); musicGain.gain.setTargetAtTime(musicMuted?0:0.9,audioContext.currentTime,0.4); updateMusicButton(); }
-function toggleMusic(){ initMusic(); if(!audioContext) return; if(!musicStarted){musicStarted=true; musicMuted=false; scheduleAmbientLoop(); startMusic(true); return;} musicMuted=!musicMuted; if(musicMuted) stopMusic(); else startMusic(true); }
+// Original cinematic orchestral music in an MP3 file, initiated by a user click.
+// Browser autoplay rules prevent starting sound before the first interaction.
+let musicEnabled=false;
+let musicSuppressedForOldCity=false;
+let musicWasInitialised=false;
+const MUSIC_VOLUME=0.76;
+function musicElement(){return $('mission-music')}
+function updateMusicButton(){
+  const b=$('music-button');if(!b)return;
+  b.setAttribute('aria-pressed',String(musicEnabled));
+  b.textContent=musicEnabled?(musicSuppressedForOldCity?'♫ Music paused':'♫ Music on'):'♫ Music off';
+  b.setAttribute('aria-label',musicEnabled?'Turn background music off':'Turn background music on');
+}
+function syncMusic(){
+  const audio=musicElement();if(!audio)return;
+  audio.volume=MUSIC_VOLUME;audio.loop=true;
+  if(!musicEnabled||musicSuppressedForOldCity){audio.pause();updateMusicButton();return;}
+  const result=audio.play();
+  if(result&&typeof result.catch==='function'){
+    result.catch(()=>{ // Some browsers require another user gesture.
+      if(musicEnabled) $('music-button').textContent='♫ Tap for music';
+    });
+  }
+  updateMusicButton();
+}
+function startMusic(force){
+  if(force && !musicWasInitialised){musicEnabled=true;musicWasInitialised=true;}
+  syncMusic();
+}
+function stopMusic(){musicSuppressedForOldCity=true;syncMusic()}
+function resumeMusic(){musicSuppressedForOldCity=false;syncMusic()}
+function toggleMusic(){musicWasInitialised=true;musicEnabled=!musicEnabled;syncMusic()}
 
 function store(){}
 function load(){ state={index:0,alternatives:0,started:false,finished:false,gameOver:false}; }
@@ -277,9 +301,9 @@ function setView(next){
   $('welcome-view').hidden=next!=='welcome';$('game-view').hidden=next!=='decision';$('reel-view').hidden=next!=='reel';$('finish-view').hidden=next!=='finish';$('gameover-view').hidden=next!=='gameover';
   window.scrollTo({top:0,behavior:'instant'});
 }
-function start(){reset();startMusic(true);}
-function reset(){state={index:0,alternatives:0,started:true,finished:false,gameOver:false};renderDecision();}
-function goHome(){clearTimeout(pendingAdvance);stopVideo();locked=false;$('try-again-panel').hidden=true;setView('welcome');updateWelcome()}
+function start(){startMusic(true);reset();}
+function reset(){state={index:0,alternatives:0,started:true,finished:false,gameOver:false};resumeMusic();renderDecision();}
+function goHome(){clearTimeout(pendingAdvance);stopVideo();locked=false;$('try-again-panel').hidden=true;resumeMusic();setView('welcome');updateWelcome()}
 function updateWelcome(){ $('start-button').innerHTML='Start Mission <span aria-hidden="true">→</span>'; }
 function requestRestart(){$('restart-dialog').showModal()}
 
@@ -360,7 +384,7 @@ function stopVideo(){
 }
 function showReel(s){
   clearTimeout(pendingAdvance);stopVideo();setView('reel');
-  if(s.video || (!s.animatedMap && !s.youtube)) stopMusic();
+  if(state.index===7) stopMusic(); else resumeMusic();
   $('reel-count').textContent=`${pad(state.index+1)} / ${STAGES.length}`;
   $('reel-date').textContent=s.date;
   $('reel-heading').textContent=s.archiveTitle;
@@ -435,6 +459,7 @@ function showReel(s){
   };
   vid.onended=()=>{
     if(view!=='reel')return;
+    if(state.index===7) resumeMusic();
     if(s.archivePhoto){
       const picture=$('archive-reveal-image');
       const verify=new Image();
@@ -466,7 +491,7 @@ function showReel(s){
 }
 function replayVideo(){
   clearTimeout(pendingAdvance);
-  stopMusic();
+  if(state.index===7)stopMusic();
   if(animationReady && view==='reel'){
     const frame=$('animated-map');
     frame.src=STAGES[state.index].animatedMap+'?play='+(++mapReplayCount);
@@ -479,11 +504,12 @@ function advance(){
   if(view!=='reel')return;
   clearTimeout(pendingAdvance);stopVideo();
   state.index++;
-  if(state.index>=STAGES.length)finish();else {startMusic(true); renderDecision();}
+  resumeMusic();
+  if(state.index>=STAGES.length)finish();else renderDecision();
 }
 function gameOver(){
   clearTimeout(pendingAdvance);stopVideo();
-  startMusic(true);
+  resumeMusic();
   locked=true;state.gameOver=true;state.finished=false;state.started=true;
   $('try-again-panel').hidden=true;
   $('gameover-stage').textContent=`REACHED DECISION ${pad(state.index+1)} OF ${STAGES.length}`;
@@ -493,7 +519,7 @@ function gameOver(){
 }
 function finish(){
   state.finished=true;state.started=true;state.gameOver=false;stopVideo();
-  startMusic(true);
+  resumeMusic();
   $('finish-attempts').textContent=state.alternatives;setView('finish');
 }
 function openNotes(){$('notes-dialog').showModal()}
@@ -526,7 +552,8 @@ function init(){
   $('finish-notes-button').addEventListener('click',openNotes);
   $('close-notes').addEventListener('click',()=>$('notes-dialog').close());
   $('notes-dialog').addEventListener('click',e=>{if(e.target===$('notes-dialog'))$('notes-dialog').close()});
-  $('replay-button').addEventListener('click',reset);
+  $('replay-button').addEventListener('click',()=>{reset();startMusic(true)});
+  $('finish-home-button').addEventListener('click',goHome);
   $('gameover-restart').addEventListener('click',reset);
   $('gameover-home').addEventListener('click',goHome);
   document.addEventListener('keydown',e=>{

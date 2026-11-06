@@ -1,43 +1,38 @@
-# Six Days of Decisions | Version 15: War Desk Redesign
+# Six Days of Decisions | Version 17
 
-A browser game for students aged 16 to 17, developed for StandWithUs UK Explore. It runs directly on GitHub Pages using static HTML, CSS, JavaScript, local photos, videos and animated SVG maps.
+A browser game for students aged 16 and 17, developed for StandWithUs UK Explore. It runs directly on GitHub Pages using static HTML, CSS, JavaScript, local photographs, archival videos, original audio and animated SVG maps.
 
-## Version 15 changes
+## What is new
 
-* Rebuilt the home screen as a focused intelligence desk: one Top Secret folder and three archival prints, led by David Rubinger's photograph of the three paratroopers at the Western Wall. The layout keeps the title and Start button clearly separated from the pictures.
-* Rewrote the briefings, questions, two choices, feedback and results across all 14 stages. Text is shorter and more direct, without changing which choices follow the historical record.
-* Reduced clutter on decision screens. The extra historical note is available under **Why it mattered**, and the archive panel shows a photograph, date, location and source. Additional details remain in the gallery and educator notes.
-* Removed unnecessary labels such as **Silent Archive Video** from outcome screens. The history and media take centre stage.
-* Set the Stage 2 Straits of Tiran and Stage 6 Jerusalem Under Fire archive panels to the supplied Nasser image from the GPO collection. The Stage 6 caption explicitly identifies this as context, not a photograph of shelling in Jerusalem.
-* Improved mobile layout, reduced repeated navigation on the home screen and retained the transparent StandWithUs UK and Explore logos.
-* Preserved the previous 14 stages, 8 local video sequences, 6 animated military maps with 1967 flags, archive gallery, the two spare lives system, Game Over and restart.
+**Original looping cinematic music** replaces the previous quiet tone synthesiser. Press Start Mission to begin the game and music. Browser audio rules mean the score cannot play before the user interacts. The Music button switches playback on or off. Music continues through all screens and films except the Old City clip, where it pauses so the Hebrew voices can be heard.
 
-## Upload to GitHub
+**Completely redesigned final debrief** gives students a dramatic completion photo, clear mission stats, a before and after map comparison, more photographs at the Western Wall, concise historical takeaways and three fully working actions: Play Again, Home and Educator Sources. Duplicate final screen buttons have been removed.
 
-1. Download and extract the ZIP.
-2. Open the existing `6-day-war-game` GitHub repository.
-3. Use **Add file > Upload files** and upload the extracted files and entire `assets` folder into the repository root. Replace existing files when prompted.
-4. Use this commit message: `Redesign Six Days of Decisions with a clearer 1967 war desk`.
-5. Commit the changes. The game will update at https://yehuda-swu.github.io/6-day-war-game/ once GitHub Pages publishes the new revision.
+The 14 historical decisions, two spare lives, Game Over, archival photo gallery and media credits remain unchanged. Student progress is not saved between visits.
 
-If working in a local Git checkout, use:
+## Update the GitHub website
+
+1. Download and extract the Version 17 ZIP.
+2. Open the existing repository: https://github.com/yehuda-swu/6-day-war-game
+3. In GitHub, select Add file then Upload files.
+4. Upload all extracted files and the `assets` folder into the **root** of the repository. `index.html` should be visible next to `assets`, not inside an extra folder.
+5. Commit with the message: `Add cinematic background music and redesign final debrief`.
+6. Open https://yehuda-swu.github.io/6-day-war-game/ after GitHub Pages publishes the change.
+
+Alternatively, inside a local Git checkout run:
 
 ```bash
 git add .
-git commit -m "Redesign Six Days of Decisions with a clearer 1967 war desk"
+git commit -m "Add cinematic background music and redesign final debrief"
 git push origin main
 ```
 
-No build step or hosting software is needed.
+No build process or API keys are required. The MP3 plays in modern desktop and mobile browsers.
 
-## Historical content and attribution
+## Historical content and media credits
 
-This activity asks learners to identify decisions recorded in the historical record. It does **not** suggest that those decisions were inevitable, the only defensible choices or free from controversy. The educator notes preserve additional historical nuance and sources.
+The game presents historically documented decisions without suggesting that all these decisions were inevitable or morally uncontested. The educator notes discuss important historical distinctions. Source credits for AP Archive, IDF, Unpacked / OpenDor Media, GPO, David Rubinger, UN Photo and the National Library of Israel are retained.
 
-The Stage 2 and Stage 6 Nasser image is a contextual photograph from 1967 with an unverified exact day and location. In particular, it does not show the actual shelling of Jerusalem. Images with other uncertain dates are labelled carefully. The home screen folder, stamp and desk are graphic design elements rather than real archival objects.
+The original instrumental background score uses the openly licensed TimGM6mb soundfont. The score and its rendering credits are explained in `MUSIC_SOURCES.md` and the soundfont license is included in `MUSIC_LICENSE_GPL2.txt`. The soundfont itself is not included in this archive.
 
-Photographs from the supplied GPO archive are credited to the Government Press Office. The three paratroopers photograph is credited to David Rubinger / GPO. Other source credits, including UN Photo, the National Library of Israel, IDF, AP Archive, Unpacked / OpenDor Media and Periscope Film LLC, are retained separately.
-
-All videos remain silent except the original Hebrew military communications in the IDF Old City clip. Video transitions and the six animated maps work locally without third party services. The map unit movements are educational illustrations, not precise battlefield positions.
-
-See `MEDIA_SOURCES.md`, `GPO_IMPORTED_PHOTOS.md`, `GPO_IMPORTED_PHOTOS.csv` and `MAP_SOURCES.md` for source details.
+See `MEDIA_SOURCES.md`, `MAP_SOURCES.md`, `GPO_PHOTO_SOURCES.md`, `MUSIC_SOURCES.md` and `V17_CHANGELOG.md` for further information.
