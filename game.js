@@ -79,7 +79,7 @@ const STAGES = [
     options:['Defend the city but avoid wider operations.','Defend the city and counterattack Jordanian forces.'],correct:1,
     success:'Israel counterattacked. Heavy fighting spread through Jerusalem and the West Bank, then under Jordanian control.',
     alternative:'The historical response was a counterattack after Jordan entered the fighting.',
-    focus:['westbank','israel'],point:[427,277],map:'JERUSALEM FRONT',archiveTitle:'Jerusalem under fire',archiveCaption:'Jordanian artillery fire was followed by intense fighting around Jerusalem.',image:'assets/gpo/13-nasser-pre-war.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:1
+    focus:['westbank','israel'],point:[427,277],map:'JERUSALEM FRONT',archiveTitle:'Jerusalem under fire',archiveCaption:'Jordanian artillery fire was followed by intense fighting around Jerusalem.',image:'assets/gpo/10-jerusalem-101-400x267.jpg',video:'assets/06-shelling.mp4',mediaCredit:'Unpacked / OpenDor Media',source:1
   },
   {
     date:'6 JUNE 1967',day:'DAY TWO',phase:1,tag:'07 / THE APPROACH',title:'A divided Jerusalem',
@@ -89,7 +89,7 @@ const STAGES = [
     options:['Secure the surrounding routes and positions first.','Enter the Old City before securing the approaches.'],correct:0,
     success:'Israeli forces secured positions around Jerusalem. On 7 June, they entered the Old City.',
     alternative:'Troops secured key routes and positions before entering the Old City.',
-    focus:['westbank'],point:[427,277],map:'EAST JERUSALEM',archiveTitle:'The divided city',archiveCaption:'The Old City was under Jordanian control from 1948 until June 1967.',image:'assets/07-jerusalem.jpg',video:null,animatedMap:'assets/maps/07-jerusalem.svg',source:1
+    focus:['westbank'],point:[427,277],map:'EAST JERUSALEM',archiveTitle:'A divided Jerusalem',archiveCaption:'The Old City and East Jerusalem had been under Jordanian control since 1948.',image:'assets/divided-jerusalem-aerial-1967.jpg',video:null,animatedMap:'assets/maps/07-jerusalem.svg',source:1
   },
   {
     date:'7 JUNE 1967',day:'DAY THREE',phase:1,tag:'08 / THE OLD CITY',title:'The Old City is entered',
@@ -129,7 +129,7 @@ const STAGES = [
     options:['Accept the ceasefire without taking the Heights.','Launch an offensive onto the Golan Heights.'],correct:1,
     success:'Israeli troops attacked the Syrian positions on 9 June and advanced into the next day.',
     alternative:'There were arguments for restraint, but Israel launched the Golan offensive.',
-    focus:['golan','syria'],point:[451,113],map:'GOLAN HEIGHTS',archiveTitle:'The battle for the Golan',archiveCaption:'The northern offensive took place on 9 and 10 June, shortly before the final ceasefire.',image:'assets/11-golan.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:3
+    focus:['golan','syria'],point:[451,113],map:'GOLAN HEIGHTS',archiveTitle:'The battle for the Golan',archiveCaption:'The northern offensive took place on 9 and 10 June, shortly before the final ceasefire.',image:'assets/11-golan.jpg',video:null,animatedMap:'assets/maps/11-golan.svg',mediaCredit:'Unpacked / OpenDor Media',source:3
   },
   {
     date:'10 JUNE 1967',day:'DAY SIX',phase:1,tag:'12 / THE WAR ENDS',title:'Six days later',
@@ -168,7 +168,7 @@ const STAGES = [
 /* Decision-screen photographs are separate from the animated outcome films.
    Never label a map, an illustration or a documentary reconstruction as an
    original historical photograph. Dates refer to the pictured event when known. */
-const ARCHIVE_CARDS = [{"kind":"ARCHIVE PHOTO","image":"assets/archive/01-unef-flag-19-may-1967.jpg","alt":"United Nations flag lowered at King’s Gate, 19 May 1967","tag":"The UN flag comes down","date":"19 May 1967","location":"King’s Gate, Gaza City","source":"UN Photo","caption":"UN peacekeepers withdraw from positions along the border."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/13-nasser-pre-war.jpg","tag":"President Nasser, 1967","date":"1967 (exact date not verified)","location":"Egypt (precise location not verified)","source":"Government Press Office (GPO) collection","caption":"Egypt’s president ordered the Straits of Tiran closed. This is a contextual portrait, not a photograph of the blockade."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/19-shelter-galilee-20-400x267.jpg","tag":"Civilian preparations","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"Families shelter in northern Israel. This photograph documents civilian vulnerability; it does not depict military mobilisation."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/18-rabin-52-400x267.jpg","tag":"IDF Chief of Staff Rabin","date":"1967 (exact date not verified)","location":"Israel (precise location not confirmed)","source":"Government Press Office (GPO) collection","caption":"Rabin photographed with military personnel. This is a contextual image, not a photograph of a cabinet meeting."},{"kind":"ARCHIVE PHOTO","image":"assets/archive/05-egyptian-aircraft-wreckage.jpg","alt":"Egyptian military aircraft wreckage after the opening air strikes","tag":"Operation Focus aftermath","date":"5 June 1967","location":"Egyptian airfield","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Damaged Egyptian military aircraft following Israeli air strikes on 5 June."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/13-nasser-pre-war.jpg","tag":"Nasser and the crisis","date":"1967 (exact date unknown)","location":"Egypt (location not confirmed)","source":"Government Press Office (GPO) collection","caption":"President Nasser in 1967. Context photograph: it does not show the fighting in Jerusalem.","alt":"President Gamal Abdel Nasser, contextual photograph from 1967"},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/11-jerusalem-105-400x267.jpg","tag":"Fighting near Jerusalem","date":"June 1967 (date not verified)","location":"Jerusalem","source":"Government Press Office (GPO) collection","caption":"Israeli soldiers near Jerusalem stone walls. The precise date is not confirmed."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/17-paratroopers-western-wall.jpg","alt":"Three Israeli paratroopers standing at the Western Wall, photographed by David Rubinger on 7 June 1967","tag":"The three paratroopers","date":"7 June 1967","location":"Western Wall, Jerusalem","source":"David Rubinger / GPO archive","caption":"Three Israeli paratroopers photographed at the Western Wall on 7 June 1967."},{"kind":"ARCHIVE PHOTO","image":"assets/archive/09-israeli-soldiers-sinai-shower.jpg","tag":"A moment in the Sinai","date":"1967","location":"Sinai Peninsula","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Israeli soldiers use a makeshift shower during the Sinai campaign."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/21-shelter-galilee-22.jpg","tag":"Sheltering on the northern front","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"A child seeks shelter in northern Israel, illustrating the danger faced by border communities."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/08-israeli-tanks-in-golan-88-400x267.jpg","tag":"Armour on the Golan","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Israeli armour pictured on the Golan Heights during the 1967 war; the precise day is not established."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/04-golan-tanks-104-400x267.jpg","tag":"After the fighting","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Military vehicles on the Heights. This photograph illustrates the situation after the fighting; its precise date is not verified."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/03-eshkol-in-golan-86-400x267.jpg","tag":"Levi Eshkol on the Golan","date":"1967 (exact date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Prime Minister Levi Eshkol visits the Golan. This image is contextual and does not depict the cabinet meeting of 19 June."},{"kind":"ARCHIVE FILM","image":"assets/14-khartoum.jpg","tag":"Nasser arrives in Khartoum","date":"30 August 1967","location":"Khartoum, Sudan","source":"AP Archive","caption":"President Nasser arrives for the summit. This does not depict the adoption of the Three No’s."}];
+const ARCHIVE_CARDS = [{"kind":"ARCHIVE PHOTO","image":"assets/archive/01-unef-flag-19-may-1967.jpg","alt":"United Nations flag lowered at King’s Gate, 19 May 1967","tag":"The UN flag comes down","date":"19 May 1967","location":"King’s Gate, Gaza City","source":"UN Photo","caption":"UN peacekeepers withdraw from positions along the border."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/13-nasser-pre-war.jpg","tag":"President Nasser, 1967","date":"1967 (exact date not verified)","location":"Egypt (precise location not verified)","source":"Government Press Office (GPO) collection","caption":"Egypt’s president ordered the Straits of Tiran closed. This is a contextual portrait, not a photograph of the blockade."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/19-shelter-galilee-20-400x267.jpg","tag":"Civilian preparations","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"Families shelter in northern Israel. This photograph documents civilian vulnerability; it does not depict military mobilisation."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/18-rabin-52-400x267.jpg","tag":"IDF Chief of Staff Rabin","date":"1967 (exact date not verified)","location":"Israel (precise location not confirmed)","source":"Government Press Office (GPO) collection","caption":"Rabin photographed with military personnel. This is a contextual image, not a photograph of a cabinet meeting."},{"kind":"ARCHIVE PHOTO","image":"assets/archive/05-egyptian-aircraft-wreckage.jpg","alt":"Egyptian military aircraft wreckage after the opening air strikes","tag":"Operation Focus aftermath","date":"5 June 1967","location":"Egyptian airfield","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Damaged Egyptian military aircraft following Israeli air strikes on 5 June."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/10-jerusalem-101-400x267.jpg","tag":"Jerusalem under fire","date":"5 June 1967 (date not verified)","location":"Jerusalem","source":"Government Press Office (GPO) collection","caption":"Context photograph linked to the Jordanian front in Jerusalem. Replace with a King Hussein archive photo if a preferred file is later added.","alt":"Historical photograph linked to the Jordanian front in Jerusalem in June 1967"},{"kind":"ARCHIVE PHOTO","image":"assets/divided-jerusalem-aerial-1967.jpg","tag":"A divided Jerusalem","date":"1967","location":"Jerusalem","source":"Government Press Office (GPO) collection","caption":"Aerial view showing the Old City and the line through divided Jerusalem before the city was reunified in the war.","alt":"Aerial view of divided Jerusalem in 1967"},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/17-paratroopers-western-wall.jpg","alt":"Three Israeli paratroopers standing at the Western Wall, photographed by David Rubinger on 7 June 1967","tag":"The three paratroopers","date":"7 June 1967","location":"Western Wall, Jerusalem","source":"David Rubinger / GPO archive","caption":"Three Israeli paratroopers photographed at the Western Wall on 7 June 1967."},{"kind":"ARCHIVE PHOTO","image":"assets/archive/09-israeli-soldiers-sinai-shower.jpg","tag":"A moment in the Sinai","date":"1967","location":"Sinai Peninsula","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Israeli soldiers use a makeshift shower during the Sinai campaign."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/21-shelter-galilee-22.jpg","tag":"Sheltering on the northern front","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"A child seeks shelter in northern Israel, illustrating the danger faced by border communities."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/08-israeli-tanks-in-golan-88-400x267.jpg","tag":"Armour on the Golan","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Israeli armour pictured on the Golan Heights during the 1967 war; the precise day is not established."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/04-golan-tanks-104-400x267.jpg","tag":"After the fighting","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Military vehicles on the Heights. This photograph illustrates the situation after the fighting; its precise date is not verified."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/03-eshkol-in-golan-86-400x267.jpg","tag":"Levi Eshkol on the Golan","date":"1967 (exact date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Prime Minister Levi Eshkol visits the Golan. This image is contextual and does not depict the cabinet meeting of 19 June."},{"kind":"ARCHIVE FILM","image":"assets/14-khartoum.jpg","tag":"Nasser arrives in Khartoum","date":"30 August 1967","location":"Khartoum, Sudan","source":"AP Archive","caption":"President Nasser arrives for the summit. This does not depict the adoption of the Three No’s."}];
 
 
 /* GPO gallery: catalogued from the supplied sixdaywar.org photo page,
@@ -247,22 +247,17 @@ let videoReady = false;
 let animationReady = false;
 let mapReplayCount = 0;
 
-function store(){try{localStorage.setItem(STATE_KEY,JSON.stringify(state))}catch(e){}}
-function load(){
-  try{
-    // Existing players retain their chapter progress. The previous build had no lives.
-    let raw=localStorage.getItem(STATE_KEY);
-    let migrated=false;
-    if(!raw){raw=localStorage.getItem(PRIOR_STATE_KEY)||localStorage.getItem(LEGACY_KEY);migrated=!!raw;}
-    if(!raw)return;
-    const data=JSON.parse(raw);
-    if(data&&Number.isInteger(data.index)&&data.index>=0&&data.index<=STAGES.length){
-      state={index:data.index,alternatives:migrated?0:Math.min(MAX_MISTAKES,Math.max(0,Number(data.alternatives)||0)),started:!!data.started,finished:!!data.finished,gameOver:migrated?false:!!data.gameOver};
-      if(!state.finished && state.alternatives>=MAX_MISTAKES)state.gameOver=true;
-      if(migrated)store();
-    }
-  }catch(e){}
-}
+let audioContext=null,musicGain=null,musicMaster=null,musicStarted=false,musicMuted=true,musicTimers=[];
+function clearMusicTimers(){musicTimers.forEach(id=>clearTimeout(id));musicTimers=[]}
+function updateMusicButton(){const b=$('music-button'); if(!b)return; const on=musicStarted && !musicMuted; b.setAttribute('aria-pressed', String(on)); b.textContent=on?'♫ Music on':'♫ Music off';}
+function stopMusic(){clearMusicTimers(); if(musicGain){musicGain.gain.cancelScheduledValues(audioContext.currentTime); musicGain.gain.setTargetAtTime(0,audioContext.currentTime,0.15);} musicMuted=true; updateMusicButton();}
+function scheduleAmbientLoop(){ if(!audioContext||!musicGain) return; clearMusicTimers(); const notes=[146.83,174.61,196.00,220.00,196.00,174.61]; let t=audioContext.currentTime+0.05; notes.forEach((freq,i)=>{ const osc=audioContext.createOscillator(); const gain=audioContext.createGain(); osc.type=i%2?'triangle':'sine'; osc.frequency.value=freq; gain.gain.value=0.0001; osc.connect(gain).connect(musicGain); osc.start(t); gain.gain.exponentialRampToValueAtTime(0.025,t+0.4); gain.gain.exponentialRampToValueAtTime(0.0001,t+4.8); osc.stop(t+5); t+=2.3; }); musicTimers.push(setTimeout(()=>{if(!musicMuted) scheduleAmbientLoop()},12000)); }
+function initMusic(){ if(audioContext) return; const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return; audioContext=new AC(); musicMaster=audioContext.createGain(); musicMaster.gain.value=0.7; musicGain=audioContext.createGain(); musicGain.gain.value=0.0001; const lp=audioContext.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=900; musicGain.connect(lp).connect(musicMaster).connect(audioContext.destination); }
+function startMusic(force){ initMusic(); if(!audioContext||!musicGain) return; audioContext.resume?.(); if(!musicStarted){musicStarted=true; musicMuted=false; scheduleAmbientLoop();} if(force) musicMuted=false; musicGain.gain.cancelScheduledValues(audioContext.currentTime); musicGain.gain.setTargetAtTime(musicMuted?0:0.9,audioContext.currentTime,0.4); updateMusicButton(); }
+function toggleMusic(){ initMusic(); if(!audioContext) return; if(!musicStarted){musicStarted=true; musicMuted=false; scheduleAmbientLoop(); startMusic(true); return;} musicMuted=!musicMuted; if(musicMuted) stopMusic(); else startMusic(true); }
+
+function store(){}
+function load(){ state={index:0,alternatives:0,started:false,finished:false,gameOver:false}; }
 function remainingLives(){return Math.max(0,INITIAL_SPARE_LIVES-state.alternatives)}
 function renderLives(){
   const hearts=$('lives-icons');
@@ -282,13 +277,10 @@ function setView(next){
   $('welcome-view').hidden=next!=='welcome';$('game-view').hidden=next!=='decision';$('reel-view').hidden=next!=='reel';$('finish-view').hidden=next!=='finish';$('gameover-view').hidden=next!=='gameover';
   window.scrollTo({top:0,behavior:'instant'});
 }
-function start(){if(state.finished||state.gameOver){reset();return;}state.started=true;state.finished=false;store();renderDecision();}
-function reset(){state={index:0,alternatives:0,started:true,finished:false,gameOver:false};store();renderDecision();}
+function start(){reset();startMusic(true);}
+function reset(){state={index:0,alternatives:0,started:true,finished:false,gameOver:false};renderDecision();}
 function goHome(){clearTimeout(pendingAdvance);stopVideo();locked=false;$('try-again-panel').hidden=true;setView('welcome');updateWelcome()}
-function updateWelcome(){
-  $('start-button').textContent=state.started&&!state.finished&&!state.gameOver?'Resume mission →':state.finished||state.gameOver?'Start again →':'Start the mission →';
-  $('welcome-new-button').hidden=!(state.started&&!state.finished&&!state.gameOver);
-}
+function updateWelcome(){ $('start-button').innerHTML='Start Mission <span aria-hidden="true">→</span>'; }
 function requestRestart(){$('restart-dialog').showModal()}
 
 function renderProgress(){
@@ -368,6 +360,7 @@ function stopVideo(){
 }
 function showReel(s){
   clearTimeout(pendingAdvance);stopVideo();setView('reel');
+  if(s.video || (!s.animatedMap && !s.youtube)) stopMusic();
   $('reel-count').textContent=`${pad(state.index+1)} / ${STAGES.length}`;
   $('reel-date').textContent=s.date;
   $('reel-heading').textContent=s.archiveTitle;
@@ -473,6 +466,7 @@ function showReel(s){
 }
 function replayVideo(){
   clearTimeout(pendingAdvance);
+  stopMusic();
   if(animationReady && view==='reel'){
     const frame=$('animated-map');
     frame.src=STAGES[state.index].animatedMap+'?play='+(++mapReplayCount);
@@ -484,12 +478,13 @@ function replayVideo(){
 function advance(){
   if(view!=='reel')return;
   clearTimeout(pendingAdvance);stopVideo();
-  state.index++;store();
-  if(state.index>=STAGES.length)finish();else renderDecision();
+  state.index++;
+  if(state.index>=STAGES.length)finish();else {startMusic(true); renderDecision();}
 }
 function gameOver(){
   clearTimeout(pendingAdvance);stopVideo();
-  locked=true;state.gameOver=true;state.finished=false;state.started=true;store();
+  startMusic(true);
+  locked=true;state.gameOver=true;state.finished=false;state.started=true;
   $('try-again-panel').hidden=true;
   $('gameover-stage').textContent=`REACHED DECISION ${pad(state.index+1)} OF ${STAGES.length}`;
   $('gameover-mistakes').textContent=state.alternatives;
@@ -497,7 +492,8 @@ function gameOver(){
   $('gameover-restart').focus({preventScroll:true});
 }
 function finish(){
-  state.finished=true;state.started=true;state.gameOver=false;store();stopVideo();
+  state.finished=true;state.started=true;state.gameOver=false;stopVideo();
+  startMusic(true);
   $('finish-attempts').textContent=state.alternatives;setView('finish');
 }
 function openNotes(){$('notes-dialog').showModal()}
@@ -519,7 +515,7 @@ function init(){
   $('start-button').addEventListener('click',start);
   $('home-button').addEventListener('click',goHome);
   $('restart-button').addEventListener('click',requestRestart);
-  $('welcome-new-button').addEventListener('click',requestRestart);
+  $('music-button').addEventListener('click',toggleMusic);
   $('cancel-restart').addEventListener('click',()=>$('restart-dialog').close());
   $('confirm-restart').addEventListener('click',()=>{$('restart-dialog').close();reset()});
   $('retry-button').addEventListener('click',retry);
@@ -539,6 +535,6 @@ function init(){
     if(view==='decision'&&!$('try-again-panel').hidden&&e.key==='Escape'){e.preventDefault();retry()}
     if(view==='reel'&&e.key==='ArrowRight'){e.preventDefault();advance()}
   });
-  if(state.gameOver)gameOver();else if(state.finished||state.index>=STAGES.length)finish();else setView('welcome');
+  setView('welcome'); updateMusicButton();
 }
 document.addEventListener('DOMContentLoaded',init);

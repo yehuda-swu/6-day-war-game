@@ -173,3 +173,13 @@ body{background:#0c1725}
 @media(prefers-reduced-motion:reduce){.archive-desk .desk-photo{transition:none}}
 /* On the landing page, one obvious Start button beats multiple duplicate controls. */
 body:has(#welcome-view:not([hidden])) .topbar-right{display:none!important}
+
+.finish-map-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:16px}
+.finish-map-grid figure,.finish-photo-strip figure{background:rgba(8,21,33,.74);border:1px solid rgba(233,188,120,.18);border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.22)}
+.finish-map-grid img,.finish-photo-strip img{width:100%;display:block;background:#091422}
+.finish-map-grid figcaption,.finish-photo-strip figcaption{padding:14px 16px;color:#f3eee5;font-size:1rem;line-height:1.35}
+.finish-map-grid figcaption span,.finish-photo-strip figcaption span{display:block;color:#b6c7d5;font-size:.88rem;margin-top:4px}
+.finish-photo-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:16px}
+.finish-gallery,.finish-map-compare{margin-top:30px}
+#music-button[aria-pressed="true"]{border-color:#efbe74;color:#efbe74}
+@media (max-width: 860px){.finish-map-grid,.finish-photo-strip{grid-template-columns:1fr}}

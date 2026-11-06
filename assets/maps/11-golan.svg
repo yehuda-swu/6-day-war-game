@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Animated schematic map of the Battle for the Golan, showing Israeli troop movements pushing Syrian forces back towards Damascus">
+<style>
+svg{background:#071321;font-family:Arial,Helvetica,sans-serif} text{paint-order:stroke;stroke:#071321;stroke-width:.8px;stroke-linejoin:round}
+@keyframes fade{to{opacity:1}} @keyframes trace{to{stroke-dashoffset:0}} @keyframes progress{to{transform:scaleX(1)}} @keyframes pulse{50%{transform:scale(1.08)}}
+.fade{opacity:0;animation:fade .8s ease forwards}.trace{stroke-dasharray:1100;stroke-dashoffset:1100;animation:trace 3.8s ease forwards}.timeline{transform:scaleX(0);transform-origin:left;animation:progress 14s linear forwards}.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.fade,.trace,.timeline,.pulse{animation:none!important;opacity:1!important;stroke-dashoffset:0!important;transform:none!important}}
+</style>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10283f"/><stop offset="1" stop-color="#071321"/></linearGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#9ec3d7" stroke-opacity=".08"/></pattern>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#efbe74"/></marker>
+</defs>
+<rect width="1200" height="720" fill="url(#bg)"/>
+<rect width="1200" height="720" fill="url(#grid)"/>
+<rect x="60" y="50" width="1080" height="620" rx="20" fill="none" stroke="#6f8ea5" stroke-opacity=".3"/>
+<text x="100" y="100" fill="#efbe74" font-size="17" font-weight="700" letter-spacing="2">THE HISTORICAL ATLAS</text>
+<text x="100" y="128" fill="#d6e2ea" font-size="30" font-weight="700">The battle for the Golan</text>
+<text x="1100" y="100" text-anchor="end" fill="#d6e2ea" font-size="13" letter-spacing="2">11 / 14</text>
+<text x="1100" y="122" text-anchor="end" fill="#94b4c8" font-size="12">SCHEMATIC • NOT TO SCALE</text>
+
+<path d="M210 470 C250 290,330 220,420 160 C465 128,505 118,550 120 C585 122,600 146,618 172 C655 225,672 284,688 320 C708 367,735 407,790 430 C850 455,920 450,1030 420" fill="#213748" opacity=".95"/>
+<path d="M205 490 C245 310,325 238,416 176 C462 144,505 134,546 136 C579 138,591 160,608 186 C645 238,660 292,677 330 C696 373,721 414,772 442 C831 474,905 471,1030 444 L1030 565 L210 565 Z" fill="#4f6878" opacity=".92"/>
+<path d="M245 490 C320 505,430 520,580 535 C745 552,890 555,1030 545" fill="none" stroke="#9ac2d7" stroke-opacity=".35" stroke-width="2" stroke-dasharray="8 8"/>
+<text x="335" y="590" fill="#b8cfdb" font-size="18" font-weight="700" letter-spacing="1.5">ISRAEL / GALILEE</text>
+<text x="765" y="108" fill="#b8cfdb" font-size="18" font-weight="700" letter-spacing="1.5">GOLAN HEIGHTS</text>
+<text x="980" y="150" fill="#d4dde4" font-size="16" font-weight="700" letter-spacing="2">TOWARDS DAMASCUS</text>
+<text x="980" y="172" fill="#9eb7c7" font-size="12">Syrian forces withdrew eastwards</text>
+
+<g class="fade" style="animation-delay:1s"><circle cx="960" cy="220" r="7" fill="#efbe74" class="pulse"/><text x="980" y="225" fill="#f0d7a2" font-size="14" font-weight="700">DAMASCUS</text></g>
+<g class="fade" style="animation-delay:1.6s"><circle cx="760" cy="255" r="6" fill="#efbe74"/><text x="780" y="260" fill="#f0d7a2" font-size="13" font-weight="700">QUNEITRA</text></g>
+<g class="fade" style="animation-delay:1.9s"><circle cx="415" cy="445" r="6" fill="#efbe74"/><text x="435" y="449" fill="#f0d7a2" font-size="13" font-weight="700">SEA OF GALILEE</text></g>
+<g class="fade" style="animation-delay:2.2s"><circle cx="590" cy="265" r="6" fill="#efbe74"/><text x="610" y="258" fill="#f0d7a2" font-size="13" font-weight="700">TEL FAKHER</text></g>
+<g class="fade" style="animation-delay:2.5s"><circle cx="525" cy="338" r="6" fill="#efbe74"/><text x="545" y="332" fill="#f0d7a2" font-size="13" font-weight="700">TEL AZAZIAT</text></g>
+
+<!-- movement arrows -->
+<path d="M330 470 C420 430,470 370,525 325 C560 295,595 284,640 270" stroke="#efbe74" stroke-width="14" opacity=".16" fill="none" stroke-linecap="round"/>
+<path d="M330 470 C420 430,470 370,525 325 C560 295,595 284,640 270" class="trace" style="animation-delay:2.4s" stroke="#efbe74" stroke-width="5" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M395 490 C515 468,585 438,666 380 C705 350,735 312,775 270" stroke="#efbe74" stroke-width="14" opacity=".16" fill="none" stroke-linecap="round"/>
+<path d="M395 490 C515 468,585 438,666 380 C705 350,735 312,775 270" class="trace" style="animation-delay:5.1s" stroke="#efbe74" stroke-width="5" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M745 252 C810 238,865 230,940 224" stroke="#ef7d7d" stroke-width="5" stroke-dasharray="14 10" fill="none" class="fade" style="animation-delay:8s" marker-end="url(#arrow)"/>
+
+<!-- unit cards -->
+<g class="fade" style="animation-delay:2.3s"><rect x="275" y="445" width="88" height="66" rx="10" fill="#081829" stroke="#86d6f0"/><text x="319" y="472" text-anchor="middle" fill="#86d6f0" font-size="24">▣</text><rect x="304" y="419" width="30" height="19" fill="#fff"/><rect x="304" y="422" width="30" height="2.8" fill="#1e68b9"/><rect x="304" y="433.5" width="30" height="2.8" fill="#1e68b9"/><path d="M319 426.8L323 433.3H315ZM319 433.6L315 427.1H323Z" fill="none" stroke="#1e68b9" stroke-width="1.05"/><text x="319" y="501" text-anchor="middle" fill="#f6e4c8" font-size="10" font-weight="700">IDF ARMOUR</text></g>
+<g class="fade" style="animation-delay:5s"><rect x="360" y="498" width="88" height="66" rx="10" fill="#081829" stroke="#86d6f0"/><text x="404" y="525" text-anchor="middle" fill="#86d6f0" font-size="24">✦</text><rect x="389" y="472" width="30" height="19" fill="#fff"/><rect x="389" y="475" width="30" height="2.8" fill="#1e68b9"/><rect x="389" y="486.5" width="30" height="2.8" fill="#1e68b9"/><path d="M404 479.8L408 486.3H400ZM404 486.6L400 480.1H408Z" fill="none" stroke="#1e68b9" stroke-width="1.05"/><text x="404" y="554" text-anchor="middle" fill="#f6e4c8" font-size="10" font-weight="700">IDF INFANTRY</text></g>
+<g class="fade" style="animation-delay:1.2s"><rect x="650" y="215" width="88" height="66" rx="10" fill="#081829" stroke="#efbe74"/><text x="694" y="241" text-anchor="middle" fill="#efbe74" font-size="24">✹</text><rect x="679" y="189" width="30" height="19" fill="#fff"/><rect x="679" y="189" width="30" height="6.3" fill="#d52d3b"/><rect x="679" y="201.7" width="30" height="6.3" fill="#111"/><path d="M686 198c2 3 4 3 6 0 2 3 4 3 6 0" fill="none" stroke="#11834b" stroke-width="1.5"/><text x="694" y="271" text-anchor="middle" fill="#f6e4c8" font-size="10" font-weight="700">SYRIA</text></g>
+
+<g class="fade" style="animation-delay:8.2s"><rect x="630" y="565" width="420" height="60" rx="12" fill="#081523" stroke="#efbe74" stroke-opacity=".7"/><text x="650" y="592" fill="#efbe74" font-size="15" font-weight="700">Israeli troops pushed Syrian forces back on 9 and 10 June</text><text x="650" y="612" fill="#b7c8d6" font-size="12">The Syrian retreat ran eastwards, away from the high ground overlooking the Galilee.</text></g>
+
+<rect x="120" y="650" width="960" height="4" rx="2" fill="#8ba8ba" fill-opacity=".35"/>
+<rect x="120" y="650" width="960" height="4" rx="2" fill="#efbe74" class="timeline"/>
+</svg>
