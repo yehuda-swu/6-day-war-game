@@ -8,6 +8,7 @@
   <title>1967 | Six Days of Decisions</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cinematic.css">
+  <link rel="stylesheet" href="refresh.css">
   <script src="game.js" defer></script>
 </head>
 <body>
@@ -19,33 +20,33 @@
         <div class="brand-rule"></div>
         <div class="logo-box explore-box" id="explore-logo-box"><img id="explore-logo" alt="Explore logo" hidden><span class="fallback-explore">EXPLORE<span class="brand-dot">.</span></span></div>
       </div>
-      <div class="topbar-right"><span class="topbar-caption">HISTORY DECISION SIMULATOR</span><button class="small-button nav-button" type="button" id="home-button" aria-label="Return to home screen">⌂ Home</button><button class="small-button nav-button restart-button" type="button" id="restart-button">↻ Restart</button><button class="small-button" type="button" id="notes-button" aria-haspopup="dialog">Educator notes <span aria-hidden="true">↗</span></button></div>
+      <div class="topbar-right"><span class="topbar-caption">THE 1967 FILES</span><button class="small-button nav-button" type="button" id="home-button" aria-label="Return to home screen">⌂ Home</button><button class="small-button nav-button restart-button" type="button" id="restart-button">↻ Restart</button><button class="small-button" type="button" id="notes-button" aria-haspopup="dialog">Educator notes <span aria-hidden="true">↗</span></button></div>
     </header>
 
     <main id="game-view" class="decision-view" hidden aria-labelledby="decision-title">
       <div class="decision-photo" aria-hidden="true"><img id="decision-photo" alt="" hidden></div>
       <div class="decision-light" aria-hidden="true"></div>
       <div class="decision-inner">
-        <div class="decision-utility"><div class="utility-left"><span class="operation-dot"></span> THE 1967 ARCHIVE <span class="utility-divider">/</span> OPERATIONS ROOM</div><div class="utility-right"><div id="lives-counter" class="lives-counter" role="status" aria-live="polite" aria-label="2 lives remaining. A third incorrect decision ends the game."><span class="lives-label">LIVES</span><span id="lives-icons" class="lives-icons" aria-hidden="true"><span class="life-icon">♥</span><span class="life-icon">♥</span></span><span id="lives-text" class="lives-text">2 lives remaining</span></div><div class="decision-counter" id="stage-indicator">DECISION 01 / 14</div></div></div>
+        <div class="decision-utility"><div class="utility-left"><span class="operation-dot"></span> YOUR MISSION <span class="utility-divider">/</span> 1967</div><div class="utility-right"><div id="lives-counter" class="lives-counter" role="status" aria-live="polite" aria-label="2 lives remaining. A third incorrect decision ends the game."><span class="lives-label">LIVES</span><span id="lives-icons" class="lives-icons" aria-hidden="true"><span class="life-icon">♥</span><span class="life-icon">♥</span></span><span id="lives-text" class="lives-text">2 lives remaining</span></div><div class="decision-counter" id="stage-indicator">DECISION 01 / 14</div></div></div>
         <div class="micro-progress" id="micro-progress" aria-label="Game progress"></div>
         <section class="scenario scenario-with-archive">
           <div class="scenario-main">
             <div class="scenario-meta"><span id="scenario-chapter">CHAPTER ONE / THE CRISIS</span><span id="scenario-date">16 MAY 1967</span></div>
             <h1 id="decision-title">The peacekeepers withdraw</h1>
             <p class="scenario-copy" id="scenario-copy"></p>
-            <div class="scenario-intel"><span class="intel-icon">i</span><span id="scenario-intel"></span></div>
+            <details class="scenario-intel"><summary>Why it mattered <span aria-hidden="true">＋</span></summary><p id="scenario-intel"></p></details>
           </div>
           <figure class="decision-archive-card" id="decision-archive-card" aria-labelledby="archive-tag" aria-describedby="archive-caption">
             <div class="archive-card-photo">
               <img id="archive-photo" alt="" loading="eager" decoding="async" hidden>
               <div id="archive-missing" class="archive-photo-placeholder" hidden aria-label="Historic photograph not yet available"><span class="archive-placeholder-icon" aria-hidden="true">▣</span><span>ARCHIVE IMAGE PENDING</span></div>
-              <span class="archive-photo-kind" id="archive-kind">HISTORICAL PHOTOGRAPH</span>
+              <span class="archive-photo-kind" id="archive-kind">ARCHIVE</span>
             </div>
             <figcaption class="archive-card-copy">
-              <div class="archive-card-kicker">FROM THE ARCHIVE <span id="archive-sequence">01 / 14</span></div>
+              <div class="archive-card-kicker">THE ARCHIVE <span id="archive-sequence">01 / 14</span></div>
               <h2 id="archive-tag">UNEF withdrawal</h2>
-              <div class="archive-card-meta"><div><span>DATE</span><strong id="archive-date">19 May 1967</strong></div><div><span>LOCATION</span><strong id="archive-location">Gaza City</strong></div></div>
-              <p id="archive-caption"></p>
+              <div class="archive-card-meta"><div><span>DATE</span><strong id="archive-date">19 May 1967</strong></div><div><span>PLACE</span><strong id="archive-location">Gaza City</strong></div></div>
+              <p id="archive-caption" class="archive-detail"></p>
               <div class="archive-card-source"><span>SOURCE</span><span id="archive-source">UN Photo</span></div>
             </figcaption>
           </figure>
@@ -53,10 +54,10 @@
         <div class="make-decision"><span class="make-decision-rule"></span><span>YOUR DECISION</span><span class="make-decision-rule"></span></div>
         <h2 class="decision-question" id="question"></h2>
         <section class="decision-options" id="choices" aria-label="Select one of two decisions"></section>
-        <div class="decision-bottom"><span>SELECT AN OPTION TO REVEAL WHAT REALLY HAPPENED <span class="decision-bottom-dot">✦</span> HISTORICAL RECONSTRUCTION</span><div class="archive-actions"><button type="button" class="gpo-open" id="gpo-open" hidden>Explore GPO archive photos ↗</button><a href="#" id="stage-source" target="_blank" rel="noopener noreferrer">VIEW HISTORICAL SOURCE ↗</a></div></div>
+        <div class="decision-bottom"><span>Make your choice to see what happened.</span><div class="archive-actions"><button type="button" class="gpo-open" id="gpo-open" hidden>More photos ↗</button><a href="#" id="stage-source" target="_blank" rel="noopener noreferrer">Historical source ↗</a></div></div>
       </div>
       <section id="try-again-panel" class="retry-mask" hidden role="dialog" aria-labelledby="retry-heading" aria-modal="true">
-        <div class="retry-card"><div class="retry-icon">♡</div><span class="retry-kicker" id="retry-lives">LIFE LOST</span><h2 id="retry-heading">One life remaining.</h2><p id="retry-copy"></p><button type="button" id="retry-button" class="reel-next">Reconsider your decision <span aria-hidden="true">↻</span></button></div>
+        <div class="retry-card"><div class="retry-icon">♡</div><span class="retry-kicker" id="retry-lives">LIFE LOST</span><h2 id="retry-heading">One life remaining.</h2><p id="retry-copy"></p><button type="button" id="retry-button" class="reel-next">Try another choice <span aria-hidden="true">↻</span></button></div>
       </section>
     </main>
 
@@ -76,49 +77,51 @@
         <div class="archive-reveal-card"><img id="archive-reveal-image" src="" alt="Wreckage of Egyptian aircraft after Operation Focus"><p id="archive-reveal-caption"></p><small id="archive-reveal-credit"></small></div>
       </div>
       <div class="reel-body">
-        <div class="reel-top"><span><span class="reel-live"></span> THE HISTORICAL OUTCOME</span><span id="reel-count">01 / 14</span></div>
-        <div class="reel-content"><span class="reel-episode" id="reel-date">16 MAY 1967</span><div id="media-type" class="media-type">VISUAL HISTORY CARD</div><h1 id="reel-heading">What happened next</h1><p id="reel-description"></p><div class="reel-controls"><button type="button" class="reel-next" id="reel-next">Continue to the next decision <span aria-hidden="true">→</span></button><button type="button" class="reel-secondary" id="reel-replay" hidden>Replay footage ↺</button></div><a id="external-film-link" class="external-film-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open the original film on YouTube ↗</a><p id="reel-credit" class="reel-credit" hidden></p><p id="reel-photo-caption" class="reel-photo-caption" hidden></p><p id="reel-help" class="reel-help">Review the historical outcome, then continue to the next decision.</p></div>
+        <div class="reel-top"><span><span class="reel-live"></span> WHAT HAPPENED</span><span id="reel-count">01 / 14</span></div>
+        <div class="reel-content"><span class="reel-episode" id="reel-date">16 MAY 1967</span><div id="media-type" class="media-type" aria-hidden="true">VISUAL HISTORY CARD</div><h1 id="reel-heading">What happened next</h1><p id="reel-description"></p><div class="reel-controls"><button type="button" class="reel-next" id="reel-next">Next decision <span aria-hidden="true">→</span></button><button type="button" class="reel-secondary" id="reel-replay" hidden>Replay footage ↺</button></div><a id="external-film-link" class="external-film-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open the original film on YouTube ↗</a><p id="reel-credit" class="reel-credit" hidden></p><p id="reel-photo-caption" class="reel-photo-caption" hidden></p><p id="reel-help" class="reel-help">Watch what happened, then move on.</p></div>
         <div class="reel-foot"><span>SWU UK <span class="dot-sep">✦</span> EXPLORE</span><span id="reel-foot-step">NEXT: DECISION 02</span></div>
       </div>
     </section>
     <section id="welcome-view" class="welcome-view" aria-labelledby="welcome-title">
-      <div class="welcome-eyebrow"><span class="welcome-dot"></span> AN INTERACTIVE HISTORY EXPERIENCE <span class="welcome-year">1967</span></div>
+      <div class="welcome-eyebrow"><span class="welcome-dot"></span> CLASSIFIED HISTORY / JUNE 1967 <span class="welcome-year">FILE 067</span></div>
       <div class="welcome-inner">
-        <div class="welcome-copy"><div class="welcome-edition">THE MIDDLE EAST <span>JUNE 1967</span></div><h1 id="welcome-title">Six Days of<br><em>Decisions.</em></h1><p class="welcome-deck">The Middle East, 1967. Confront the decisions that shaped six days of war and decades of history.</p><p class="welcome-description">Study each intelligence briefing, choose between two options, and watch the historical outcome unfold. Can you follow the decisions that defined June 1967?</p><div class="welcome-actions"><button class="primary-action" id="start-button" type="button">Enter the decision room <span aria-hidden="true">→</span></button><button class="secondary-action" id="welcome-notes-button" type="button">For educators ↗</button><button class="secondary-action" id="welcome-new-button" type="button" hidden>Begin again ↻</button></div><div class="welcome-facts"><span><strong>14</strong> decisions</span><span><strong>3</strong> chapters</span><span><strong>2</strong> spare lives</span></div></div>
-        <div class="welcome-art archive-desk" aria-hidden="true">
+        <div class="welcome-copy">
+          <div class="welcome-edition">1967 <span>THE SIX DAY WAR</span></div>
+          <h1 id="welcome-title">Six Days<br>of <em>Decisions.</em></h1>
+          <p class="welcome-deck">You are in the war room.<br>History is in your hands.</p>
+          <p class="welcome-description">14 decisions. Two choices each time. Can you make the calls Israel's leaders made in 1967?</p>
+          <div class="welcome-actions"><button class="primary-action" id="start-button" type="button">Start the mission <span aria-hidden="true">→</span></button><button class="secondary-action" id="welcome-notes-button" type="button">For educators</button><button class="secondary-action" id="welcome-new-button" type="button" hidden>Start again ↻</button></div>
+          <p class="welcome-quiet"><span class="quiet-dot"></span> 14 decisions <span class="quiet-divider">•</span> 2 spare lives <span class="quiet-divider">•</span> Based on real events</p>
+        </div>
+        <div class="welcome-art archive-desk" aria-label="A classified 1967 file with three historical photographs resting on a dark wooden desk" role="img">
           <div class="desk-grain"></div>
           <div class="folder-shadow"></div>
-          <div class="classified-folder">
-            <div class="folder-tab">THE 1967 FILES <span>ARCHIVE 067</span></div>
-            <div class="folder-face"><div class="folder-code">EYES ONLY <span>JUNE 1967</span></div><div class="folder-rule"></div><div class="folder-mark">TOP<br>SECRET</div><div class="folder-sub">DECISION BRIEFINGS<br>JERUSALEM · SINAI · GOLAN</div><span class="folder-seal">1967</span></div>
-          </div>
-          <div class="desk-photo desk-photo-nasser"><img src="assets/gpo/13-nasser-pre-war.jpg" alt=""><span>THE CRISIS · 1967</span></div>
-          <div class="desk-photo desk-photo-golan"><img src="assets/gpo/05-golan-tanks-1-400x267.jpg" alt=""><span>GOLAN HEIGHTS · 1967</span></div>
-          <div class="desk-photo desk-photo-jerusalem"><img src="assets/gpo/01-dayan-and-rabin-in-jerusalem.jpg" alt=""><span>JERUSALEM · 1967</span></div>
-          <div class="desk-photo desk-photo-shelter"><img src="assets/gpo/19-shelter-galilee-20-400x267.jpg" alt=""><span>NORTHERN FRONT · 1967</span></div>
-          <div class="desk-photo desk-photo-paratroopers"><img src="assets/gpo/17-paratroopers-western-wall.jpg" alt=""><span>WESTERN WALL · 7 JUNE 1967</span></div>
-          <div class="desk-stamp">TOP SECRET</div>
-          <div class="desk-credit">HISTORICAL PHOTOGRAPHS · GPO ARCHIVE<br>WESTERN WALL: DAVID RUBINGER / GPO</div>
+          <div class="classified-folder"><div class="folder-tab">FILE 067 <span>JUNE 1967</span></div><div class="folder-face"><div class="folder-code">STATE ARCHIVE <span>1967</span></div><div class="folder-rule"></div><div class="folder-mark">TOP SECRET</div><div class="folder-sub">JERUSALEM / SINAI / GOLAN</div></div></div>
+          <div class="desk-photo desk-photo-nasser"><img src="assets/gpo/13-nasser-pre-war.jpg" alt="" loading="eager"><span>EGYPT · 1967</span></div>
+          <div class="desk-photo desk-photo-golan"><img src="assets/gpo/05-golan-tanks-1-400x267.jpg" alt="" loading="eager"><span>GOLAN HEIGHTS · 1967</span></div>
+          <div class="desk-photo desk-photo-paratroopers"><img src="assets/gpo/17-paratroopers-western-wall.jpg" alt="" loading="eager"><span>JERUSALEM · 7 JUNE</span></div>
+          <div class="desk-paperclip" aria-hidden="true"></div>
+          <div class="desk-credit">Historical photographs: GPO collection<br>Western Wall: David Rubinger / GPO</div>
         </div>
       </div>
-      <div class="welcome-bottom"><span>STANDWITHUS UK <span class="divider-dot">•</span> EXPLORE</span><span>EDUCATIONAL RECONSTRUCTION BASED ON HISTORICAL EVENTS</span></div>
+      <div class="welcome-bottom"><span>STANDWITHUS UK <span class="divider-dot">•</span> EXPLORE</span><span>LEARN WHAT HAPPENED. QUESTION WHY.</span></div>
     </section>
 
     <section id="gameover-view" class="gameover-view" hidden aria-labelledby="gameover-title">
       <div class="gameover-inner">
-        <span class="gameover-kicker">MISSION INTERRUPTED <span>1967 DECISION SIMULATOR</span></span>
+        <span class="gameover-kicker">MISSION OVER <span>1967</span></span>
         <div class="gameover-symbol" aria-hidden="true">✕</div>
         <h1 id="gameover-title">Game <em>Over.</em></h1>
-        <p class="gameover-lede">Three incorrect decisions have ended your mission. History demands careful judgement.</p>
+        <p class="gameover-lede">Three mistakes. Mission over. Ready for another try?</p>
         <div class="gameover-score"><div><strong id="gameover-mistakes">3</strong><span>MISTAKES MADE</span></div><div><strong id="gameover-stage">REACHED DECISION 01 OF 14</strong><span>YOUR PROGRESS</span></div><div><strong>0</strong><span>LIVES REMAINING</span></div></div>
-        <p class="gameover-tip">Review the evidence, reconsider the alternatives, and try to reach the end of the war with fewer mistakes.</p>
+        <p class="gameover-tip">Look at the evidence, rethink your choices and go again.</p>
         <div class="gameover-actions"><button id="gameover-restart" class="primary-action" type="button">Restart the mission ↻</button><button id="gameover-home" class="secondary-action" type="button">Return home</button></div>
       </div>
     </section>
 
     <section class="finish-view" id="finish-view" hidden aria-labelledby="finish-title">
       <span class="finish-kicker">MISSION COMPLETED <span>JUNE TO NOVEMBER 1967</span></span>
-      <div class="finish-mark">✶</div><h1 id="finish-title">You've followed the <em>historical path.</em></h1><p class="finish-sub">You have traced Israel's decisions through the crisis, the Six Day War and the opening debates about territory and peace.</p>
+      <div class="finish-mark">✶</div><h1 id="finish-title">You made it <em>through 1967.</em></h1><p class="finish-sub">You followed the decisions of 1967 and discovered how they changed the region.</p>
       <div class="finish-stats"><div><strong>14<span>/14</span></strong><small>DECISIONS COMPLETED</small></div><div><strong id="finish-attempts">0</strong><small>ALTERNATIVE CHOICES EXPLORED</small></div><div><strong>1967</strong><small>YEAR OF THE EVENTS</small></div></div>
       <section class="finish-thinking"><p class="finish-section-title">WHAT HAPPENED NEXT?</p><p>Israel took control of the Sinai Peninsula, Gaza Strip, West Bank including East Jerusalem, and Golan Heights. The war also displaced hundreds of thousands of people and left difficult questions about security, territory, Palestinian rights and peace.</p><p>In November 1967, UN Security Council Resolution 242 linked withdrawal from territories occupied in the conflict with recognition, peace and secure boundaries. Egypt and Israel later signed a peace treaty in 1979, and Israel completed its withdrawal from Sinai in 1982.</p></section>
       <section class="finish-questions"><h2>Three questions to debate</h2><ol><li>What made Israel's leaders believe that war might be unavoidable?</li><li>How did the capture of Jerusalem and the Golan Heights change Israeli security and politics?</li><li>What were the opportunities and challenges created by the territories occupied after the war?</li></ol></section>

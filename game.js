@@ -23,142 +23,142 @@ const SOURCES = [
 const STAGES = [
   {
     date:'16 MAY 1967',day:'BEFORE THE WAR',phase:0,tag:'01 / A REGION ON EDGE',title:'The peacekeepers withdraw',
-    brief:'Egypt asks the United Nations to withdraw its peacekeeping force from positions in Sinai and Gaza. Egyptian troops are moving into the region. Israeli leaders fear that the security arrangements established after the 1956 war are breaking down.',
-    intel:'The UN force had been stationed on Egyptian territory with Egypt’s consent. Its removal raised the risks, but war had not yet begun.',
-    question:'As the Israeli leadership, how do you react to the growing threat?',
-    options:['Raise military readiness while seeking urgent diplomatic clarification.','Rely on diplomatic pressure alone and postpone military preparations.'],correct:0,
-    success:'Israel raised its readiness and continued consultations with allies. The following weeks became known in Israel as the period of waiting.',
-    alternative:'Ignoring the mobilisation would leave Israel exposed. Historically, Israeli leaders raised the alert while continuing diplomatic efforts.',
+    brief:'Egypt wants UN peacekeepers out of Sinai and Gaza. Egyptian troops are moving in. Israeli leaders are alarmed.',
+    intel:'The UN force was stationed on Egyptian territory with Egypt’s consent. Its departure made the crisis more dangerous.',
+    question:'What would you do first?',
+    options:['Prepare the military while pushing for answers.','Trust diplomacy and delay military preparations.'],correct:0,
+    success:'Israel raised military readiness while trying to resolve the crisis through diplomacy. The country entered a tense period of waiting.',
+    alternative:'The historical government prepared for danger while still pursuing diplomacy.',
     focus:['israel','sinai'],point:[369,250],map:'SINAI AND THE BORDER',archiveTitle:'The period of waiting',archiveCaption:'UN peacekeepers withdrew as tensions along Israel’s borders increased.',image:'assets/01-peacekeepers.jpg',video:null,animatedMap:'assets/maps/01-un-withdrawal.svg',source:0
   },
   {
     date:'22 TO 23 MAY 1967',day:'BEFORE THE WAR',phase:0,tag:'02 / THE BLOCKADE',title:'The Straits of Tiran close',
-    brief:'Egypt announces that the Straits of Tiran will be closed to Israeli shipping. These waters connect Israel’s port of Eilat to the Red Sea. Israel regards the blockade as a serious threat to its security and freedom of navigation.',
-    intel:'The United States and other countries explored diplomatic proposals to reopen the waterway. These did not remove the crisis before the war.',
-    question:'What do you do while the waterway remains blocked?',
-    options:['Rely on international guarantees without further military preparation.','Seek an international solution while preparing for the possibility of fighting.'],correct:1,
-    success:'Israel pursued diplomacy and prepared militarily. The failure to reopen the Straits helped persuade Israeli leaders that the crisis was deepening.',
-    alternative:'There was no diplomatic breakthrough by early June. The historical Israeli response combined international appeals with military preparations.',
+    brief:'President Nasser closes the Straits of Tiran to Israeli shipping. Eilat’s route to the Red Sea is cut off. Israel sees this as a major threat.',
+    intel:'Other countries considered ways to reopen the route, but no solution emerged before the war.',
+    question:'How do you respond to the blockade?',
+    options:['Wait for international guarantees before preparing further.','Push for diplomacy, but prepare for possible fighting.'],correct:1,
+    success:'Israel tried diplomacy and prepared its forces. The blockade remained in place as the crisis deepened.',
+    alternative:'Israel combined diplomatic efforts with military preparations because the blockade remained unresolved.',
     focus:['sinai','israel'],point:[399,420],map:'STRAITS OF TIRAN',archiveTitle:'The maritime blockade',archiveCaption:'Eilat’s access to the Red Sea became a central question in the crisis.',image:'assets/02-tiran.jpg',video:null,animatedMap:'assets/maps/02-straits-tiran.svg',source:1
   },
   {
     date:'30 MAY 1967',day:'BEFORE THE WAR',phase:0,tag:'03 / A NEW ALLIANCE',title:'Jordan joins the crisis',
-    brief:'Jordan signs a mutual defence agreement with Egypt. Egypt, Syria and Jordan now form the main fronts of Israel’s security crisis. Threatening public statements add to fear among Israelis, while families and reservists prepare for possible war.',
-    intel:'Israel faced the possibility of fighting across several fronts. Mobilising reserves protected the country but was costly and disrupted daily life.',
-    question:'How does Israel prepare for the possibility of several fronts?',
-    options:['Call up reservists and prepare the home front while maintaining diplomatic contact.','Maintain normal readiness while seeking assurances from Egypt and Jordan.'],correct:0,
-    success:'Israel mobilised large numbers of reservists. Public anxiety was intense, especially amid fears that the conflict could threaten the state’s survival.',
-    alternative:'The crisis was not over. Israeli leaders continued the mobilisation because a regional war was a genuine possibility.',
+    brief:'Jordan signs a defence pact with Egypt. Israel now faces the possibility of war with Egypt, Jordan and Syria. Reservists and families prepare for the worst.',
+    intel:'Mobilising reservists was expensive and disruptive, but it strengthened Israel’s defences.',
+    question:'What is your next move?',
+    options:['Call up reservists and prepare civilians.','Keep normal readiness and seek new assurances.'],correct:0,
+    success:'Israel mobilised its reservists as fear spread through the country.',
+    alternative:'The historical response included mobilisation because a wider war was possible.',
     focus:['israel','westbank','golan'],point:[427,277],map:'THREE FRONTS',archiveTitle:'Israel prepares',archiveCaption:'Reservists were mobilised as tensions increased across the region.',image:'assets/03-mobilisation.jpg',video:null,animatedMap:'assets/maps/03-mobilisation.svg',source:1
   },
   {
     date:'4 JUNE 1967',day:'EVE OF WAR',phase:0,tag:'04 / THE CABINET VOTE',title:'The decision to act',
-    brief:'After weeks of mounting tensions and unsuccessful diplomacy, Israeli ministers meet to determine whether to begin military action. Some worry about international support and the dangers of striking first. Others believe waiting increases the risk.',
-    intel:'The cabinet voted on 4 June to take military action. The timing and necessity of the first strike remain subjects of historical discussion.',
-    question:'Which course did Israel’s government choose in the historical record?',
-    options:['Give diplomacy more time, despite the risk of further escalation.','Authorise military action, beginning with an air operation against Egypt.'],correct:1,
-    success:'The government authorised action. Israeli aircraft were ordered to strike Egyptian airfields the following morning.',
-    alternative:'Waiting was a real question in contemporary debate, but it was not the cabinet’s final decision on 4 June 1967.',
+    brief:'Weeks of tension have passed. Diplomacy has failed to end the crisis. On 4 June, Israeli ministers must decide whether to strike first or wait.',
+    intel:'Striking first carried major risks. So did waiting. Historians continue to debate the options.',
+    question:'What did the cabinet decide?',
+    options:['Wait longer for a diplomatic breakthrough.','Approve an air strike against Egyptian bases.'],correct:1,
+    success:'The cabinet approved military action. Israeli jets were set to attack Egyptian airfields on 5 June.',
+    alternative:'Waiting was debated, but the cabinet authorised military action on 4 June.',
     focus:['israel','sinai'],point:[370,207],map:'THE DECISION ROOM',archiveTitle:'The cabinet debates',archiveCaption:'Prime Minister Levi Eshkol and ministers faced the most consequential decision of the crisis.',image:'assets/04-cabinet.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:2
   },
   {
     date:'5 JUNE 1967',day:'DAY ONE',phase:1,tag:'05 / OPERATION FOCUS',title:'The opening air strikes',
-    brief:'Israel launches the war with a major air operation against Egyptian airfields. The surprise attacks destroy much of Egypt’s air force on the ground, allowing Israeli forces to operate with a major advantage in the air.',
-    intel:'The operation is commonly called Operation Focus. It was crucial to Israel’s rapid military success, although fighting continued on several fronts.',
-    question:'What was the opening military priority on 5 June?',
-    options:['Attack Egyptian airfields to reduce the threat from the air.','Open with a ground offensive in Sinai before trying to neutralise Egyptian aircraft.'],correct:0,
-    success:'Israeli pilots struck Egyptian air bases. The loss of aircraft and runways severely weakened Egypt’s ability to defend its forces in Sinai.',
-    alternative:'The historical operation focused on Egyptian airfields, not symbolic flights over cities.',
+    brief:'At dawn on 5 June, Israel launches Operation Focus. Its aircraft attack Egyptian airfields, aiming to prevent Egypt from using its air force.',
+    intel:'Air power became a major advantage, but ground battles were still to come.',
+    question:'Where do you strike first?',
+    options:['Target the Egyptian airfields.','Begin the ground campaign before the air strikes.'],correct:0,
+    success:'Israeli aircraft hit Egyptian bases and destroyed much of the Egyptian air force on the ground.',
+    alternative:'Operation Focus opened with attacks on Egyptian airfields, giving Israel a major air advantage.',
     focus:['sinai','israel'],point:[342,306],map:'THE SOUTHERN FRONT',archiveTitle:'Operation Focus',archiveCaption:'The opening air campaign dramatically changed the balance of the war.',image:'assets/05-airfields.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',archivePhoto:'assets/05-airfields-wreckage.jpg',archivePhotoCredit:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',archivePhotoCaption:'Wreckage of the Egyptian Air Force after the first day of the war. Historical photograph.',source:1
   },
   {
-    date:'5 JUNE 1967',day:'DAY ONE',phase:1,tag:'06 / THE EASTERN FRONT',title:'Jordan opens fire',
-    brief:'Israel initially tells Jordan that it will not attack if Jordan stays outside the fighting. Jordanian forces nevertheless begin shelling western Jerusalem and other Israeli positions. A second major front opens.',
-    intel:'King Hussein had signed a defence pact with Egypt. Reports of Egyptian success during the first hours of the war also influenced Jordanian decisions.',
-    question:'How did Israel respond after Jordan entered the fighting?',
-    options:['Defend existing positions but avoid a wider advance against Jordanian forces.','Defend its positions and begin operations against Jordanian forces.'],correct:1,
-    success:'Israeli forces counterattacked. Fighting spread across Jerusalem and the West Bank, then controlled by Jordan.',
-    alternative:'Israeli forces did not withdraw from the defence of Jerusalem. They responded militarily after Jordan began shelling.',
-    focus:['westbank','israel'],point:[427,277],map:'JERUSALEM FRONT',archiveTitle:'Jerusalem under fire',archiveCaption:'Jordanian artillery fire was followed by intense fighting around Jerusalem.',image:'assets/06-shelling.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:1
+    date:'5 JUNE 1967',day:'DAY ONE',phase:1,tag:'06 / THE EASTERN FRONT',title:'Jerusalem under fire',
+    brief:'Israel tells Jordan it will not attack if Jordan stays out of the war. Jordanian forces then shell West Jerusalem. A second front opens.',
+    intel:'King Hussein had signed a pact with Egypt and received misleading reports of early Egyptian victories.',
+    question:'Jerusalem is under fire. What now?',
+    options:['Defend the city but avoid wider operations.','Defend the city and counterattack Jordanian forces.'],correct:1,
+    success:'Israel counterattacked. Heavy fighting spread through Jerusalem and the West Bank, then under Jordanian control.',
+    alternative:'The historical response was a counterattack after Jordan entered the fighting.',
+    focus:['westbank','israel'],point:[427,277],map:'JERUSALEM FRONT',archiveTitle:'Jerusalem under fire',archiveCaption:'Jordanian artillery fire was followed by intense fighting around Jerusalem.',image:'assets/gpo/13-nasser-pre-war.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:1
   },
   {
     date:'6 JUNE 1967',day:'DAY TWO',phase:1,tag:'07 / THE APPROACH',title:'A divided Jerusalem',
-    brief:'Israeli troops fight to secure strategic routes around Jerusalem. The city has been divided since 1948. The Old City and its sacred sites remain under Jordanian control. Any assault risks casualties, damage to holy places and major diplomatic consequences.',
-    intel:'The Israeli government had not entered the war with an agreed plan to capture the Old City. Events on the ground changed the options available.',
-    question:'What was the next part of Israel’s advance around Jerusalem?',
-    options:['Secure surrounding positions and routes before attempting to enter the Old City.','Attempt to enter the Old City before securing the routes and surrounding positions.'],correct:0,
-    success:'Israeli forces secured positions around the city. By 7 June, they were in a position to enter East Jerusalem and the Old City.',
-    alternative:'The historical advance consolidated key positions rather than abandoning Jerusalem. The decision to enter the Old City remained sensitive.',
+    brief:'The battle for Jerusalem continues. The Old City has been under Jordanian control since 1948. Narrow streets and holy sites make any assault dangerous.',
+    intel:'Israel did not begin the war with a settled plan to take the Old City.',
+    question:'How do you approach the Old City?',
+    options:['Secure the surrounding routes and positions first.','Enter the Old City before securing the approaches.'],correct:0,
+    success:'Israeli forces secured positions around Jerusalem. On 7 June, they entered the Old City.',
+    alternative:'Troops secured key routes and positions before entering the Old City.',
     focus:['westbank'],point:[427,277],map:'EAST JERUSALEM',archiveTitle:'The divided city',archiveCaption:'The Old City was under Jordanian control from 1948 until June 1967.',image:'assets/07-jerusalem.jpg',video:null,animatedMap:'assets/maps/07-jerusalem.svg',source:1
   },
   {
     date:'7 JUNE 1967',day:'DAY THREE',phase:1,tag:'08 / THE OLD CITY',title:'The Old City is entered',
-    brief:'Israeli paratroopers enter the Old City through the Lions’ Gate. Israeli forces gain control of the Temple Mount, also known as Haram al Sharif, and reach the Western Wall. The moment carries deep meaning for Jewish history while also transforming the position of Palestinian residents and Muslim and Christian holy sites.',
-    intel:'Israeli leaders sought to safeguard the holy places. The Muslim Waqf retained a central religious administration role at the Temple Mount.',
-    question:'What approach is consistent with the reported Israeli priority in the Old City?',
-    options:['Delay entry into the Old City because of the risks to religious sites and civilians.','Enter with ground forces while seeking to protect sacred places.'],correct:1,
-    success:'Israeli paratroopers entered the Old City on 7 June. The Western Wall became accessible to Jewish worshippers, while Jerusalem’s political and religious status remained deeply contested.',
-    alternative:'The objective was not to destroy the holy sites. Israeli leaders were concerned about the damage and diplomatic repercussions of an assault.',
+    brief:'On 7 June, Israeli paratroopers approach the Lions’ Gate. Beyond it lie the Temple Mount, also known as Haram al Sharif, and the Western Wall.',
+    intel:'Entering the Old City meant major military, religious and political risks.',
+    question:'What approach was chosen?',
+    options:['Hold back to avoid fighting near holy places.','Enter on foot while seeking to protect holy places.'],correct:1,
+    success:'Israeli paratroopers entered the Old City and reached the Western Wall. Jerusalem’s status remained deeply contested.',
+    alternative:'Israel entered the Old City while its leaders sought to protect the holy places.',
     focus:['westbank','israel'],point:[427,277],map:'THE OLD CITY',archiveTitle:'Jerusalem, 7 June',archiveCaption:'Paratroopers reached the Western Wall after the battle for Jerusalem.',image:'assets/08-old-city.jpg',video:null,mediaCredit:'IDF',source:1
   },
   {
     date:'7 JUNE 1967',day:'DAY THREE',phase:1,tag:'09 / THE SOUTHERN FRONT',title:'The route to Eilat',
-    brief:'Meanwhile, Israel’s southern offensive has moved rapidly through Sinai. Israeli forces take Sharm el Sheikh near the entrance to the Straits of Tiran. Israel can again use the sea route it had regarded as essential.',
-    intel:'Egyptian forces retreated across Sinai. By 8 June, fighting on the Egyptian and Jordanian fronts had largely stopped.',
-    question:'Which strategic goal was achieved in the south?',
-    options:['Regain access through the Straits of Tiran and secure the Sinai front.','Hold existing positions in Sinai instead of pressing towards the Straits of Tiran.'],correct:0,
-    success:'Israel secured Sharm el Sheikh and access to the Straits. By the end of the fighting it occupied the Sinai Peninsula and Gaza Strip.',
-    alternative:'Capturing Cairo was not the outcome of the 1967 southern campaign. Securing Sinai and access to the Straits were central developments.',
+    brief:'Israeli forces push across Sinai. They reach Sharm el Sheikh, near the entrance to the Straits of Tiran. The southern front is shifting fast.',
+    intel:'By 8 June, major fighting with Egypt and Jordan was drawing to a close.',
+    question:'What was the strategic goal?',
+    options:['Reopen the Straits and secure the Sinai front.','Stop short of the Straits and hold existing positions.'],correct:0,
+    success:'Israel took Sharm el Sheikh and gained access through the Straits. Its forces occupied Sinai and Gaza by the war’s end.',
+    alternative:'Securing access to the Straits was a central result of the Sinai campaign.',
     focus:['sinai','gaza'],point:[399,420],map:'SINAI AND THE STRAITS',archiveTitle:'The Sinai campaign',archiveCaption:'The battle in Sinai was decided quickly. The blockade of the Straits ended.',image:'assets/09-sinai.jpg',video:'assets/09-sinai.mp4',mediaCredit:'Periscope Film LLC',photoCredit:'Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel',photoCaption:'Still: IDF soldiers at an improvised shower in Sinai, June 1967. The film illustrates armour and artillery; precise filming locations have not been verified.',source:7
   },
   {
     date:'8 JUNE 1967',day:'DAY FOUR',phase:1,tag:'10 / THE CEASEFIRE',title:'The fighting changes',
-    brief:'Egypt and Jordan accept ceasefire arrangements, and fighting on those fronts winds down. Syrian positions in the Golan Heights still overlook Israeli communities near the Sea of Galilee. The Israeli government debates whether to fight on the northern front.',
-    intel:'The United Nations Security Council had been pressing for a ceasefire. Expanding the war carried risks as well as possible security gains.',
-    question:'Which approach reflects the events of 8 June?',
-    options:['Continue offensive operations against Egypt despite ceasefire arrangements.','End the major fighting with Egypt and Jordan while examining the Syrian front.'],correct:1,
-    success:'By 8 June, fighting with Egypt and Jordan had stopped. The critical remaining decision concerned Syria and the Golan Heights.',
-    alternative:'The Israeli campaign did not continue towards Cairo. The northern front became the focus of the final two days.',
+    brief:'Egypt and Jordan accept ceasefire arrangements. But Syrian positions on the Golan Heights still overlook northern Israeli communities.',
+    intel:'The UN was pushing for a ceasefire. Opening another offensive had serious risks.',
+    question:'Where does Israel turn next?',
+    options:['Keep attacking Egypt despite the ceasefire.','Stop fighting Egypt and Jordan; assess Syria.'],correct:1,
+    success:'The Egyptian and Jordanian fronts quietened. Israel’s leaders turned to the question of Syria and the Golan Heights.',
+    alternative:'The major fighting with Egypt and Jordan ended. Attention shifted to Syria.',
     focus:['golan','syria'],point:[447,115],map:'NORTHERN FRONT',archiveTitle:'The northern question',archiveCaption:'Syrian positions in the Golan overlooked communities in northern Israel.',image:'assets/10-northern-front.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:7
   },
   {
     date:'9 JUNE 1967',day:'DAY FIVE',phase:1,tag:'11 / THE GOLAN DECISION',title:'The high ground',
-    brief:'Syria’s Golan Heights offer commanding terrain above northern Israel. The Israeli cabinet and military leadership debate an offensive against Syrian forces. Defence Minister Moshe Dayan, initially opposed to a ground attack, changes his position on 9 June.',
-    intel:'There were strong arguments both for and against advancing. Fighting on the Golan was costly, and the possibility of another UN ceasefire was approaching.',
-    question:'Which decision was taken as the war entered its fifth day?',
-    options:['Stay below the Golan Heights and accept a ceasefire without an offensive.','Authorise an advance onto the Golan Heights despite the risks.'],correct:1,
-    success:'Israeli forces attacked Syrian positions on 9 June. The advance was contested but continued into the following day.',
-    alternative:'Restraint was advocated by some leaders, but the actual decision on 9 June was to launch the Golan offensive.',
+    brief:'Syrian positions high on the Golan overlook the Galilee. Israel’s leaders disagree about whether to attack. Defence Minister Moshe Dayan changes his mind on 9 June.',
+    intel:'The Golan assault was dangerous, and a final ceasefire was approaching.',
+    question:'What decision was made on 9 June?',
+    options:['Accept the ceasefire without taking the Heights.','Launch an offensive onto the Golan Heights.'],correct:1,
+    success:'Israeli troops attacked the Syrian positions on 9 June and advanced into the next day.',
+    alternative:'There were arguments for restraint, but Israel launched the Golan offensive.',
     focus:['golan','syria'],point:[451,113],map:'GOLAN HEIGHTS',archiveTitle:'The battle for the Golan',archiveCaption:'The northern offensive took place on 9 and 10 June, shortly before the final ceasefire.',image:'assets/11-golan.jpg',video:null,mediaCredit:'Unpacked / OpenDor Media',source:3
   },
   {
     date:'10 JUNE 1967',day:'DAY SIX',phase:1,tag:'12 / THE WAR ENDS',title:'Six days later',
-    brief:'After heavy fighting, Israeli forces gain control of the Golan Heights. International pressure for a ceasefire is intense. Israel now holds territory captured from Egypt, Jordan and Syria, and faces decisions extending far beyond the battlefield.',
-    intel:'The war ended on 10 June. Control of the Sinai, Gaza, West Bank, East Jerusalem and Golan would reshape politics in the region.',
-    question:'How did the military phase end?',
-    options:['The sides accepted a ceasefire and the major fighting stopped.','Continue the northern offensive towards Damascus rather than accept a ceasefire.'],correct:0,
-    success:'The ceasefire took hold on 10 June. The military conflict had lasted just six days, but its consequences continued for decades.',
-    alternative:'The main fighting ended with a ceasefire on 10 June. Israeli forces did not take Damascus.',
+    brief:'By 10 June, Israeli forces control the Golan Heights. The UN presses for a ceasefire. The war has changed the map of the region.',
+    intel:'The consequences for Israelis and Palestinians, and for the wider region, would last for decades.',
+    question:'How does the war end?',
+    options:['Accept the ceasefire and stop major fighting.','Keep advancing towards Damascus.'],correct:0,
+    success:'The ceasefire took hold on 10 June. The war lasted six days; its political consequences lasted far longer.',
+    alternative:'The fighting ended with a ceasefire. Israeli forces did not take Damascus.',
     focus:['golan','sinai','westbank','gaza'],point:[446,120],map:'THE CEASEFIRE',archiveTitle:'The ceasefire',archiveCaption:'The 5 to 10 June war changed the territorial map of the Middle East.',image:'assets/12-ceasefire.jpg',video:null,animatedMap:'assets/maps/12-ceasefire.svg',source:7
   },
   {
     date:'19 JUNE 1967',day:'AFTER THE WAR',phase:2,tag:'13 / TERRITORY AND PEACE',title:'What should happen to the land?',
-    brief:'Israel’s leaders debate the territories captured in the war. Some support far reaching territorial exchanges for peace. Others want to retain areas considered vital for security, while another camp argues against withdrawal. Cabinet ministers discuss peace treaties involving Egypt and Syria.',
-    intel:'On 19 June, the cabinet adopted a position involving potential withdrawal from Sinai and the Golan for peace and security arrangements. Historians dispute how far this was formally communicated as an offer.',
-    question:'Which position did the cabinet adopt on 19 June?',
-    options:['Retain all captured territory without proposing any withdrawal in peace negotiations.','Consider peace treaties with Egypt and Syria involving withdrawal from Sinai and the Golan.'],correct:1,
-    success:'The cabinet agreed on a diplomatic position involving Sinai and the Golan in exchange for peace. East Jerusalem, the West Bank and Gaza raised further unresolved questions.',
-    alternative:'Not every minister agreed on the future of the territories. Nevertheless, the recorded resolution included possible withdrawal from Sinai and the Golan for peace.',
+    brief:'Israel now controls Sinai, Gaza, the West Bank, East Jerusalem and the Golan Heights. Its leaders must decide what territory, if any, to exchange for peace.',
+    intel:'On 19 June, the cabinet discussed withdrawal from Sinai and the Golan in return for peace. Whether the position became a formal offer is disputed.',
+    question:'What did the cabinet agree on?',
+    options:['Keep all the territory without considering withdrawal.','Consider returning Sinai and the Golan for peace.'],correct:1,
+    success:'The cabinet supported possible withdrawal from Sinai and the Golan for peace. Other territorial questions remained unresolved.',
+    alternative:'The cabinet’s recorded position included possible withdrawal from Sinai and the Golan.',
     focus:['sinai','golan','westbank'],point:[389,278],map:'LAND FOR PEACE?',archiveTitle:'The peace debate',archiveCaption:'The future of the occupied territories divided Israeli leaders.',image:'assets/13-cabinet-peace.jpg',video:null,animatedMap:'assets/maps/13-peace.svg',source:4
   },
   {
     date:'1 SEPTEMBER 1967',day:'AFTER THE WAR',phase:2,tag:'14 / THE THREE NO’S',title:'Khartoum and the future',
-    brief:'Arab League leaders meet in Khartoum, Sudan, from 29 August to 1 September. Their declaration becomes known for the “Three No’s”: no peace with Israel, no recognition of Israel and no negotiations with Israel. The outcome appears to narrow the immediate prospects for direct peace talks.',
-    intel:'The Khartoum statement represented the participating governments at that summit. Arab and Israeli positions were not fixed forever. Egypt and Israel signed a peace treaty in 1979.',
-    question:'How should the historical record of Khartoum be understood?',
-    options:['Arab League leaders adopted a declaration rejecting peace, recognition and negotiations with Israel at that time.','Arab League leaders called for immediate direct peace negotiations with Israel.'],correct:0,
-    success:'The Three No’s became a defining feature of the immediate aftermath. In November 1967, UN Resolution 242 offered a framework linking withdrawal, recognition and secure peace.',
-    alternative:'There was no peace treaty at Khartoum. Its declaration included the Three No’s, although diplomatic positions evolved in later years.',
+    brief:'Arab League leaders meet in Khartoum. On 1 September, their declaration sets out the Three No’s: no peace, recognition or negotiations with Israel.',
+    intel:'The declaration reflected the participating governments at that time. Egypt later made peace with Israel in 1979.',
+    question:'What did the summit declare?',
+    options:['No peace, recognition or negotiations with Israel.','Immediate direct peace negotiations with Israel.'],correct:0,
+    success:'The Three No’s shaped the immediate aftermath. Later that year, UN Resolution 242 helped define a future diplomatic framework.',
+    alternative:'The Khartoum declaration included the Three No’s; it did not announce direct peace talks.',
     focus:['israel','sinai','golan','westbank'],point:[411,250],map:'THE DIPLOMATIC FRONT',archiveTitle:'Nasser arrives at the Khartoum Summit',archiveCaption:'AP Archive footage dated 30 August 1967 shows President Gamal Abdel Nasser arriving in Khartoum. The Arab League declaration containing the Three No’s was adopted at the summit on 1 September.',image:'assets/14-khartoum.jpg',video:'assets/14-khartoum.mp4',mediaCredit:'AP Archive',photoCaption:'30 August 1967: President Nasser arrives at Khartoum and inspects a guard of honour. This footage shows his arrival, not the adoption of the final declaration.',source:6
   }
 ];
@@ -168,7 +168,7 @@ const STAGES = [
 /* Decision-screen photographs are separate from the animated outcome films.
    Never label a map, an illustration or a documentary reconstruction as an
    original historical photograph. Dates refer to the pictured event when known. */
-const ARCHIVE_CARDS = [{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/archive/01-unef-flag-19-may-1967.jpg","alt":"United Nations flag lowered at King’s Gate, 19 May 1967","tag":"The UN flag comes down","date":"19 May 1967","location":"King’s Gate, Gaza City","source":"UN Photo","caption":"The UN flag is lowered as the Emergency Force withdraws from its observation posts."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/13-nasser-pre-war.jpg","tag":"Nasser addresses a crowd","date":"1967 (exact date not verified)","location":"Egypt (precise location not verified)","source":"Government Press Office (GPO) collection","caption":"Context photograph of President Nasser. The exact date and location of this image are not confirmed; it does not show the blockade itself."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/19-shelter-galilee-20-400x267.jpg","tag":"Civilian preparations","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"Families shelter in northern Israel. This photograph documents civilian vulnerability; it does not depict military mobilisation."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/18-rabin-52-400x267.jpg","tag":"IDF Chief of Staff Rabin","date":"1967 (exact date not verified)","location":"Israel (precise location not confirmed)","source":"Government Press Office (GPO) collection","caption":"Rabin photographed with military personnel. This is a contextual image, not a photograph of a cabinet meeting."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/archive/05-egyptian-aircraft-wreckage.jpg","alt":"Egyptian military aircraft wreckage after the opening air strikes","tag":"Operation Focus aftermath","date":"5 June 1967","location":"Egyptian airfield","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Damaged Egyptian military aircraft following Israeli air strikes on 5 June."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/09-jerusalem-100-400x267.jpg","tag":"Jerusalem under fire","date":"June 1967 (date not verified)","location":"Jerusalem","source":"Government Press Office (GPO) collection","caption":"An Israeli soldier in a Jerusalem position. The exact date of this photograph has not been verified."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/11-jerusalem-105-400x267.jpg","tag":"Fighting near Jerusalem","date":"June 1967 (date not verified)","location":"Jerusalem","source":"Government Press Office (GPO) collection","caption":"Israeli soldiers near Jerusalem stone walls. The precise date is not confirmed."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/17-paratroopers-western-wall.jpg","alt":"Three Israeli paratroopers standing at the Western Wall, photographed by David Rubinger on 7 June 1967","tag":"The three paratroopers","date":"7 June 1967","location":"Western Wall, Jerusalem","source":"David Rubinger / GPO archive","caption":"Three Israeli paratroopers photographed at the Western Wall on 7 June 1967."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/archive/09-israeli-soldiers-sinai-shower.jpg","tag":"A moment in the Sinai","date":"1967","location":"Sinai Peninsula","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Israeli soldiers use a makeshift shower during the Sinai campaign."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/21-shelter-galilee-22.jpg","tag":"Sheltering on the northern front","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"A child seeks shelter in northern Israel, illustrating the danger faced by border communities."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/08-israeli-tanks-in-golan-88-400x267.jpg","tag":"Armour on the Golan","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Israeli armour pictured on the Golan Heights during the 1967 war; the precise day is not established."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/04-golan-tanks-104-400x267.jpg","tag":"After the fighting","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Military vehicles on the Heights. This photograph illustrates the situation after the fighting; its precise date is not verified."},{"kind":"HISTORICAL PHOTOGRAPH","image":"assets/gpo/03-eshkol-in-golan-86-400x267.jpg","tag":"Levi Eshkol on the Golan","date":"1967 (exact date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Prime Minister Levi Eshkol visits the Golan. This image is contextual and does not depict the cabinet meeting of 19 June."},{"kind":"AP ARCHIVE FILM FRAME","image":"assets/14-khartoum.jpg","tag":"Nasser arrives in Khartoum","date":"30 August 1967","location":"Khartoum, Sudan","source":"AP Archive","caption":"President Nasser arrives for the summit. This does not depict the adoption of the Three No’s."}];
+const ARCHIVE_CARDS = [{"kind":"ARCHIVE PHOTO","image":"assets/archive/01-unef-flag-19-may-1967.jpg","alt":"United Nations flag lowered at King’s Gate, 19 May 1967","tag":"The UN flag comes down","date":"19 May 1967","location":"King’s Gate, Gaza City","source":"UN Photo","caption":"UN peacekeepers withdraw from positions along the border."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/13-nasser-pre-war.jpg","tag":"President Nasser, 1967","date":"1967 (exact date not verified)","location":"Egypt (precise location not verified)","source":"Government Press Office (GPO) collection","caption":"Egypt’s president ordered the Straits of Tiran closed. This is a contextual portrait, not a photograph of the blockade."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/19-shelter-galilee-20-400x267.jpg","tag":"Civilian preparations","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"Families shelter in northern Israel. This photograph documents civilian vulnerability; it does not depict military mobilisation."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/18-rabin-52-400x267.jpg","tag":"IDF Chief of Staff Rabin","date":"1967 (exact date not verified)","location":"Israel (precise location not confirmed)","source":"Government Press Office (GPO) collection","caption":"Rabin photographed with military personnel. This is a contextual image, not a photograph of a cabinet meeting."},{"kind":"ARCHIVE PHOTO","image":"assets/archive/05-egyptian-aircraft-wreckage.jpg","alt":"Egyptian military aircraft wreckage after the opening air strikes","tag":"Operation Focus aftermath","date":"5 June 1967","location":"Egyptian airfield","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Damaged Egyptian military aircraft following Israeli air strikes on 5 June."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/13-nasser-pre-war.jpg","tag":"Nasser and the crisis","date":"1967 (exact date unknown)","location":"Egypt (location not confirmed)","source":"Government Press Office (GPO) collection","caption":"President Nasser in 1967. Context photograph: it does not show the fighting in Jerusalem.","alt":"President Gamal Abdel Nasser, contextual photograph from 1967"},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/11-jerusalem-105-400x267.jpg","tag":"Fighting near Jerusalem","date":"June 1967 (date not verified)","location":"Jerusalem","source":"Government Press Office (GPO) collection","caption":"Israeli soldiers near Jerusalem stone walls. The precise date is not confirmed."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/17-paratroopers-western-wall.jpg","alt":"Three Israeli paratroopers standing at the Western Wall, photographed by David Rubinger on 7 June 1967","tag":"The three paratroopers","date":"7 June 1967","location":"Western Wall, Jerusalem","source":"David Rubinger / GPO archive","caption":"Three Israeli paratroopers photographed at the Western Wall on 7 June 1967."},{"kind":"ARCHIVE PHOTO","image":"assets/archive/09-israeli-soldiers-sinai-shower.jpg","tag":"A moment in the Sinai","date":"1967","location":"Sinai Peninsula","source":"Dan Hadani Collection, The Pritzker Family National Photography Collection, The National Library of Israel","caption":"Israeli soldiers use a makeshift shower during the Sinai campaign."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/21-shelter-galilee-22.jpg","tag":"Sheltering on the northern front","date":"1967 (date not verified)","location":"Galilee, northern Israel","source":"Government Press Office (GPO) collection","caption":"A child seeks shelter in northern Israel, illustrating the danger faced by border communities."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/08-israeli-tanks-in-golan-88-400x267.jpg","tag":"Armour on the Golan","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Israeli armour pictured on the Golan Heights during the 1967 war; the precise day is not established."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/04-golan-tanks-104-400x267.jpg","tag":"After the fighting","date":"June 1967 (date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Military vehicles on the Heights. This photograph illustrates the situation after the fighting; its precise date is not verified."},{"kind":"ARCHIVE PHOTO","image":"assets/gpo/03-eshkol-in-golan-86-400x267.jpg","tag":"Levi Eshkol on the Golan","date":"1967 (exact date not verified)","location":"Golan Heights","source":"Government Press Office (GPO) collection","caption":"Prime Minister Levi Eshkol visits the Golan. This image is contextual and does not depict the cabinet meeting of 19 June."},{"kind":"ARCHIVE FILM","image":"assets/14-khartoum.jpg","tag":"Nasser arrives in Khartoum","date":"30 August 1967","location":"Khartoum, Sudan","source":"AP Archive","caption":"President Nasser arrives for the summit. This does not depict the adoption of the Three No’s."}];
 
 
 /* GPO gallery: catalogued from the supplied sixdaywar.org photo page,
@@ -207,7 +207,7 @@ function renderGpoGallery(){
 function setGpoDecisionUI(index){
   const count=GPO_LIBRARY.filter(entry=>entry.stage===index+1).length;
   $('gpo-open').hidden=count===0;
-  $('gpo-open').textContent=count?`Explore GPO archive photos (${count}) ↗`:'';
+  $('gpo-open').textContent=count?`More photos (${count}) ↗`:'';
 }
 
 function renderDecisionArchive(index){
@@ -286,7 +286,7 @@ function start(){if(state.finished||state.gameOver){reset();return;}state.starte
 function reset(){state={index:0,alternatives:0,started:true,finished:false,gameOver:false};store();renderDecision();}
 function goHome(){clearTimeout(pendingAdvance);stopVideo();locked=false;$('try-again-panel').hidden=true;setView('welcome');updateWelcome()}
 function updateWelcome(){
-  $('start-button').textContent=state.started&&!state.finished&&!state.gameOver?'Resume your journey →':state.finished||state.gameOver?'Begin the mission again →':'Enter the decision room →';
+  $('start-button').textContent=state.started&&!state.finished&&!state.gameOver?'Resume mission →':state.finished||state.gameOver?'Start again →':'Start the mission →';
   $('welcome-new-button').hidden=!(state.started&&!state.finished&&!state.gameOver);
 }
 function requestRestart(){$('restart-dialog').showModal()}
@@ -319,7 +319,7 @@ function renderDecision(){
     const b=document.createElement('button');b.type='button';b.className='big-choice';b.setAttribute('aria-label',`Choice ${i===0?'A':'B'}: ${option}`);
     const top=document.createElement('span');top.className='big-choice-top';top.innerHTML=`<span class="big-choice-letter">${i===0?'A':'B'}</span><span class="big-choice-prompt">OPTION ${pad(i+1)} <span class="big-choice-marker">↗</span></span>`;
     const main=document.createElement('span');main.className='big-choice-copy';main.textContent=option;
-    const bot=document.createElement('span');bot.className='big-choice-bottom';bot.textContent='MAKE THIS DECISION';
+    const bot=document.createElement('span');bot.className='big-choice-bottom';bot.textContent='SELECT';
     b.append(top,main,bot);b.addEventListener('click',()=>choose(i));choices.appendChild(b);
   });
   renderProgress();setView('decision');
@@ -373,9 +373,9 @@ function showReel(s){
   $('reel-heading').textContent=s.archiveTitle;
   $('reel-description').textContent=s.success;
   $('reel-foot-step').textContent=state.index===STAGES.length-1?'NEXT: THE FINAL DEBRIEF':`NEXT: DECISION ${pad(state.index+2)}`;
-  $('media-type').textContent='VISUAL HISTORY CARD';
-  $('reel-help').textContent='Read the historical outcome and continue when you are ready.';
-  $('reel-next').textContent=state.index===STAGES.length-1?'View the final debrief →':'Continue to the next decision →';
+  $('media-type').textContent='WHAT HAPPENED';
+  $('reel-help').textContent='';
+  $('reel-next').textContent=state.index===STAGES.length-1?'View the final result →':'Next decision →';
   $('reel-replay').hidden=true;
   const credit=$('reel-credit');credit.textContent=s.mediaCredit?`Footage: ${s.mediaCredit}`:s.photoCredit?`Photograph: ${s.photoCredit}`:'';credit.hidden=!(s.mediaCredit||s.photoCredit);
   const photoCaption=$('reel-photo-caption');photoCaption.textContent=s.photoCaption||'';photoCaption.hidden=!s.photoCaption;
@@ -398,8 +398,8 @@ function showReel(s){
     credit.hidden=false;
     photoCaption.textContent=yt.description;
     photoCaption.hidden=false;
-    $('media-type').textContent='SILENT ARCHIVAL FILM';
-    $('reel-help').textContent='This archival film plays without sound. Choose Continue when ready.';
+    $('media-type').textContent='WHAT HAPPENED';
+    $('reel-help').textContent='';
     $('reel-view').classList.add('has-video');
     $('reel-illustration').hidden=true;
     frame.hidden=false;
@@ -413,10 +413,10 @@ function showReel(s){
     animationReady=true;
     $('reel-view').classList.add('has-animation');
     $('reel-illustration').hidden=true;
-    $('media-type').textContent='ANIMATED HISTORICAL MAP';
-    $('reel-help').textContent='This original map animation has no audio. The next decision follows automatically.';
+    $('media-type').textContent='WHAT HAPPENED';
+    $('reel-help').textContent='';
     $('reel-replay').hidden=false;
-    $('reel-replay').textContent='Replay map animation ↺';
+    $('reel-replay').textContent='Replay ↺';
     credit.textContent='Map: original educational reconstruction using Natural Earth public domain geography. Not to scale.';
     credit.hidden=false;
     const frame=$('animated-map');frame.hidden=false;
@@ -434,9 +434,9 @@ function showReel(s){
     if(view!=='reel'||videoReady)return;
     videoReady=true;
     $('reel-view').classList.add('has-video');vid.hidden=false;$('reel-illustration').hidden=true;
-    $('media-type').textContent=state.index===7?'HEBREW ARCHIVE AUDIO':'SILENT ARCHIVE VIDEO';
+    $('media-type').textContent=state.index===7?'WHAT HAPPENED':'WHAT HAPPENED';
     credit.hidden=!s.mediaCredit;
-    $('reel-help').textContent=state.index===7?'Original Hebrew military communications. The next decision follows the clip.':'This film plays without sound. The next decision follows the clip.';
+    $('reel-help').textContent=state.index===7?'':'';
     $('reel-replay').hidden=false;
     const result=vid.play();if(result&&typeof result.catch==='function')result.catch(()=>{$('reel-help').textContent='Select play on the video to watch the historical footage.'});
   };
@@ -458,13 +458,13 @@ function showReel(s){
       verify.src=s.archivePhoto;
       return;
     }
-    $('reel-help').textContent='The clip has finished. Moving to the next decision.';
+    $('reel-help').textContent='';
     pendingAdvance=setTimeout(()=>{if(view==='reel')advance()},2800);
   };
   vid.onerror=()=>{
     videoReady=false;$('reel-view').classList.remove('has-video');
     vid.hidden=true;$('reel-illustration').hidden=false;
-    $('media-type').textContent='VISUAL HISTORY CARD';
+    $('media-type').textContent='WHAT HAPPENED';
     $('reel-replay').hidden=true;
     credit.hidden=!(s.photoCredit);
   };
