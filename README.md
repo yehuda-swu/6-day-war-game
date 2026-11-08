@@ -1,49 +1,26 @@
-# Version 19: Outcome viewing layout
+# 1948: Hold the Line | Version 8
 
-The video and map viewing area is now separate from the explanatory text on all screen sizes. A fullscreen button has been added.
+A standalone history strategy game for StandWithUs UK Explore.
 
-# Six Days of Decisions | Version 18
+## Publish on GitHub Pages
 
-A browser game for students aged 16 and 17, developed for StandWithUs UK Explore. It runs on GitHub Pages using static HTML, CSS, JavaScript, local photographs, historical videos, a supplied soundtrack and animated SVG maps.
+1. Extract the ZIP.
+2. Replace `index.html` in the repository root.
+3. Commit the update and wait for GitHub Pages to publish.
 
-## What is new
+## Version 8 changes
 
-**Soundtrack replaced:** The previous cinematic score has been removed. Version 18 now uses the music file supplied by the project owner, *March of the Israeli Defence Force*, with approximately five seconds of leading silence removed.
+* One highlighted mission front per chapter; other regions are historical context.
+* Players can try a different action once if a mission goes wrong.
+* Clear action previews, with only one action each round.
+* Easier resources and a transparent victory goal: defend four of six battles.
+* Optional player name.
+* Automatic leaderboard, stored locally on that browser only, updating when campaigns finish. In progress points appear during play.
+* End screen with clear win/loss, score, leaderboard and a researched What Really Happened summary.
+* Full chronology, period flags, logos and embedded music retained.
 
-**Music on the home screen:** The site attempts to play the soundtrack as soon as the home page loads. Most browsers block audible autoplay until the first user interaction. If so, select **Play soundtrack** on the home screen or **Play music** in the top bar. A first click or tap on the home screen can also start the track before beginning the mission.
+## Note about the leaderboard
 
-**Continuous looping music:** The music stays on throughout the experience and is only paused during the Old City video with Hebrew audio. It then resumes at the same point. The top bar and home screen provide pause and play controls. Student progress is not saved between visits.
+This is a static HTML game published on GitHub Pages. LocalStorage scores are tied to the individual browser and device. A shared public leaderboard requires a database and authentication. Do not imply scores automatically synchronise between players or devices.
 
-The 14 historical decisions, two spare lives, Game Over, redesigned final debrief, archival photo gallery, animated maps and existing media credits remain unchanged.
-
-## Update the GitHub website
-
-1. Download and extract the Version 18 ZIP.
-2. Open the existing repository: https://github.com/yehuda-swu/6-day-war-game
-3. Select Add file, then Upload files.
-4. Upload all extracted files and the `assets` folder into the root of the repository. `index.html` should sit next to the `assets` folder.
-5. Commit with the message: `Replace game music with supplied march and enable home screen playback`.
-6. Open https://yehuda-swu.github.io/6-day-war-game/ after GitHub Pages publishes the change.
-
-To commit from the command line in an existing local checkout, use:
-
-```bash
-git add .
-git commit -m "Replace game music with supplied march and enable home screen playback"
-git push origin main
-```
-
-No build process or API keys are required.
-
-## Historical content, recordings and source rights
-
-The game presents historical decisions without suggesting that all these decisions were inevitable or morally uncontested. The educator notes discuss historical distinctions. Source credits for AP Archive, IDF, Unpacked / OpenDor Media, GPO, David Rubinger, UN Photo and the National Library of Israel remain included.
-
-The new soundtrack was supplied by the project owner and is **not** claimed to be public domain. Before publication on a public GitHub Pages website, ensure that the necessary rights to host and reproduce this particular music recording and composition have been obtained. See `MUSIC_SOURCES.md` for details.
-
-See also `MEDIA_SOURCES.md`, `MAP_SOURCES.md`, `GPO_PHOTO_SOURCES.md` and `V18_CHANGELOG.md`.
-
-
-## Version 20: Soundtrack from the home screen
-
-On page load the site requests audible playback of the supplied march. Modern browsers may block this request. When blocked, the visitor can tap anywhere on the home screen or use the soundtrack button to enable sound before beginning the mission. The music will then play continuously, except for the Old City Hebrew film. The user can switch it off at any time.
+The battle scores are fictional and are kept separate from documented historical figures.
